@@ -5,23 +5,51 @@ the Status every session.
 
 ---
 
-## Status — 2026-09-26
+## Status — 2026-09-26 (overnight run, unsupervised)
 
-Overnight build in progress, unsupervised. Question round answered before the owner slept; all
-four answers were the recommended option.
+**It is playable.** Open `index.html`, or `node tools/serve.mjs`. Twelve decks, an AI opponent,
+147 original illustrations, a generated sound kit and a score the program writes as it runs.
 
 **Done**
-- `.gitignore` committed alone, secrets ignored from commit zero.
-- Rights read and recorded with dates (`docs/rights.md`), `NOTICE.md`, `docs/takedown.md`.
-- Comprehensive Rules v1.2.1, Rule Manual and Floor Rules in gitignored `scratch/rules/`.
-- All 60 series of the official card list scraped; `data/printed.js` built —
-  **2,785 distinct card numbers, 142 Leaders**, printed text verbatim.
-- The ten meta archetypes captured from onepiece.gg with per-card counts
-  (`scratch/decks/onepiece-gg-meta-2026-09-26.json`).
+- `.gitignore` committed alone; secrets ignored from commit zero.
+- Rights read and recorded with dates (`docs/rights.md`), `NOTICE.md`, `docs/takedown.md`, and
+  the disclaimer on the menu screen the player actually sees.
+- Comprehensive Rules v1.2.1, the Rule Manual and the Floor Rules in gitignored `scratch/`;
+  `docs/rules.md` is the citation index and the engine cites sections throughout.
+- All 60 series of the official card list scraped. `data/printed.js`: **2,785 card numbers,
+  142 Leaders**, printed text verbatim.
+- Engine: `legalActions` / `apply` (immutable) / `isTerminal` / `whoActs`, one resolution queue,
+  seeded RNG inside `apply`, structured log. **The reactive window — Block, Counter and Trigger —
+  is a queue step whose `ctrl` is the other seat**, and nothing else was needed for it.
+- `tools/build-abilities.mjs` compiles printed text into the grammar; **32.6%** of the set
+  compiles and the rest is refused from every deck rather than half-working.
+- Twelve registered decks, all legal at 50 / 4-of / colour-matched, each showing its provenance.
+- AI with the horizon rule, plus the two behaviour counters from day one.
+- Gates: `test.mjs` (25), `check-pages.mjs`, `check-art.mjs` (147), `audit-cards.mjs`
+  (**0 FAIL, 9 WARN**), `arena.mjs`, and the black box with its replayer.
 
-**Next, in order** — every arrow leaves the thing runnable
-engine spine + tests → two starter decks playable vs the AI → interface → art → sound →
-the ten meta decks → registers and handoff.
+**Measured**
+- **The player going first wins ~50%** over 32 games in both seats. Bandai's own answer — no
+  draw and 1 DON!! on turn one (CR 6-3-1, 6-4-1) — reproduces almost exactly. That is the best
+  single piece of evidence that the turn structure is right.
+- **Turns on which the AI does nothing: 0.0%.** It was 5.5% before the evaluator was given a
+  term for `[Blocker]`, at which point block windows went 0 → 59 in the same measurement. An
+  evaluator blind to a rule measures itself (`CARD-GAME-LESSONS-5.md` §5.2).
+- **Blocks are never declined; counters are played on about two thirds of windows.** Both seats,
+  decisive results only.
+
+**What is not done** — see `TODO.md` for the queue and `DEVIATIONS.md` for the standing bugs.
+The largest gaps are compiler coverage (which decides how much of each meta deck is the real
+list) and an animation layer.
+
+**The three things to form an opinion on first**
+1. **Does the Counter Step feel right?** It is the novel mechanic and the one place the game
+   stops and asks you something during the opponent's turn. It currently asks every time you
+   have any legal counter at all.
+2. **Is the art direction right?** 147 renders are one decision and regenerating is paying
+   twice. Look at a deck's worth before asking for more.
+3. **Do the meta decks play like the real ones?** Where a deck is mostly `inferred` slots
+   (Enel at 6/50, Rocks.D.Xebec at 8/50) it will not, and the fix is compiler coverage.
 
 ---
 
