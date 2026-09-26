@@ -1,0 +1,41 @@
+# ---------------------------------------------------------------------------
+# Secrets. These were in the project directory on commit zero; they are
+# ignored in the first commit for exactly that reason.
+# ---------------------------------------------------------------------------
+hf_token.md
+elevenlabs.token.rtf
+*.token
+*.token.*
+.env
+.env.*
+
+# ---------------------------------------------------------------------------
+# Raw research. Scrapes, official PDFs, card dumps, screenshots. Nothing in
+# here crosses into the repo except through a generated pack.
+# ---------------------------------------------------------------------------
+scratch/
+
+# ---------------------------------------------------------------------------
+# Art masters and archives. The repo carries delivery encodes (.webp) only.
+# ---------------------------------------------------------------------------
+art/masters/
+art/archive/
+*.psd
+
+# ---------------------------------------------------------------------------
+# Traces, replays, sweep sandboxes.
+# ---------------------------------------------------------------------------
+traces/
+sweeps/
+*.trace.json
+
+# ---------------------------------------------------------------------------
+# Editor and OS noise, including the lock files a synced folder produces.
+# ---------------------------------------------------------------------------
+.DS_Store
+._*
+.~lock.*
+*.swp
+node_modules/
+.idea/
+.vscode/
