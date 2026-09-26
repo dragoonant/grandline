@@ -316,7 +316,11 @@
         p.hand.splice(at, 1);
         p.donActive -= c.cost; p.donRested += c.cost;           // CR 2-7-2
         NS.log.push(s, 'card.played', { seat: seat, id: a.id, cost: c.cost });
-        return resumeAfterEffect(E.playCardFree(s, seat, a.id));
+        // Through execute(), not directly: playing may ask a question (CR 3-7-6-1, a full
+        // Character area) and every question must be parkable on the queue.
+        return resumeAfterEffect(E.execute(s, { ctrl: seat, self: null, cardId: a.id,
+                                                src: null, ops: [{ k: 'playCard', id: a.id }],
+                                                answers: [] }));
       }
 
       case 'event': {                                           // CR 2-7-3

@@ -223,6 +223,15 @@
     });
   };
 
+  // Playing a card is an op so that it runs inside an invocation. Without this the Character
+  // area overflow choice (CR 3-7-6-1) calls offerChoice OUTSIDE execute(), and OP_NEED_CHOICE
+  // escapes apply() entirely — found by the CR 3-7-6 test, which is what that test is for.
+  // The cost is already paid and the card already out of hand when this runs, so re-running the
+  // invocation to answer a question re-plays only the placement, which is idempotent.
+  H.playCard = function (s, ctx, op) {
+    E.playCardFree(s, ctx.ctrl, op.id);
+  };
+
   // CR 4-11 — "remove" a card from its area to another. Returning a Character to hand, or to
   // the top or bottom of its owner's deck.
   H.bounce = function (s, ctx, op) {
@@ -320,6 +329,7 @@
       ' ' + (op.type ? '{' + op.type + '} type ' : '') + 'card and add it to your hand. ' +
       'Then, place the rest at the bottom of your deck in any order';
   };
+  D.playCard = function (op) { return 'Play ' + op.id; };
   D.bounce = function (op) {
     var where = op.to === 'hand' ? "the owner's hand"
       : op.to === 'top' ? "the top of the owner's deck" : "the bottom of the owner's deck";
