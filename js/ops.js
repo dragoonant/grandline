@@ -323,6 +323,37 @@
     NS.log.push(s, 'don.deckSize', { seat: ctx.ctrl, n: op.n });
   };
 
+  // ---------------------------------------------------------------------------------------
+  // Activation costs as ops (CR 8-3-1). An AUTO effect must pay its cost too, and paying may
+  // itself ask a question (trashing from hand). Running the cost as the first ops of the same
+  // invocation means the whole thing stays atomic: if the player is asked something mid-payment
+  // the partial run is discarded and replayed with the answer, exactly like any other effect.
+  // ---------------------------------------------------------------------------------------
+  H.payRestDon = function (s, ctx, op) {
+    var p = s.players[ctx.ctrl];
+    if (p.donActive < op.n) throw new Error('payRestDon: cannot pay, should have been checked');
+    p.donActive -= op.n; p.donRested += op.n;                      // CR 8-3-1-5
+    NS.log.push(s, 'cost.restDon', { seat: ctx.ctrl, n: op.n });
+  };
+
+  H.payDonMinus = function (s, ctx, op) {
+    // CR 10-2-10-1 — return that many DON!! from the field and the cost area to the DON!! deck.
+    var p = s.players[ctx.ctrl];
+    var left = op.n;
+    var take = Math.min(left, p.donActive); p.donActive -= take; left -= take;
+    take = Math.min(left, p.donRested); p.donRested -= take; left -= take;
+    [p.leader].concat(p.chars).forEach(function (u) {
+      var t = Math.min(left, u.don); u.don -= t; left -= t;
+    });
+    p.donDeck += op.n - left;
+    NS.log.push(s, 'cost.donMinus', { seat: ctx.ctrl, n: op.n - left });
+  };
+
+  H.payRestSelf = function (s, ctx) {
+    var u = S.findUnit(s, ctx.self);
+    if (u) { u.rested = true; NS.log.push(s, 'cost.restSelf', { uid: u.uid }); }
+  };
+
   // =======================================================================================
   // Describers — CLAUDE.md hard rule 7. js/text.js renders these; the auditor diffs the
   // result against the printed text. A describer that returns nothing is a thrown error.
@@ -437,6 +468,9 @@
     return 'Select ' + selText(op.sel) +
            '. Your opponent cannot activate [Blocker] if that card attacks during this turn';
   };
+  D.payRestDon = function (op) { return 'rest ' + op.n + ' DON!! card' + (op.n === 1 ? '' : 's'); };
+  D.payDonMinus = function (op) { return 'DON!! \u2212' + op.n; };
+  D.payRestSelf = function () { return 'rest this card'; };
   D.playFromHand = function (op) {
     return 'Play up to ' + (op.n || 1) + ' ' + (op.type ? '{' + op.type + '} type ' : '') +
       'card' + (op.costMax !== undefined ? ' with a cost of ' + op.costMax + ' or less' : '') + ' from your hand';

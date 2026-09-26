@@ -241,17 +241,48 @@
     });
   }
 
+  // CR 8-3-1 — an activation cost becomes ops that run at the FRONT of the invocation, so a cost
+  // and its effect are one atomic run and a question asked while paying replays cleanly.
+  // Without this an auto effect resolved for free: OP17-058 Kaido's DON!! -1 was never taken,
+  // which only became visible once the timing itself started firing.
+  function costOps(ab) {
+    return (ab.cost || []).map(function (c) {
+      if (c.k === 'restDon') return { k: 'payRestDon', n: c.n };
+      if (c.k === 'donMinus') return { k: 'payDonMinus', n: c.n };
+      if (c.k === 'restSelf') return { k: 'payRestSelf' };
+      if (c.k === 'trashHand') return { k: 'trashHand', n: c.n };
+      throw new Error('costOps: unknown activation cost "' + c.k + '"');
+    });
+  }
+
+  function canAfford(s, seat, u, ab) {
+    var p = s.players[seat];
+    return (ab.cost || []).every(function (c) {
+      if (c.k === 'restDon') return p.donActive >= c.n;            // CR 8-3-1-3
+      if (c.k === 'trashHand') return p.hand.length >= c.n;
+      if (c.k === 'restSelf') return u.rested === false;
+      if (c.k === 'donMinus') {
+        return p.donActive + p.donRested + p.leader.don +
+               p.chars.reduce(function (a, x) { return a + x.don; }, 0) >= c.n;
+      }
+      return false;
+    });
+  }
+
   function fireAuto(s, when, info) {
     var u = info.unit, seat = info.seat;
-    // CR 10-2-5 / 10-2-16 — "[When Attacking]/[On Your Opponent's Attack]" is one ability with
-    // two activation timings, so it answers to either.
-    var abs = abilitiesOf(u).filter(function (a) { return a.when === when || a.alsoWhen === when; });
+    // CR 10-2-5 / 10-2-16 — "[When Attacking]/[On Your Opponent's Attack]" is one printed
+    // effect under two timings, and tools/build-abilities.mjs emits ONE ABILITY PER TIMING.
+    // Matching `alsoWhen` here as well fired the same effect twice under the second timing.
+    var abs = abilitiesOf(u).filter(function (a) { return a.when === when; });
     for (var i = 0; i < abs.length; i++) {
       var ab = abs[i];
       if (!condsMet(s, u, ab, info)) continue;
+      if (!canAfford(s, seat, u, ab)) continue;              // CR 8-3-1-3
       if (ab.once && u.onceUsed[when + i]) continue;         // CR 10-2-13
       if (ab.once) u.onceUsed[when + i] = true;
-      var out = execute(s, { ctrl: seat, self: u.uid, cardId: u.id, src: u.uid, ops: ab.ops, answers: [] });
+      var out = execute(s, { ctrl: seat, self: u.uid, cardId: u.id, src: u.uid,
+                             ops: costOps(ab).concat(ab.ops), answers: [] });
       // execute() returns a new state; copy it back onto `s` so callers keep their reference.
       Object.keys(out).forEach(function (k) { s[k] = out[k]; });
     }
@@ -340,6 +371,16 @@
     fireAuto(s, 'whenAttacking', { unit: a, seat: seat });     // CR 7-1-1-3, 10-2-5
     var def = S.findUnit(s, targetUid);
     if (def) fireAuto(s, 'whenAttacked', { unit: def, seat: 1 - seat });
+
+    // CR 10-2-16-1 — [On Your Opponent's Attack] fires when the OPPONENT declares an attack,
+    // AFTER their [When Attacking] effects, and it belongs to the defending PLAYER rather than
+    // to the card being attacked: the Leader may carry it while a Character is the target.
+    // OP17-058 Kaido prints it as the second half of a dual timing.
+    var dSeat = 1 - seat;
+    [s.players[dSeat].leader].concat(s.players[dSeat].chars.slice()).forEach(function (u) {
+      if (S.findUnit(s, u.uid)) fireAuto(s, 'onOpponentAttack', { unit: u, seat: dSeat });
+    });
+
     if (gone(s)) return endBattle(s);                          // CR 7-1-1-4
     return openBlockStep(s);
   }
@@ -368,19 +409,30 @@
     });
   }
 
+  // CR 8-6-1 — an effect that is mid-resolution finishes before play continues. An auto effect
+  // fired during the Attack Step may park a question, and unshifting the Block or Counter step
+  // in front of it would ask the defender to block before they had answered their own card.
+  // The step goes behind any parked choices instead.
+  function enqueue(s, step) {
+    var i = 0;
+    while (i < s.queue.length && s.queue[i].k === 'choice') i++;
+    s.queue.splice(i, 0, step);
+    return s;
+  }
+
   function openBlockStep(s) {
     s.battle.step = 'block';
     var opts = blockers(s);
     // PLAN.md D4 — a window with no legal option is never shown.
     if (!opts.length) return openCounterStep(s);
-    s.queue.unshift({ k: 'block', ctrl: 1 - s.battle.seat });
+    enqueue(s, { k: 'block', ctrl: 1 - s.battle.seat });
     return s;
   }
 
   function openCounterStep(s) {
     s.battle.step = 'counter';
     if (!counterOptions(s).length) return damageStep(s);
-    s.queue.unshift({ k: 'counter', ctrl: 1 - s.battle.seat });
+    enqueue(s, { k: 'counter', ctrl: 1 - s.battle.seat });
     return s;
   }
 
@@ -492,8 +544,9 @@
   }
 
   NS.engine = {
+    enqueue: enqueue,
     offerChoice: offerChoice, execute: execute, draw: draw, trashFromHand: trashFromHand,
-    koUnit: koUnit, playCardFree: playCardFree, fireAuto: fireAuto, condsMet: condsMet,
+    koUnit: koUnit, playCardFree: playCardFree, fireAuto: fireAuto, condsMet: condsMet, costOps: costOps, canAfford: canAfford,
     beginTurn: beginTurn, endTurn: endTurn, declareAttack: declareAttack,
     openBlockStep: openBlockStep, openCounterStep: openCounterStep, damageStep: damageStep,
     dealLeaderDamage: dealLeaderDamage, lifeToHand: lifeToHand, endBattle: endBattle, blockers: blockers,

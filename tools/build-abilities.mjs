@@ -589,6 +589,7 @@ for (const c of PRINTED) {
       // half the card, and the auditor is what caught it on OP17-058 Kaido.
       if (r.ability.alsoWhen) {
         rec.abilities.push(Object.assign({}, r.ability, { when: r.ability.alsoWhen, alsoWhen: null }));
+        r.ability.alsoWhen = null;          // the second timing is its own ability now
       }
       continue;
     }
