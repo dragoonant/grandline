@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GRAND LINE — an unofficial ONE PIECE CARD GAME</title>
+<link rel="stylesheet" href="css/game.css">
+</head>
+<body>
+
+<div id="app">
+  <div id="topbar">
+    <b>GRAND LINE</b>
+    <span id="turnbadge" class="turnbadge"></span>
+    <span class="spacer"></span>
+    <button id="btn-log" title="Toggle the log (L)">Log</button>
+    <button id="btn-sound" title="Sound">&#128266;</button>
+    <button id="btn-trace" title="Download this game's trace for a bug report">Trace</button>
+    <button id="btn-menu">Menu</button>
+  </div>
+  <div id="table"></div>
+</div>
+
+<div id="sidebar"><h3>Game log</h3><div id="log"></div></div>
+<div id="preview"></div>
+<div id="modal"></div>
+
+<div class="screen" id="screen-menu"></div>
+<div class="screen" id="screen-decks"></div>
+<div class="screen" id="screen-help"></div>
+<div class="screen" id="screen-art"></div>
+
+<!-- THE SCRIPT LIST. tools/check-pages.mjs asserts this matches tests.html and
+     tools/lib/load.mjs exactly. Order is a dependency declaration, not a preference. -->
+<script src="js/rng.js"></script>
+<script src="js/log.js"></script>
+<script src="js/names.js"></script>
+<script src="js/state.js"></script>
+<script src="js/statics.js"></script>
+<script src="js/ops.js"></script>
+<script src="js/text.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/actions.js"></script>
+<script src="data/printed.js"></script>
+<script src="data/abilities.js"></script>
+<script src="data/defects.js"></script>
+<script src="data/decks.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/ai.js"></script>
+<script src="art/manifest.js"></script>
+<script src="js/art.js"></script>
+<script src="js/render.js"></script>
+<script src="js/board.js"></script>
+<script src="js/bugreport.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/screens.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

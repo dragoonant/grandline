@@ -75,6 +75,6 @@ const t = agg.turns || 1;
 console.log(`  turns played              ${agg.turns || 0}`);
 console.log(`  turns with NO action      ${agg.turnsWithNoAction || 0}  (${(100 * (agg.turnsWithNoAction || 0) / t).toFixed(1)}%)`);
 console.log(`  counter windows offered   ${agg.counterWindows || 0}`);
-console.log(`  counter windows DECLINED  ${agg.counterWindowsDeclined || 0}  (${agg.counterWindows ? (100 * agg.counterWindowsDeclined / agg.counterWindows).toFixed(1) : '0.0'}%)`);
+console.log(`  counter windows DECLINED  ${agg.counterWindowsDeclined || 0}  (${agg.counterWindows ? (100 * (agg.counterWindowsDeclined || 0) / agg.counterWindows).toFixed(1) : '0.0'}%)`);
 console.log(`  block windows offered     ${agg.blockWindows || 0}`);
-console.log(`  block windows DECLINED    ${agg.blockWindowsDeclined || 0}  (${agg.blockWindows ? (100 * agg.blockWindowsDeclined / agg.blockWindows).toFixed(1) : '0.0'}%)`);
+console.log(`  block windows DECLINED    ${agg.blockWindowsDeclined || 0}  (${agg.blockWindows ? (100 * (agg.blockWindowsDeclined || 0) / agg.blockWindows).toFixed(1) : '0.0'}%)`);

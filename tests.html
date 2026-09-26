@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>GRAND LINE — tests</title>
+<style>body{font:14px ui-monospace,monospace;background:#0b1622;color:#dbe6f2;padding:1rem}
+.ok{color:#7ad4a8}.fail{color:#ff7b72}</style>
+</head>
+<body>
+<h1>Engine self-check</h1>
+<div id="out">running…</div>
+
+<!-- THE SCRIPT LIST — identical to index.html's engine half. tools/check-pages.mjs asserts it. -->
+<script src="js/rng.js"></script>
+<script src="js/log.js"></script>
+<script src="js/names.js"></script>
+<script src="js/state.js"></script>
+<script src="js/statics.js"></script>
+<script src="js/ops.js"></script>
+<script src="js/text.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/actions.js"></script>
+<script src="data/printed.js"></script>
+<script src="data/abilities.js"></script>
+<script src="data/defects.js"></script>
+<script src="data/decks.js"></script>
+<script src="js/cards.js"></script>
+<script src="js/ai.js"></script>
+<script>
+(function (OP) {
+  var out = document.getElementById('out');
+  function line(cls, t) { var d = document.createElement('div'); d.className = cls; d.textContent = t; out.appendChild(d); }
+  out.textContent = '';
+  var pass = 0, fail = 0;
+  function check(name, fn) {
+    try { fn(); pass++; line('ok', 'ok    ' + name); }
+    catch (e) { fail++; line('fail', 'FAIL  ' + name + ' — ' + e.message); }
+  }
+  OP.cards.build();
+  check('the card registry builds', function () {
+    if (OP.cards.all().length < 2000) throw new Error('only ' + OP.cards.all().length + ' cards');
+  });
+  check('every registered deck is legal (CR 5-1-2)', function () {
+    OP.decks.forEach(function (d) {
+      var list = []; d.list.forEach(function (x) { for (var i = 0; i < x[1]; i++) list.push(x[0]); });
+      var errs = OP.state.checkDeck(d.leader, list);
+      if (errs.length) throw new Error(d.key + ': ' + errs[0]);
+    });
+  });
+  check('a game plays to a defeat condition', function () {
+    var d = OP.decks[0], e = OP.decks[1];
+    function cards(x) { var o = []; x.list.forEach(function (y) { for (var i = 0; i < y[1]; i++) o.push(y[0]); }); return o; }
+    var s = OP.engine.newGame({ seed: 5, first: 0, decks: [
+      { key: d.key, leader: d.leader, cards: cards(d) },
+      { key: e.key, leader: e.leader, cards: cards(e) }] });
+    for (var i = 0; i < 3000 && s.winner === null; i++) s = OP.engine.apply(s, OP.ai.choose(s));
+    if (s.winner === null) throw new Error('no winner after 3000 actions, turn ' + s.turn);
+  });
+  check('every ability describes without throwing', function () {
+    OP.cards.all().forEach(function (c) { OP.text.describeCard(c); OP.text.describeTrigger(c); });
+  });
+  line(fail ? 'fail' : 'ok', '\n' + pass + ' passed, ' + fail + ' failed');
+}(window.OP));
+</script>
+</body>
+</html>
