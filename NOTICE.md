@@ -17,8 +17,11 @@ game is named here once, to identify what this software implements.
 - **Character names**, which belong to Eiichiro Oda / Shueisha, in `js/names.js`.
 - **Original illustrations**, generated for this project in an original style. No official
   illustration is reproduced and no prompt references an official artwork, artist or studio.
-- **Original audio.** Every sound effect is generated for this project and the music is written
-  by the program itself at runtime. **There is no third-party audio in this repository at all.**
+- **Original audio.** The music is written by the program itself while it runs — an original
+  procedural score, not a recording. The sound effects in `audio/sfx/` were generated for this
+  project from written descriptions, and a synthesised fallback in `js/audio.js` covers every
+  event even with that folder deleted. **No third-party recording, sample library, track or
+  performance appears in this repository.**
 
 ## What this repository does NOT contain
 

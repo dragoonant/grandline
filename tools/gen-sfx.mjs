@@ -1,0 +1,103 @@
+#!/usr/bin/env node
+// tools/gen-sfx.mjs — generate the one-shot kit, layered OVER the synthesised floor in
+// js/audio.js. Same discipline as the art run: --dry-run makes zero network calls, idempotent
+// by default, --force archives first.
+//
+// These are generated FOR THIS PROJECT from a text description. No recording, sample library,
+// track or performance by anyone else enters this repository — see NOTICE.md.
+//
+// The table is keyed by LOG TAG, because the audio layer rides the structured log. A tag with
+// no file simply falls back to its synthesised voice, which is why the kit can be partial.
+import { readFile, writeFile, mkdir, stat, rename, readdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+
+const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
+const args = process.argv.slice(2);
+const DRY = args.includes('--dry-run');
+const FORCE = args.includes('--force');
+const OUT = join(ROOT, 'audio', 'sfx');
+
+// duration is in seconds; keep them SHORT. A long tail on a frequent tag is how project 4's
+// siren happened — a sound on a mechanism that fires more often than the picture changes.
+const KIT = [
+  ['card.played',    0.7, 'a single firm card slapped down onto a wooden table, close, dry, no music'],
+  ['stage.played',   1.2, 'heavy ship timber settling and a rope creaking once, low and short'],
+  ['event.played',   0.9, 'a quick sharp whoosh of cloth and air, one gesture, dry'],
+  ['battle.declared',1.1, 'one fast blade drawn and swung through air, aggressive, dry, no impact'],
+  ['battle.blocked', 0.9, 'a wooden shield taking a hard hit and holding, one thud, dry'],
+  // "this one wants to feel like a parry" — lessons-5 §7.7
+  ['counter.played', 0.9, 'a bright metallic sword parry, two blades catching and ringing once, short, dry'],
+  ['char.ko',        1.3, 'a body and armour collapsing onto a ship deck, one heavy crash, dry'],
+  ['life.taken',     1.4, 'a deep hollow ship bell struck once underwater, ominous, slow decay'],
+  ['life.critical',  1.8, 'a deep cracked bell struck once with a low groaning hull strain under it, dread'],
+  ['trigger.used',   1.2, 'a bright rising magical chime with a quick sparkle, hopeful, short'],
+  ['don.given',      0.5, 'one small gold coin set down on wood, tiny, crisp, very short'],
+  ['win',            2.2, 'a short triumphant brass and drum flourish, sea-adventure fanfare, ending clean'],
+  ['lose',           2.2, 'a low descending brass note with a slow drum, defeat, ending clean']
+];
+
+console.log(`${KIT.length} one-shots in the kit`);
+if (DRY) {
+  KIT.forEach(([tag, d, p]) => console.log(`  ${tag.padEnd(18)} ${d}s  "${p}"`));
+  console.log('\n--dry-run: no network calls were made, nothing was spent.');
+  process.exit(0);
+}
+
+await mkdir(OUT, { recursive: true });
+const TOKEN = (await readFile(join(ROOT, 'elevenlabs.token.rtf'), 'utf8'))
+  .replace(/\\[a-z0-9]+\s?|[{}]/g, '').match(/sk_[a-f0-9]+/i);
+if (!TOKEN) throw new Error('no ElevenLabs key found in elevenlabs.token.rtf');
+const KEY = TOKEN[0];
+
+async function exists(p) { try { return (await stat(p)).size > 2000; } catch { return false; } }
+
+let ok = 0, skipped = 0, failed = 0;
+for (const [tag, dur, prompt] of KIT) {
+  const file = join(OUT, tag.replace(/\./g, '_') + '.mp3');
+  if (!FORCE && await exists(file)) { skipped++; continue; }
+  process.stdout.write(`  ${tag.padEnd(18)} … `);
+  try {
+    const res = await fetch('https://api.elevenlabs.io/v1/sound-generation', {
+      method: 'POST',
+      headers: { 'xi-api-key': KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify({ text: prompt, duration_seconds: dur, prompt_influence: 0.65 })
+    });
+    if (!res.ok) throw new Error('HTTP ' + res.status + ' ' + (await res.text()).slice(0, 120));
+    const buf = Buffer.from(await res.arrayBuffer());
+    if (buf.length < 2000) throw new Error('response too small: ' + buf.length + ' bytes');
+    if (FORCE && await exists(file)) {
+      await mkdir(join(ROOT, 'audio', 'archive'), { recursive: true });
+      await rename(file, join(ROOT, 'audio', 'archive', tag + '.' + Date.now() + '.mp3'));
+    }
+    await writeFile(file, buf);
+    ok++;
+    console.log(`ok  ${(buf.length / 1024).toFixed(0)}kb`);
+  } catch (e) { failed++; console.log('FAIL  ' + e.message); }
+}
+console.log(`\n${ok} generated, ${skipped} already present, ${failed} failed`);
+
+// Write the manifest the same way the art pipeline does: from what is on disk, never invented.
+const files = (await readdir(OUT)).filter((f) => f.endsWith('.mp3')).sort();
+const entries = [];
+for (const f of files) {
+  const s = await stat(join(OUT, f));
+  if (s.size < 2000) { console.error('SKIP zero-length ' + f); continue; }
+  entries.push([f.replace(/\.mp3$/, '').replace(/_/g, '.'), 'audio/sfx/' + f]);
+}
+await writeFile(join(ROOT, 'audio', 'manifest.js'),
+`// audio/manifest.js — GENERATED by tools/gen-sfx.mjs. Do not edit by hand.
+//
+// One-shots generated for this project from a text description, layered over the synthesised
+// floor in js/audio.js. A tag with no entry here keeps its synthesised voice, which is why the
+// kit may be partial and why nothing breaks if this file is empty.
+//
+// Declared on the page even while empty; js/audio.js THROWS if it is absent (hard rule 11).
+(function (NS) {
+  'use strict';
+  NS.sfxManifest = {
+${entries.map(([k, v]) => `    ${JSON.stringify(k)}: ${JSON.stringify(v)}`).join(',\n')}
+  };
+}(window.OP = window.OP || {}));
+`);
+console.log(`${entries.length} one-shots in audio/manifest.js`);

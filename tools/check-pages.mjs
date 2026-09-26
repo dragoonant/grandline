@@ -55,8 +55,13 @@ function stripComments(src) {
 const CHECKS = [
   { name: 'silent fallback `if (!NS.x)`',
     re: /\bif\s*\(\s*!\s*(NS|OP|window\.OP)\s*\.\s*[A-Za-z_$][\w$]*\s*\)/,
+    // The banned thing is WORKING AROUND a missing dependency, not noticing one. `if (!NS.x)
+    // throw` is the correct pattern and the whole point of the rule, so the check looks at the
+    // next 3 lines for a throw rather than carrying an allow list that would grow forever and
+    // eventually hide a real bypass.
+    window: 3, windowRe: /throw\b/,
     why: 'a missing dependency must THROW on the first frame, not be worked around',
-    allow: ['js/art.js', 'js/cards.js', 'js/main.js', 'js/engine.js', 'js/actions.js'] },
+    allow: [] },
 
   { name: 'silent fallback `NS.x || {}`',
     re: /\b(NS|OP|window\.OP)\s*\.\s*[A-Za-z_$][\w$]*\s*\|\|\s*(\{\}|\[\])/,
@@ -98,9 +103,12 @@ for (const c of CHECKS) {
   for (const f of jsFiles) {
     if (c.allow.includes(f)) continue;
     const src = stripComments(await readFile(join(ROOT, f), 'utf8'));
-    src.split('\n').forEach((line, i) => {
+    const lines = src.split('\n');
+    lines.forEach((line, i) => {
       if (!c.re.test(line)) return;
       if (c.except && c.except.test(line)) return;
+      if (c.window && c.windowRe &&
+          lines.slice(i, i + 1 + c.window).some((l) => c.windowRe.test(l))) return;
       hits.push(`${f}:${i + 1}  ${line.trim().slice(0, 90)}`);
     });
   }

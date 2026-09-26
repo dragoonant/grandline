@@ -15,9 +15,16 @@
 (function (NS) {
   'use strict';
 
+  if (!NS.sfxManifest) {
+    throw new Error('audio: audio/manifest.js is not on the page. It must be declared even ' +
+                    'while it is empty (hard rule 11) — the same bypass that cost project 5 an ' +
+                    'art pass would cost this one a sound kit.');
+  }
+
   var ctx = null, master = null, musicGain = null, sfxGain = null;
   var muted = false, started = false, seen = 0, lastAt = {};
   var scheduler = null, nextNote = 0, step = 0;
+  var buffers = {}, loading = {};
 
   try { muted = localStorage.getItem('op.muted') === '1'; } catch (e) { muted = false; }
 
@@ -70,6 +77,33 @@
     var g = c.createGain(); g.gain.value = opts.gain || 0.25;
     src.connect(f); f.connect(g); g.connect(sfxGain);
     src.start(t);
+  }
+
+  // ---------------------------------------------------------------------------------------
+  // The generated one-shot kit, layered OVER the synth floor. A tag with no file keeps its
+  // synthesised voice, so a partial kit is a perfectly good kit.
+  // ---------------------------------------------------------------------------------------
+  function oneShot(key, gain) {
+    var c = ensure(); if (!c) return false;
+    var url = NS.sfxManifest[key];
+    if (!url) return false;
+    var b = buffers[key];
+    if (b) { fire(b, gain); return true; }
+    if (loading[key]) return true;            // already on its way; this firing is dropped
+    loading[key] = true;
+    fetch(url).then(function (r) { return r.arrayBuffer(); })
+      .then(function (ab) { return c.decodeAudioData(ab); })
+      .then(function (buf) { buffers[key] = buf; delete loading[key]; fire(buf, gain); })
+      .catch(function () { delete loading[key]; });   // fall back to the synth voice next time
+    return true;
+  }
+
+  function fire(buf, gain) {
+    var c = ctx; if (!c) return;
+    var src = c.createBufferSource(); src.buffer = buf;
+    var g = c.createGain(); g.gain.value = gain === undefined ? 0.75 : gain;
+    src.connect(g); g.connect(sfxGain);
+    src.start(c.currentTime);
   }
 
   // ---------------------------------------------------------------------------------------
@@ -126,17 +160,34 @@
   // Rate limits, in ms, for tags that fire far more often than the picture changes.
   var LIMIT = { 'don.given': 110, 'card.drawn': 90, 'power.mod': 160 };
 
+  // Some tags choose a different one-shot depending on the state — the Life clock escalates.
+  function keyFor(e) {
+    if (e.tag === 'life.taken' || e.tag === 'life.banished') {
+      return (e.data && e.data.left !== undefined && e.data.left <= 1) ? 'life.critical' : 'life.taken';
+    }
+    if (e.tag === 'game.over') return e.data.winner === (NS.ui ? NS.ui.you : 0) ? 'win' : 'lose';
+    if (e.tag === 'counterEvent.played') return 'counter.played';
+    return e.tag;
+  }
+
   function play(e) {
     if (muted) return;
     var v = VOICE[e.tag];
-    if (!v) return;
+    var key = keyFor(e);
+    if (!v && !NS.sfxManifest[key]) return;
     var lim = LIMIT[e.tag];
     if (lim) {
       var now = Date.now();
       if (lastAt[e.tag] && now - lastAt[e.tag] < lim) return;
       lastAt[e.tag] = now;
     }
-    try { v(e); } catch (err) { /* a sound must never break a game */ }
+    try {
+      // The one-shot is the voice when there is one; the synth layer stays under the loudest
+      // moments so they still have a transient even before the file has decoded.
+      var got = oneShot(key, key === 'don.given' ? 0.35 : 0.8);
+      if (!got && v) v(e);
+      else if (got && v && (e.tag === 'char.ko' || e.tag === 'life.taken')) v(e);
+    } catch (err) { /* a sound must never break a game */ }
   }
 
   // Called with every new state; voices only what is NEW since the last call.

@@ -29,6 +29,19 @@ sed -i '' "s/NAME_PACK = 'characters'/NAME_PACK = 'original'/" js/names.js
 node tools/test.mjs --quiet && git commit -am "takedown: switch to the original name pack"
 ```
 
+## Level 2b — remove the generated illustrations and sound
+
+Every illustration and sound effect here is original to this project, so this level exists only
+for completeness. The game keeps playing: `js/art.js` falls back to a deterministic procedural
+placeholder per card, and `js/audio.js` falls back to its synthesised kit.
+
+```bash
+git rm -r art/cards audio/sfx
+node tools/write-manifest.mjs   # rewrites art/manifest.js from what is on disk — now nothing
+printf '(function(NS){NS.sfxManifest={};}(window.OP=window.OP||{}));\n' > audio/manifest.js
+git add -A && git commit -m "takedown: remove generated art and sound"
+```
+
 ## Level 3 — remove everything
 
 ```bash

@@ -1,8 +1,8 @@
 /* css/game.css — CARD-PRESENTATION-SPEC.md. Art is the card; text floats on a scrim. */
 
 :root {
-  --card-board-w: 6.4rem;
-  --card-hand-w: 7.6rem;
+  --card-board-w: 8rem;
+  --card-hand-w: 8.6rem;
   --card-preview-w: 20rem;
   --tiny-w: 2.1rem;
 
@@ -42,8 +42,8 @@ body {
 /* §6.3 of lessons-5: `em` cascades from font-size, NOT from width, so every size class must
    set its own base or every card renders at the body size. */
 .card-tiny    { width: var(--tiny-w);        aspect-ratio: 5/7; font-size: 5px; }
-.card-board   { width: var(--card-board-w);  aspect-ratio: 5/7; font-size: 11px; }
-.card-hand    { width: var(--card-hand-w);   aspect-ratio: 5/7; font-size: 13px; }
+.card-board   { width: var(--card-board-w);  aspect-ratio: 5/7; font-size: 12px; }
+.card-hand    { width: var(--card-hand-w);   aspect-ratio: 5/7; font-size: 14px; }
 .card-preview { width: var(--card-preview-w); min-height: 24rem; font-size: 16px; }
 
 .card-art { position: absolute; inset: 0; z-index: 0; }
@@ -132,8 +132,8 @@ body {
 /* #table must itself be a flex column, or .board's flex:1 has nothing to grow inside and the
    whole board collapses to its content height with the hand floating mid-page. */
 #table { flex: 1; display: flex; flex-direction: column; min-height: 0; }
-.board { flex: 1; display: grid; grid-template-rows: 1fr auto 1fr; gap: .4rem;
-  padding: .5rem .7rem; min-height: 0; }
+.board { flex: 1; display: grid; grid-template-rows: auto minmax(2.2rem, 1fr) auto; gap: .4rem;
+  padding: .5rem .7rem; min-height: 0; align-content: center; }
 .side { display: grid; grid-template-columns: 10rem 1fr 10rem; gap: .6rem;
   align-items: center; min-height: 0; }
 .side.enemy { align-items: start; }
@@ -158,8 +158,9 @@ body {
 #prompt { font-size: .95rem; color: var(--gold); text-align: center; min-height: 1.3rem;
   padding: .25rem .8rem; background: rgba(0,0,0,.3); border-radius: 999px; }
 
-#hand { display: flex; justify-content: center; gap: .3rem; padding: .3rem 0 .1rem;
-  min-height: calc(var(--card-hand-w) * 1.4); align-items: flex-end; flex-wrap: nowrap; }
+#hand { display: flex; justify-content: center; gap: .3rem; padding: .35rem 0 .7rem;
+  height: calc(var(--card-hand-w) * 1.56); align-items: flex-end; flex-wrap: nowrap;
+  flex: none; }
 #hand .card { transition: transform .14s ease; cursor: pointer; }
 #hand .card:hover { transform: translateY(-14px); z-index: 5; }
 
