@@ -81,6 +81,8 @@
     p.hand.forEach(function (id, ix) {
       var c = S.card(id);
       if (c.cost === null || c.cost > p.donActive) return;      // CR 2-7-2
+      // CR 1-3-3 — a prohibiting effect always takes precedence.
+      if ((s.lockPlay || []).some(function (l) { return l.seat === seat && l.category === c.category; })) return;
       if (c.category === 'CHARACTER' || c.category === 'STAGE') {
         out.push({ t: 'play', id: id, ix: ix, cost: c.cost, label: c.name });
       } else if (c.category === 'EVENT' &&
@@ -156,6 +158,8 @@
         case 'restSelf':  return u.rested === false;
         case 'donMinus':  return (p.donActive + p.donRested +
                                   p.leader.don + p.chars.reduce(function (a, x) { return a + x.don; }, 0)) >= c.n;
+        case 'restOwn':   return [p.leader].concat(p.chars, p.stage ? [p.stage] : [])
+                                 .filter(function (x) { return !x.rested; }).length >= c.n;
         default: throw new Error('canPayCost: unknown cost "' + c.k + '"');
       }
     });
@@ -167,6 +171,21 @@
       if (c.k === 'restDon') { p.donActive -= c.n; p.donRested += c.n; }
       else if (c.k === 'trashHand') { E.trashFromHand(s, seat, c.n); }
       else if (c.k === 'restSelf') { u.rested = true; }
+      else if (c.k === 'restOwn') {
+        // "rest N of your cards" — the player chooses which, through the one choice door.
+        for (var r = 0; r < c.n; r++) {
+          var pool = [p.leader].concat(p.chars, p.stage ? [p.stage] : [])
+                      .filter(function (x) { return !x.rested; });
+          if (!pool.length) break;
+          var got = E.offerChoice(s, {
+            kind: 'cost', ctrl: seat, prompt: 'Rest one of your cards to pay for this',
+            options: pool.map(function (x) { return { v: x.uid, label: S.card(x.id).name, uid: x.uid }; }),
+            min: 1, max: 1
+          });
+          var pickU = S.findUnit(s, got[0]);
+          if (pickU) pickU.rested = true;
+        }
+      }
       else if (c.k === 'donMinus') {
         var left = c.n;
         var take = Math.min(left, p.donActive); p.donActive -= take; left -= take;
@@ -373,13 +392,19 @@
     var seed = typeof opts.seed === 'number' ? opts.seed : NS.rng.seedFrom(String(opts.seed || 'grandline'));
     var s = {
       seed: seed, rng: seed, turn: 1, active: 0, first: 0, phase: 'setup',
-      players: [], queue: [], log: [], winner: null, battle: null, noBlock: [], acts: 0,
+      players: [], queue: [], log: [], winner: null, battle: null, noBlock: [], lockPlay: [], acts: 0,
       decks: [opts.decks[0].key, opts.decks[1].key]
     };
 
     for (var i = 0; i < 2; i++) {
       var d = opts.decks[i];
       var p = S.newPlayer(d.leader);
+      // CR 8-1-3-3-3 — a Leader may change the deck-construction rules "under the rules of this
+      // game", and that is valid before the game begins. Enel's DON!! deck is 6, not 10.
+      (S.card(d.leader).abilities || []).forEach(function (ab) {
+        if (ab.when !== 'static') return;
+        (ab.ops || []).forEach(function (o) { if (o.k === 'donDeckSize') p.donDeck = o.n; });
+      });
       p.deck = d.cards.slice();
       NS.rng.shuffle(s, p.deck);                                 // CR 5-2-1-2, inside apply-land
       s.players.push(p);

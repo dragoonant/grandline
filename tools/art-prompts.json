@@ -1,5 +1,5 @@
 {
-  "style": "painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design",
+  "style": "bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design",
   "built": "2026-09-26",
   "model": "black-forest-labs/FLUX.1-schnell",
   "size": "768x1088",
@@ -10,1029 +10,1029 @@
       "name": "Doma",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a scarred duellist in a long coat with a slender rapier. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a scarred duellist in a long coat with a slender rapier. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "EB02-017",
       "name": "Nami",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "EB04-037",
       "name": "Porche",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a bright-eyed performer in a ruffled costume, mid-pirouette. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a bright-eyed performer in a ruffled costume, mid-pirouette. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-006",
       "name": "Otama",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a small girl in a patched kimono with a tail-like topknot, a dumpling in each hand. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a small girl in a patched kimono with a tail-like topknot, a dumpling in each hand. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-010",
       "name": "Komachiyo",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "an enormous shaggy dog-lion the size of a cart, tongue out, harness jingling. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an enormous shaggy dog-lion the size of a cart, tongue out, harness jingling. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-016",
       "name": "Nami",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-022",
       "name": "Brook",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a towering skeleton in a tailcoat and top hat, a slender cane-sword drawn, an enormous afro. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a towering skeleton in a tailcoat and top hat, a slender cane-sword drawn, an enormous afro. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-023",
       "name": "Marco",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a sleepy-eyed blond man in an open purple coat, blue and gold flame unfurling behind him like wings. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a sleepy-eyed blond man in an open purple coat, blue and gold flame unfurling behind him like wings. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-036",
       "name": "Otsuru",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "an elderly innkeeper in a plain kimono, sleeves tied back, steam from a teahouse behind her. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an elderly innkeeper in a plain kimono, sleeves tied back, steam from a teahouse behind her. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-041",
       "name": "Kouzuki Momonosuke",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a small boy in an oversized lord’s kimono, trying very hard to look tall. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a small boy in an oversized lord’s kimono, trying very hard to look tall. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-104",
       "name": "Speed",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a woman in a horned helm, the lower half of a horse, hooves striking sparks. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a woman in a horned helm, the lower half of a horse, hooves striking sparks. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP01-109",
       "name": "Who's.Who",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-001",
       "name": "Edward.Newgate",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "an immense white-moustached old giant of a man, bare-chested and scarred, a colossal bladed polearm planted in the deck. full-length heroic portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an immense white-moustached old giant of a man, bare-chested and scarred, a colossal bladed polearm planted in the deck. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-013",
       "name": "Portgas.D.Ace",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a freckled young man in an open shirt and a wide orange hat, fire curling off his shoulders. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a freckled young man in an open shirt and a wide orange hat, fire curling off his shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-020",
       "name": "LittleOars Jr.",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a mountain-sized giant in a striped tunic, an anchor used as a club. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a mountain-sized giant in a striped tunic, an anchor used as a club. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-080",
       "name": "Dobon",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a squat armoured brute with a hippo-jawed helm. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a squat armoured brute with a hippo-jawed helm. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-097",
       "name": "Komille",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a uniformed officer with cropped hair and a straight sabre. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a uniformed officer with cropped hair and a straight sabre. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-104",
       "name": "Sentomaru",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a squat axe-wielding officer in a shoulder-plated coat, hair in a stiff topknot. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a squat axe-wielding officer in a shoulder-plated coat, hair in a stiff topknot. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-107",
       "name": "Doberman",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a scarred officer with a jutting jaw and a heavy fur-collared coat. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a scarred officer with a jutting jaw and a heavy fur-collared coat. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-108",
       "name": "Donquixote Rosinante",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a very tall clown-faced man in a black feathered coat, a cigarette burning a hole in his lapel, silence pooling around him. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a very tall clown-faced man in a black feathered coat, a cigarette burning a hole in his lapel, silence pooling around him. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP02-109",
       "name": "Jaguar.D.Saul",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a colossal bearded giant in a torn coat, laughing with his whole chest, an island-sized shadow. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a colossal bearded giant in a torn coat, laughing with his whole chest, an island-sized shadow. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP03-005",
       "name": "Thatch",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a cheerful pompadoured cook with twin blades and a kerchief. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a cheerful pompadoured cook with twin blades and a kerchief. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP03-044",
       "name": "Kaya",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a pale gentle girl in a long dress on a clifftop lawn, hands folded. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a pale gentle girl in a long dress on a clifftop lawn, hands folded. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP03-052",
       "name": "Merry",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a stiff elderly butler in a pressed coat, a tray held perfectly level. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a stiff elderly butler in a pressed coat, a tray held perfectly level. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP03-103",
       "name": "Bobbin the Disposer",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a hunched figure in a patchwork coat and hood, a curved blade held low. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a hunched figure in a patchwork coat and hood, a curved blade held low. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP03-107",
       "name": "Charlotte Galette",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a woman in a ruffled butter-yellow gown, one hand turning the ground to slick gold. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a woman in a ruffled butter-yellow gown, one hand turning the ground to slick gold. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP04-007",
       "name": "Sanji",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP04-016",
       "name": "Bad Manners Kick Course",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the Alabasta. wide landscape with the horizon low. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Alabasta. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP04-041",
       "name": "Apis",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a small girl with wild hair in a fisherman’s smock, a tiny dragon curled on her shoulder. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a small girl with wild hair in a fisherman’s smock, a tiny dragon curled on her shoulder. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP04-051",
       "name": "Who's.Who",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP04-077",
       "name": "Ideo",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a compact fighter with piston-driven forearms and a wide mohawk. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a compact fighter with piston-driven forearms and a wide mohawk. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP04-103",
       "name": "Kouzuki Hiyori",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a poised young woman in an ornate kimono, a shamisen resting against her knee. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a poised young woman in an ornate kimono, a shamisen resting against her knee. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP04-113",
       "name": "Rabiyan",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a living flying carpet with tassel-fringed eyes, curling in the wind. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a living flying carpet with tassel-fringed eyes, curling in the wind. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP05-010",
       "name": "Nico Robin",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP05-015",
       "name": "Belo Betty",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a woman in a plumed hat with a flag furled at her shoulder, one arm thrown up in a rallying shout. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a woman in a plumed hat with a flag furled at her shoulder, one arm thrown up in a rallying shout. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP05-077",
       "name": "Gamma Knife",
       "category": "EVENT",
       "color": "Purple",
-      "prompt": "a surge of motion across open water near the Heart Pirates. wide landscape with the horizon low. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Heart Pirates. wide graphic landscape with the horizon low. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP06-038",
       "name": "The Billion-fold World Trichiliocosm",
       "category": "EVENT",
       "color": "Green",
-      "prompt": "a surge of motion across open water near the Dressrosa. wide landscape with the horizon low. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Dressrosa. wide graphic landscape with the horizon low. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP06-050",
       "name": "Tashigi",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a dark-haired officer in glasses and a naval coat, katana half-drawn, jaw set. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a dark-haired officer in glasses and a naval coat, katana half-drawn, jaw set. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP06-108",
       "name": "Tenguyama Hitetsu",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a tiny old swordsmith in a long-nosed mask, hammer in hand, a forge glowing red. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tiny old swordsmith in a long-nosed mask, hammer in hand, a forge glowing red. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP07-034",
       "name": "Roronoa Zoro",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP07-046",
       "name": "Sengoku",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a silver-bearded commander in a naval cap and long coat, arms folded, gulls circling. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a silver-bearded commander in a naval cap and long coat, arms folded, gulls circling. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP07-054",
       "name": "Marguerite",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a blonde archer in a feathered green outfit, bow drawn, jungle light behind her. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a blonde archer in a feathered green outfit, bow drawn, jungle light behind her. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP07-058",
       "name": "Island of Women",
       "category": "STAGE",
       "color": "Blue",
-      "prompt": "a place on the sea near the Amazon Lily. wide landscape with the horizon low. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a place on the sea near the Amazon Lily. wide graphic landscape with the horizon low. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP07-076",
       "name": "Slow-Slow Beam Sword",
       "category": "EVENT",
       "color": "Purple",
-      "prompt": "a surge of motion across open water near the Foxy Pirates. wide landscape with the horizon low. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Foxy Pirates. wide graphic landscape with the horizon low. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP08-048",
       "name": "Sweetpea",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a heavyset warrior woman in patterned wrappings, a club across her shoulders. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a heavyset warrior woman in patterned wrappings, a club across her shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP08-061",
       "name": "Charlotte Oven",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a scowling giant of a man with a squared jaw, hands glowing furnace-red. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a scowling giant of a man with a squared jaw, hands glowing furnace-red. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP08-065",
       "name": "Charlotte Smoothie",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "an immensely tall woman in a sleeveless gown, a wine glass in one hand, a heavy blade in the other. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an immensely tall woman in a sleeveless gown, a wine glass in one hand, a heavy blade in the other. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP08-104",
       "name": "Charlotte Poire",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a small solemn girl in a layered pastry-frilled dress. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a small solemn girl in a layered pastry-frilled dress. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP09-002",
       "name": "Uta",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a singer with white and red hair in a bright stage coat, one hand raised, ribbons of sound spiralling out. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a singer with white and red hair in a bright stage coat, one hand raised, ribbons of sound spiralling out. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP09-062",
       "name": "Nico Robin",
       "category": "LEADER",
       "color": "Purple",
-      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. full-length heroic portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. full-length hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-004",
       "name": "Vergo",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a bamboo-armoured officer with round sunglasses and a stiff collar, stance low. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a bamboo-armoured officer with round sunglasses and a stiff collar, stance low. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-005",
       "name": "Sanji",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-013",
       "name": "Nami",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-066",
       "name": "Giolla",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "an eccentric artist in a voluminous gown, a palette knife raised, the air behind her warping into paint. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an eccentric artist in a voluminous gown, a palette knife raised, the air behind her warping into paint. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-068",
       "name": "Diamante",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a flamboyant swordsman in a plumed hat and a coat of banners, a rippling blade. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a flamboyant swordsman in a plumed hat and a coat of banners, a rippling blade. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-073",
       "name": "Buffalo",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a round man with a spinning propeller topknot and a striped coat. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a round man with a spinning propeller topknot and a striped coat. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-076",
       "name": "Baby 5",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a dark-haired woman in a tight uniform, one arm already changing into a weapon, eyes full of tears. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a dark-haired woman in a tight uniform, one arm already changing into a weapon, eyes full of tears. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-077",
       "name": "Bellamy",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a grinning blond brawler with springs coiled in his legs, bouncing forward. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a grinning blond brawler with springs coiled in his legs, bouncing forward. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP10-089",
       "name": "Nico Robin",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP11-003",
       "name": "Usopp",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a long-nosed marksman in goggles and overalls, a slingshot drawn taut, one eye squeezed shut in aim. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a long-nosed marksman in goggles and overalls, a slingshot drawn taut, one eye squeezed shut in aim. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP11-007",
       "name": "Tashigi",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a dark-haired officer in glasses and a naval coat, katana half-drawn, jaw set. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a dark-haired officer in glasses and a naval coat, katana half-drawn, jaw set. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP12-002",
       "name": "Edward.Newgate",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "an immense white-moustached old giant of a man, bare-chested and scarred, a colossal bladed polearm planted in the deck. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an immense white-moustached old giant of a man, bare-chested and scarred, a colossal bladed polearm planted in the deck. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP12-023",
       "name": "Kawamatsu",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a huge kappa fish-man samurai with a dished head and a fanged grin, a battered sword across his back. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a huge kappa fish-man samurai with a dished head and a fanged grin, a battered sword across his back. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP12-025",
       "name": "Kin'emon",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a topknotted samurai in a fox-patterned kimono, blade drawn, fire licking along the steel. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a topknotted samurai in a fox-patterned kimono, blade drawn, fire licking along the steel. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP12-064",
       "name": "Vergo",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a bamboo-armoured officer with round sunglasses and a stiff collar, stance low. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a bamboo-armoured officer with round sunglasses and a stiff collar, stance low. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP12-076",
       "name": "Monet",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a green-haired woman with feathered wings and harpy legs, snow gathering on her shoulders. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a green-haired woman with feathered wings and harpy legs, snow gathering on her shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP13-004",
       "name": "Sabo",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "a blond young man in a long dark coat and top hat, a lead pipe in one hand, claws of fire on the other. full-length heroic portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a blond young man in a long dark coat and top hat, a lead pipe in one hand, claws of fire on the other. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP13-043",
       "name": "Otama",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a small girl in a patched kimono with a tail-like topknot, a dumpling in each hand. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a small girl in a patched kimono with a tail-like topknot, a dumpling in each hand. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-005",
       "name": "Killer",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a silent figure in a full featureless helmet, long blond hair, two enormous spinning scythe-blades. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a silent figure in a full featureless helmet, long blond hair, two enormous spinning scythe-blades. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-007",
       "name": "Jewelry Bonney",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a pink-haired young captain in a flat cap and jacket, sprawled over a barrel mid-meal, entirely unbothered. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a pink-haired young captain in a flat cap and jacket, sprawled over a barrel mid-meal, entirely unbothered. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-013",
       "name": "Monkey.D.Luffy",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-015",
       "name": "Roronoa Zoro",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-020",
       "name": "Dracule Mihawk",
       "category": "LEADER",
       "color": "Green",
-      "prompt": "a gaunt swordsman in a wide plumed hat and a long black coat, a cross-hilted greatsword taller than he is, golden hawk eyes. full-length heroic portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a gaunt swordsman in a wide plumed hat and a long black coat, a cross-hilted greatsword taller than he is, golden hawk eyes. full-length hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-023",
       "name": "Kikunojo",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a tall elegant samurai in a pale kimono, a single long blade held low, snow drifting. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tall elegant samurai in a pale kimono, a single long blade held low, snow drifting. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-026",
       "name": "Kouzuki Oden",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a broad bare-chested lord with a flame-patterned haori and two katana, hair tied back, feet planted. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a broad bare-chested lord with a flame-patterned haori and two katana, hair tied back, feet planted. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-066",
       "name": "Diamante",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a flamboyant swordsman in a plumed hat and a coat of banners, a rippling blade. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a flamboyant swordsman in a plumed hat and a coat of banners, a rippling blade. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-071",
       "name": "Pica",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a colossal stone man rising out of the ground, a stern carved face, arms of rubble. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a colossal stone man rising out of the ground, a stern carved face, arms of rubble. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP14-073",
       "name": "Machvise",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "an enormous armoured man dropping from the sky, arms crossed. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an enormous armoured man dropping from the sky, arms crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP15-040",
       "name": "Viola",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a dark-haired dancer in a long dress, one eye glowing violet, arms in a slow sweep. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a dark-haired dancer in a long dress, one eye glowing violet, arms in a slow sweep. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP15-053",
       "name": "Rebecca",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a pink-haired gladiator in a plated outfit and a battered helm, a shield raised. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a pink-haired gladiator in a plated outfit and a battered helm, a shield raised. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP15-058",
       "name": "Enel",
       "category": "LEADER",
       "color": "Purple",
-      "prompt": "a serene man with enormous earlobes in a white shroud, a golden staff, lightning crawling over his skin. full-length heroic portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a serene man with enormous earlobes in a white shroud, a golden staff, lightning crawling over his skin. full-length hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP15-078",
       "name": "Mamaragan",
       "category": "EVENT",
       "color": "Purple",
-      "prompt": "a surge of motion across open water near the Sky Island. wide landscape with the horizon low. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Sky Island. wide graphic landscape with the horizon low. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP16-001",
       "name": "Portgas.D.Ace",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "a freckled young man in an open shirt and a wide orange hat, fire curling off his shoulders. full-length heroic portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a freckled young man in an open shirt and a wide orange hat, fire curling off his shoulders. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP16-004",
       "name": "Curiel",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a tattooed gunner with a shaved head and a long rifle. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tattooed gunner with a shaved head and a long rifle. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP16-023",
       "name": "Arlong",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a saw-nosed shark fish-man with a jagged grin, a serrated blade over his shoulder. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a saw-nosed shark fish-man with a jagged grin, a serrated blade over his shoulder. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP16-068",
       "name": "Trafalgar Law",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a tattooed surgeon in a spotted fur hat and long coat, a nodachi resting on his shoulder, shadowed eyes. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tattooed surgeon in a spotted fur hat and long coat, a nodachi resting on his shoulder, shadowed eyes. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP16-086",
       "name": "Sanji",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP16-088",
       "name": "Shimotsuki Ushimaru",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a stern old lord in dark armour and a topknot, a single blade planted point-down. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a stern old lord in dark armour and a topknot, a single blade planted point-down. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP16-090",
       "name": "Tony Tony.Chopper",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a small blue-nosed reindeer in a pink brimmed hat and red shorts, hooves braced, far too brave for his size. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a small blue-nosed reindeer in a pink brimmed hat and red shorts, hooves braced, far too brave for his size. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-006",
       "name": "Kingdew",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a hugely muscled sailor with an anchor tattoo, bracing a mast. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a hugely muscled sailor with an anchor tattoo, bracing a mast. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-039",
       "name": "Rocks.D.Xebec",
       "category": "LEADER",
       "color": "Blue",
-      "prompt": "a broad old sea captain in a long dark coat, wild hair, a curved blade held loose, an ugly calm about him. full-length heroic portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a broad old sea captain in a long dark coat, wild hair, a curved blade held loose, an ugly calm about him. full-length hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-046",
       "name": "Gloriosa",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "an ancient tiny woman with an enormous hair knot, a walking stick, absolutely unafraid. waist-up portrait, the figure filling the frame. deep blue swell and cold spray, a squall on the horizon. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an ancient tiny woman with an enormous hair knot, a walking stick, absolutely unafraid. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-058",
       "name": "Kaido",
       "category": "LEADER",
       "color": "Purple",
-      "prompt": "a vast horned man with a wild mane and a spiked club, storm-scales along his arms, lightning in the clouds behind. full-length heroic portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a vast horned man with a wild mane and a spiked club, storm-scales along his arms, lightning in the clouds behind. full-length hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-064",
       "name": "King",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a winged figure in a full flame-slit mask and dark coat, black wings spread, fire trailing. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a winged figure in a full flame-slit mask and dark coat, black wings spread, fire trailing. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-071",
       "name": "Who's.Who",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-072",
       "name": "Black Maria",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a towering woman in an elaborate robe, spider silk trailing from her sleeves. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a towering woman in an elaborate robe, spider silk trailing from her sleeves. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-079",
       "name": "Monkey.D.Luffy",
       "category": "LEADER",
       "color": "Black",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. full-length heroic portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. full-length hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-107",
       "name": "Charlotte Daifuku",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a bearded man in patterned robes, a huge smoke-genie rising from his own shoulders. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a bearded man in patterned robes, a huge smoke-genie rising from his own shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "OP17-113",
       "name": "Streusen",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a wiry old chef in a tall hat and a long coat, an enormous knife over one shoulder. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a wiry old chef in a tall hat and a long coat, an enormous knife over one shoulder. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-001",
       "name": "Monkey.D.Luffy",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. full-length heroic portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-002",
       "name": "Usopp",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a long-nosed marksman in goggles and overalls, a slingshot drawn taut, one eye squeezed shut in aim. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a long-nosed marksman in goggles and overalls, a slingshot drawn taut, one eye squeezed shut in aim. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-003",
       "name": "Karoo",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a tall flightless duck in a sailor collar, chest out, absurdly earnest. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tall flightless duck in a sailor collar, chest out, absurdly earnest. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-004",
       "name": "Sanji",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-005",
       "name": "Jinbe",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a massive blue whale-shark fish-man in an open patterned kimono, arms folded, calm as deep water. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a massive blue whale-shark fish-man in an open patterned kimono, arms folded, calm as deep water. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-006",
       "name": "Tony Tony.Chopper",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a small blue-nosed reindeer in a pink brimmed hat and red shorts, hooves braced, far too brave for his size. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a small blue-nosed reindeer in a pink brimmed hat and red shorts, hooves braced, far too brave for his size. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-007",
       "name": "Nami",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-008",
       "name": "Nico Robin",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-009",
       "name": "Nefeltari Vivi",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a blue-haired desert princess in flowing white, twin ringed blades spinning at her wrists. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a blue-haired desert princess in flowing white, twin ringed blades spinning at her wrists. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-010",
       "name": "Franky",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a hulking cyborg shipwright with blue hair and metal forearms, an open shirt, steam venting from his shoulders. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a hulking cyborg shipwright with blue hair and metal forearms, an open shirt, steam venting from his shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-011",
       "name": "Brook",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a towering skeleton in a tailcoat and top hat, a slender cane-sword drawn, an enormous afro. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a towering skeleton in a tailcoat and top hat, a slender cane-sword drawn, an enormous afro. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-012",
       "name": "Monkey.D.Luffy",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-013",
       "name": "Roronoa Zoro",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-014",
       "name": "Guard Point",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the Animal. wide landscape with the horizon low. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Animal. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-015",
       "name": "Gum-Gum Jet Pistol",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the Supernovas. wide landscape with the horizon low. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Supernovas. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-016",
       "name": "Diable Jambe",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the Straw Hat Crew. wide landscape with the horizon low. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Straw Hat Crew. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST01-017",
       "name": "Thousand Sunny",
       "category": "STAGE",
       "color": "Red",
-      "prompt": "a place on the sea near the Straw Hat Crew. wide landscape with the horizon low. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a place on the sea near the Straw Hat Crew. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-001",
       "name": "Eustass\"Captain\"Kid",
       "category": "LEADER",
       "color": "Green",
-      "prompt": "a red-haired brawler with a scavenged metal arm, goggles pushed up, scrap iron rising around him. full-length heroic portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a red-haired brawler with a scavenged metal arm, goggles pushed up, scrap iron rising around him. full-length hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-002",
       "name": "Vito",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a young gangster in a chalk-stripe suit and round glasses, twin pistols crossed. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a young gangster in a chalk-stripe suit and round glasses, twin pistols crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-003",
       "name": "Urouge",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a huge grinning monk with a curled top-knot, scarred arms, an enormous mace across his back. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a huge grinning monk with a curled top-knot, scarred arms, an enormous mace across his back. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-004",
       "name": "Capone\"Gang\"Bege",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a squat pinstriped gangster with a cigar and a fortress silhouette rising behind him. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a squat pinstriped gangster with a cigar and a fortress silhouette rising behind him. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-005",
       "name": "Killer",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a silent figure in a full featureless helmet, long blond hair, two enormous spinning scythe-blades. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a silent figure in a full featureless helmet, long blond hair, two enormous spinning scythe-blades. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-006",
       "name": "Koby",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "an earnest pink-haired young officer in a white coat, fists clenched, sea wind at his back. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "an earnest pink-haired young officer in a white coat, fists clenched, sea wind at his back. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-007",
       "name": "Jewelry Bonney",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a pink-haired young captain in a flat cap and jacket, sprawled over a barrel mid-meal, entirely unbothered. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a pink-haired young captain in a flat cap and jacket, sprawled over a barrel mid-meal, entirely unbothered. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-008",
       "name": "Scratchmen Apoo",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a long-armed musician with a wide grin and horn-shaped hair, his own body played like an instrument. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a long-armed musician with a wide grin and horn-shaped hair, his own body played like an instrument. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-009",
       "name": "Trafalgar Law",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a tattooed surgeon in a spotted fur hat and long coat, a nodachi resting on his shoulder, shadowed eyes. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tattooed surgeon in a spotted fur hat and long coat, a nodachi resting on his shoulder, shadowed eyes. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-010",
       "name": "Basil Hawkins",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a pale soothsayer with long blond hair and hollow eyes, straw effigies hanging from his sleeves. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a pale soothsayer with long blond hair and hollow eyes, straw effigies hanging from his sleeves. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-011",
       "name": "Heat",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a lanky crewman with slicked hair and a high collar, blue flame at his lips. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a lanky crewman with slicked hair and a high collar, blue flame at his lips. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-012",
       "name": "Bepo",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a polite white bear in an orange jumpsuit, standing upright, apologising. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a polite white bear in an orange jumpsuit, standing upright, apologising. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-013",
       "name": "Eustass\"Captain\"Kid",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a red-haired brawler with a scavenged metal arm, goggles pushed up, scrap iron rising around him. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a red-haired brawler with a scavenged metal arm, goggles pushed up, scrap iron rising around him. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-014",
       "name": "X.Drake",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a scarred officer in a feathered captain hat and long coat, a battle-axe in hand, dinosaur bone-plates surfacing along his arm. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a scarred officer in a feathered captain hat and long coat, a battle-axe in hand, dinosaur bone-plates surfacing along his arm. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-015",
       "name": "Scalpel",
       "category": "EVENT",
       "color": "Green",
-      "prompt": "a surge of motion across open water near the Supernovas. wide landscape with the horizon low. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Supernovas. wide graphic landscape with the horizon low. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-016",
       "name": "Repel",
       "category": "EVENT",
       "color": "Green",
-      "prompt": "a surge of motion across open water near the Supernovas. wide landscape with the horizon low. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Supernovas. wide graphic landscape with the horizon low. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST02-017",
       "name": "Straw Sword",
       "category": "EVENT",
       "color": "Green",
-      "prompt": "a surge of motion across open water near the Supernovas. wide landscape with the horizon low. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a surge of motion across open water near the Supernovas. wide graphic landscape with the horizon low. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST04-005",
       "name": "Queen",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a grinning bald brute in a purple coat, mechanical legs, far too pleased with himself. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a grinning bald brute in a purple coat, mechanical legs, far too pleased with himself. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST04-007",
       "name": "Sheepshead",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a horned brute with ram-curled horns and bladed arms. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a horned brute with ram-curled horns and bladed arms. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST04-009",
       "name": "Ginrummy",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a sharp-faced woman in a fur collar, a long cigarette holder, cold eyes. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a sharp-faced woman in a fur collar, a long cigarette holder, cold eyes. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST04-011",
       "name": "Black Maria",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a towering woman in an elaborate robe, spider silk trailing from her sleeves. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a towering woman in an elaborate robe, spider silk trailing from her sleeves. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST06-003",
       "name": "Jango",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a lanky hypnotist in a striped shirt and shades, swinging a pendulum ring. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a lanky hypnotist in a striped shirt and shades, swinging a pendulum ring. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST07-002",
       "name": "Charlotte Anana",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a young woman with a stiff pineapple-shaped hairstyle and an unimpressed stare. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a young woman with a stiff pineapple-shaped hairstyle and an unimpressed stare. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST08-011",
       "name": "Monkey.D.Luffy",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST09-013",
       "name": "Yamato",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a tall white-haired warrior with horns and a heavy studded club, a rope belt over bare shoulders. waist-up portrait, the figure filling the frame. high gold cloud and hot light, thin air above the sea. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a tall white-haired warrior with horns and a heavy studded club, a rope belt over bare shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST12-005",
       "name": "Perona",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a pink-haired girl in a gothic dress with a parasol, small ghosts drifting around her. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a pink-haired girl in a gothic dress with a parasol, small ghosts drifting around her. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST14-013",
       "name": "Roronoa Zoro",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up portrait, the figure filling the frame. iron-grey rain and dark rock, a low hard light. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST16-004",
       "name": "Shanks",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a red-haired captain in a dark cloak over one shoulder, one sleeve empty, parallel scars raking his left eye. waist-up portrait, the figure filling the frame. a green coast under moving cloud, long grass bending in wind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a red-haired captain in a dark cloak over one shoulder, one sleeve empty, parallel scars raking his left eye. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST21-005",
       "name": "Jinbe",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a massive blue whale-shark fish-man in an open patterned kimono, arms folded, calm as deep water. waist-up portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a massive blue whale-shark fish-man in an open patterned kimono, arms folded, calm as deep water. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST30-001",
       "name": "Luffy & Ace",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "two young brothers back to back, one in a straw hat and vest, one in an orange wide-brimmed hat, fire and wind between them. full-length heroic portrait, the figure filling the frame. a burning orange sky over open water, spray lit from behind. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "two young brothers back to back, one in a straw hat and vest, one in an orange wide-brimmed hat, fire and wind between them. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     },
     {
       "id": "ST34-003",
       "name": "Charlotte Brulee",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a thin sharp-faced woman with a wide slit smile, stepping half out of a tall mirror. waist-up portrait, the figure filling the frame. a bruised violet storm sky, lightning far off over black water. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a thin sharp-faced woman with a wide slit smile, stepping half out of a tall mirror. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. bold cel-shaded anime illustration, clean confident ink linework with varied weight, flat colour blocks and hard-edged cel shadow, bright saturated palette, expressive exaggerated features and strong silhouette, dynamic action pose, dramatic low camera angle, crisp highlights, original character design."
     }
   ]
 }

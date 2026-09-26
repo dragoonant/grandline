@@ -62,6 +62,10 @@ const stripNotes = (s) => s.replace(/\s*\((?:[^()]|\([^()]*\))*\)\s*/g, ' ').rep
 // =========================================================================================
 function parseSel(raw, { defaultSide = 'any' } = {}) {
   let t = ' ' + norm(raw) + ' ';
+  // "this Leader" / "this Character" / "this card" is the source itself.
+  if (/^\s*this (Leader|Character|card)\s*$/i.test(norm(raw))) {
+    return { onlySelf: true, of: ['leader', 'character'], min: 1, max: 1 };
+  }
   const sel = {};
 
   let m = t.match(/\bup to (\d+)\b/i);
@@ -88,6 +92,15 @@ function parseSel(raw, { defaultSide = 'any' } = {}) {
   m = t.match(/\{([^}]+)\}\s*(?:or\s*\{([^}]+)\}\s*)?type/i);
   if (m) { if (m[2]) sel.types = [m[1], m[2]]; else sel.type = m[1]; }
 
+  // CR 2-4-3-1 — a type in quotation marks means "a type CONTAINING this text".
+  m = t.match(/with a type including "([^"]+)"/i);
+  if (m) sel.typeIncludes = m[1];
+
+  // CR 2-1-2 — [Name] in brackets with no clarifying noun means cards with that card name.
+  const nameTags = [...t.matchAll(/\[([A-Z][^\]]*)\]/g)].map((x) => x[1])
+    .filter((n) => !/^(Blocker|Rush|Trigger|Counter|Banish|Double Attack|Unblockable|Main|On Play)$/i.test(n));
+  if (nameTags.length) sel.names = nameTags;
+
   m = t.match(/with a cost of (\d+) or less/i);           if (m) sel.costMax = +m[1];
   m = t.match(/with a cost of (\d+) or more/i);           if (m) sel.costMin = +m[1];
   m = t.match(/with (\d+) power or less/i);               if (m) sel.powerMax = +m[1];
@@ -100,6 +113,8 @@ function parseSel(raw, { defaultSide = 'any' } = {}) {
   // (hard rule 8). Strip every phrase this parser actually understands, in longest-first order,
   // and whatever survives is the reason we cannot read the selector.
   const KNOWN = [
+    /with a type including "[^"]+"/gi,
+    /\[[A-Z][^\]]*\]/g,
     /with a cost of \d+ or (?:less|more)/gi,
     /with \d+ (?:base )?power or (?:less|more)/gi,
     /other than this card/gi,
@@ -108,7 +123,7 @@ function parseSel(raw, { defaultSide = 'any' } = {}) {
     /\{[^}]*\}/g,
     /\[Blocker\]/gi,
     /\bup to\b|\bof\b|\byour opponent's\b|\byour\b|\bLeaders?\b|\bCharacters?\b|\bStages?\b/gi,
-    /\bcards?\b|\brested\b|\bactive\b|\btype\b|\bor\b|\band\b|\bthe\b|\ba\b|\ban\b/gi,
+    /\bcards?\b|\brested\b|\bactive\b|\btype\b|\bor\b|\band\b|\bthe\b|\ba\b|\ban\b|\ball\b|\bof\b/gi,
     /\d+/g,
     /[.,;:]/g
   ];
@@ -118,11 +133,24 @@ function parseSel(raw, { defaultSide = 'any' } = {}) {
   return sel;
 }
 
-const DUR = (t) =>
-  /during this battle/i.test(t) ? 'battle'
-  : /until the end of your opponent's next End Phase/i.test(t) ? 'oppEnd'
-  : /during this turn|until the end of (?:this|the) turn/i.test(t) ? 'turn'
-  : null;
+// STRICT. The tail group must BE a duration phrase, not merely contain one.
+//
+// This was not strict, and it cost a silent drop of exactly the kind hard rule 8 exists to
+// prevent. On OP02-013 the clause
+//   "Give up to 2 of your opponent's Characters -3000 power during this turn. Then, if your
+//    Leader's type includes ..., this Character gains [Rush] during this turn."
+// matched as one "Give ... power <tail>" because the tail merely CONTAINED "during this turn".
+// The second sentence was swallowed, the card compiled clean, and only tools/audit-cards.mjs
+// could see it — a test cannot, because both sides of a test come from the same ability data.
+const DUR = (t) => {
+  const x = norm(t).replace(/\.$/, '').trim();
+  if (/^during this battle$/i.test(x)) return 'battle';
+  if (/^during this turn$/i.test(x)) return 'turn';
+  if (/^until the end of (?:this|the) turn$/i.test(x)) return 'turn';
+  if (/^until the end of your opponent's next End Phase$/i.test(x)) return 'oppEnd';
+  if (/^until the end of your next turn$/i.test(x)) return 'oppEnd';
+  return null;
+};
 
 // =========================================================================================
 // Body parser — one clause to a list of ops, or null if we cannot read it.
@@ -139,12 +167,76 @@ function parseClause(raw) {
     return sel ? [{ k: 'ko', sel }] : null;
   }
 
-  // "Give <sel> +/-N power <duration>"
-  if ((m = t.match(/^Give (.+?) ([+-])(\d+) power (.+)$/i))) {
-    const sel = parseSel(m[1]); const until = DUR(m[4]);
+  // "Give <sel> +/-N power <duration>", and the no-duration form, which is a permanent effect
+  // (CR 8-1-3-3) and is marked so by parseLine when it sees no timing tag.
+  if ((m = t.match(/^Give (.+?) ([+-])(\d+) power(?: (.+))?$/i))) {
+    const sel = parseSel(m[1]);
+    const until = m[4] ? DUR(m[4]) : 'turn';
     if (!sel || !until) return null;
     return [{ k: 'power', sel, n: (m[2] === '-' ? -1 : 1) * +m[3], until }];
   }
+
+  // "Up to 1 of your [Name] Characters or up to 1 of your Characters with a type including
+  //  "X", with N power or more, gains [Rush] during this turn." Two alternative selectors and
+  //  one shared filter; the union is the same set of legal targets either way.
+  if ((m = t.match(/^Up to (\d+) of your (.+?) or up to \d+ of your (.+?), with (\d+) power or more, gains? (\[[^\]]+\]) (.+)$/i))) {
+    const kw = KEYWORDS[m[5]];
+    const until = DUR(m[6]);
+    const a = parseSel('your ' + m[2], { defaultSide: 'you' });
+    const b = parseSel('your ' + m[3], { defaultSide: 'you' });
+    if (!kw || !until || !a || !b) return null;
+    const sel = { side: 'you', of: ['character'], min: 0, max: +m[1], powerMin: +m[4],
+                  anyOf: [{ names: a.names, typeIncludes: a.typeIncludes },
+                          { names: b.names, typeIncludes: b.typeIncludes }] };
+    return [{ k: 'gainKw', kw, sel, until }];
+  }
+
+  // "All of your Characters with a cost of N or more gain [Blocker]" — the plural keyword grant.
+  if ((m = t.match(/^All of your (.+?) gains? (\[[^\]]+\])$/i))) {
+    const kw = KEYWORDS[m[2]];
+    const sel = parseSel('your ' + m[1], { defaultSide: 'you' });
+    if (kw && sel) { sel.min = 0; sel.max = 99; return [{ k: 'gainKw', kw, sel }]; }
+    return null;
+  }
+
+  // "All of your [Name] and [Name] cards gain +N power" — a selector by CARD NAME (CR 2-1-2).
+  if ((m = t.match(/^All of your ((?:\[[^\]]+\](?:\s+and\s+)?)+) cards? gains? ([+-])(\d+) power(?: (.+))?$/i))) {
+    const names = [...m[1].matchAll(/\[([^\]]+)\]/g)].map((x) => x[1]);
+    const until = m[4] ? DUR(m[4]) : 'turn';
+    if (!until) return null;
+    return [{ k: 'power', n: (m[2] === '-' ? -1 : 1) * +m[3], until,
+              sel: { side: 'you', of: ['leader', 'character'], names, min: 0, max: 99 } }];
+  }
+
+  // "your Leader and all of your Characters gain +N power"
+  if ((m = t.match(/^your Leader and all of your Characters gains? ([+-])(\d+) power(?: (.+))?$/i))) {
+    const until = m[3] ? DUR(m[3]) : 'turn';
+    if (!until) return null;
+    return [{ k: 'power', n: (m[1] === '-' ? -1 : 1) * +m[2], until,
+              sel: { side: 'you', of: ['leader', 'character'], min: 0, max: 99 } }];
+  }
+
+  // "Reveal 1 card from the top of your deck. If the revealed card's type includes "X", draw N."
+  // One op, two sentences, so it is matched before the sentence splitter (CR 11-2).
+  if ((m = t.match(/^Reveal (\d+) cards? from the top of your deck\. If the revealed card's type includes "([^"]+)", draw (\d+) cards?$/i)))
+    return [{ k: 'revealTop', n: +m[1], typeIncludes: m[2], thenDraw: +m[3] }];
+
+  // "Under the rules of this game, your DON!! deck consists of N cards." CR 8-1-3-3-3 — a
+  // permanent effect that is valid even while the card is in a secret area.
+  if ((m = t.match(/^Under the rules of this game, your DON!! deck consists of (\d+) cards?$/i)))
+    return [{ k: 'donDeckSize', n: +m[1] }];
+
+  // "Add 1 card from the top of your Life cards to your hand." CR 3-10-2.
+  if ((m = t.match(/^Add (\d+) cards? from the top of your Life cards? to your hand$/i)))
+    return [{ k: 'lifeToHand', n: +m[1] }];
+
+  // "Add up to N DON!! card from your DON!! deck and rest it."
+  if ((m = t.match(/^Add up to (\d+) DON!! cards? from your DON!! deck and rest (?:it|them)$/i)))
+    return [{ k: 'addDon', n: +m[1], rested: true }];
+
+  // "you cannot play Character cards during this turn"
+  if (/^you cannot play Character cards during this turn$/i.test(t))
+    return [{ k: 'lockPlay', what: 'CHARACTER' }];
 
   // "your {A} or {B} type Leaders and Characters gain +N power" — the plural form.
   if ((m = t.match(/^(.+?) gain ([+-])(\d+) power(?: (.+))?$/i))) {
@@ -197,10 +289,14 @@ function parseClause(raw) {
     return [{ k: 'giveDon', n: +m[1], from: m[2] ? 'rested' : 'active',
               sel: { side: 'you', of: ['leader', 'character'], min: 0, max: 1 } }];
 
-  // "Give up to N rested DON!! card(s) to your Leader or 1 of your Characters"
-  if ((m = t.match(/^Give up to (\d+) (rested )?DON!! cards? to (?:your Leader or \d+ of your Characters|\d+ of your Characters or your Leader)$/i)))
-    return [{ k: 'giveDon', n: +m[1], from: m[2] ? 'rested' : 'active',
-              sel: { side: 'you', of: ['leader', 'character'], min: 0, max: 1 } }];
+  // "Give up to N (rested) DON!! card(s) to <target>" — the target is parsed as a selector, so
+  // "1 of your Characters", "your Leader or 1 of your Characters" and "up to 1 of your {T} type
+  // Characters" all read, instead of one hardcoded phrasing per printing.
+  if ((m = t.match(/^Give up to (\d+) (rested )?DON!! cards? to (.+)$/i))) {
+    const sel = parseSel(m[3], { defaultSide: 'you' });
+    if (sel) return [{ k: 'giveDon', n: +m[1], from: m[2] ? 'rested' : 'active', sel }];
+    return null;
+  }
 
   if (/^Your opponent cannot activate \[Blocker\] during this battle$/i.test(t))
     return [{ k: 'noBlocker', scope: 'battle' }];
@@ -231,6 +327,16 @@ function parseClause(raw) {
   //  in any order." — a pure look with no take.
   if ((m = t.match(/^Look at (\d+) cards? from the top of your deck and place them at the (?:top or bottom|bottom or top|top|bottom) of your deck in any order$/i)))
     return [{ k: 'lookAdd', n: +m[1], add: 0 }];
+
+  // "Reveal 1 card from the top of your deck. If the revealed card's type includes "X", draw N
+  //  cards." CR 11-2 — one op written as two sentences, so it is matched whole.
+  if ((m = t.match(/^Reveal (\d+) cards? from the top of your deck\. If the revealed card's type includes "([^"]+)", draw (\d+) cards?$/i)))
+    return [{ k: 'revealTop', n: +m[1], typeIncludes: m[2], thenDraw: +m[3] }];
+
+  // "add up to N DON!! cards from your DON!! deck and set it as active, and add up to M
+  //  additional DON!! cards and rest them" — two additions, one active and one rested.
+  if ((m = t.match(/^[Aa]dd up to (\d+) DON!! cards? from your DON!! deck and set (?:it|them) as active, and add up to (\d+) additional DON!! cards? and rest (?:it|them)$/i)))
+    return [{ k: 'addDon', n: +m[1] }, { k: 'addDon', n: +m[2], rested: true }];
 
   // "Add up to N DON!! card(s) from your DON!! deck and set it as active." CR 3-3.
   if ((m = t.match(/^Add up to (\d+) DON!! cards? from your DON!! deck and set (?:it|them) as active$/i)))
@@ -271,8 +377,17 @@ function parseBody(body) {
   // Some printed effects are one op written as two sentences ("Select ... . Your opponent
   // cannot activate [Blocker] if that ... attacks during this turn."), so the whole body gets a
   // look before it is cut up.
-  const whole = parseClause(cleaned);
-  if (whole) return { ops: whole, bad: null };
+  // The whole-body attempt is restricted to the handful of printed effects that are genuinely
+  // ONE op written as two sentences. Letting every pattern see the whole body is how a greedy
+  // tail group swallows the sentence after it — see the note on DUR.
+  const MULTI_SENTENCE = /^Select .+\. Your opponent cannot activate \[Blocker\]|^Reveal \d+ card .+\. If the revealed card/i;
+  if (MULTI_SENTENCE.test(cleaned)) {
+    const whole = parseClause(cleaned);
+    if (whole) return { ops: whole, bad: null };
+  } else if (!/\.\s+[A-Z[]/.test(cleaned)) {
+    const whole = parseClause(cleaned);
+    if (whole) return { ops: whole, bad: null };
+  }
   const parts = cleaned.split(/(?<=\.)\s+(?=[A-Z[])/).map((x) => x.trim()).filter(Boolean);
   const ops = [];
   for (const part of parts) {
@@ -303,12 +418,22 @@ function parseLine(line) {
   if (KEYWORDS[bare]) return { keyword: KEYWORDS[bare] };
 
   const conds = [];
-  let when = null, once = false;
+  let when = null, alsoWhen = null, once = false;
 
   // Consume leading bracket tags.
   let guard = 0;
   for (;;) {
     if (++guard > 12) break;
+    // "[When Attacking]/[On Your Opponent's Attack]" — one ability with two activation
+    // timings (CR 10-2-5 / 10-2-16). Compiled as the first; the second is recorded so the
+    // engine can fire it from either window.
+    const dual = t.match(/^(\[[^\]]+\])\/(\[[^\]]+\])\s*/);
+    if (dual && TIMING[dual[1]] && TIMING[dual[2]]) {
+      when = TIMING[dual[1]];
+      alsoWhen = TIMING[dual[2]];
+      t = t.slice(dual[0].length);
+      continue;
+    }
     const m = t.match(/^(\[[^\]]+\])\s*/);
     if (!m) break;
     const tag = m[1];
@@ -345,6 +470,14 @@ function parseLine(line) {
     conds.push({ k: 'charCountAtLeast', n: +cm[1] }); t = t.slice(cm[0].length);
   } else if ((cm = t.match(/^If you have (\d+) or less Life cards?,\s*/i))) {
     conds.push({ k: 'lifeAtMost', n: +cm[1] }); t = t.slice(cm[0].length);
+  } else if ((cm = t.match(/^If you have (\d+) or more Life cards?,\s*/i))) {
+    conds.push({ k: 'lifeAtLeast', n: +cm[1] }); t = t.slice(cm[0].length);
+  } else if ((cm = t.match(/^If (?:you have|there is) an? Character with a cost of (\d+) or more,\s*/i))) {
+    conds.push({ k: 'haveCharCostAtLeast', n: +cm[1] }); t = t.slice(cm[0].length);
+  } else if ((cm = t.match(/^If (?:you have|there is) an? Character with (\d+) base power or more,\s*/i))) {
+    conds.push({ k: 'haveCharBasePowerAtLeast', n: +cm[1] }); t = t.slice(cm[0].length);
+  } else if ((cm = t.match(/^If it is your second turn or later,\s*/i))) {
+    conds.push({ k: 'turnAtLeast', n: 2 }); t = t.slice(cm[0].length);
   } else if ((cm = t.match(/^If this Character battles your opponent's (Character|Leader),\s*/i))) {
     // CR 7-1-5-2 — "if this ... battles" activates at the End of the Battle.
     when = 'endOfBattle';
@@ -374,16 +507,16 @@ function parseLine(line) {
   // permanent; anything else with no timing tag is still refused.
   if (!when) {
     const permanent = ops.length > 0 && ops.every(function (o) {
-      if (o.k === 'gainKw') return true;
+      if (o.k === 'gainKw' || o.k === 'donDeckSize') return true;
       // A permanent power change must have no duration clause — "during this turn" would make
       // it a one-shot continuous effect with nothing to trigger it.
       return o.k === 'power' && !/during this (?:turn|battle)|until the end of/i.test(t);
     });
     if (!permanent) return { unreadable: line, why: 'no timing tag (permanent effect)' };
-    return { ability: { when: 'static', conds, once, cost, optional, ops, text: norm(line) } };
+    return { ability: { when: 'static', alsoWhen: null, conds, once, cost, optional, ops, text: norm(line) } };
   }
 
-  return { ability: { when, conds, once, cost, optional, ops, text: norm(line) } };
+  return { ability: { when, alsoWhen, conds, once, cost, optional, ops, text: norm(line) } };
 }
 
 function parseCost(text) {
@@ -397,6 +530,9 @@ function parseCost(text) {
     let m;
     if ((m = part.match(/^rest (\d+) (?:of your )?DON!! cards?$/i))) { cost.push({ k: 'restDon', n: +m[1] }); continue; }
     if ((m = part.match(/^trash (\d+) cards? from your hand$/i))) { cost.push({ k: 'trashHand', n: +m[1] }); continue; }
+    if ((m = part.match(/^trash (\d+) cards? with an? \[Trigger\] from your hand$/i))) {
+      cost.push({ k: 'trashHand', n: +m[1], withTrigger: true }); continue;
+    }
     if (/^rest this (Character|card|Stage|Leader)$/i.test(part)) { cost.push({ k: 'restSelf' }); continue; }
     if ((m = part.match(/^DON!! ?-(\d+)$/i))) { cost.push({ k: 'donMinus', n: +m[1] }); continue; }
     if ((m = part.match(/^rest (\d+) of your cards?$/i))) { cost.push({ k: 'restOwn', n: +m[1] }); continue; }
@@ -446,7 +582,16 @@ for (const c of PRINTED) {
       }
       continue;
     }
-    if (r.ability) { rec.abilities.push(r.ability); continue; }
+    if (r.ability) {
+      rec.abilities.push(r.ability);
+      // CR 10-2-5 / 10-2-16 — "[When Attacking]/[On Your Opponent's Attack]" prints ONE effect
+      // under two timings. Emit one ability per timing; dropping the second is a silent loss of
+      // half the card, and the auditor is what caught it on OP17-058 Kaido.
+      if (r.ability.alsoWhen) {
+        rec.abilities.push(Object.assign({}, r.ability, { when: r.ability.alsoWhen, alsoWhen: null }));
+      }
+      continue;
+    }
     bad.push(r.why ? `${norm(line)}   [${r.why}]` : norm(line));
   }
 

@@ -18,6 +18,7 @@
   function candidates(s, ctx, sel) {
     if (!S) bind();
     sel = sel || {};
+
     var out = [];
     var me = ctx.ctrl, opp = 1 - ctx.ctrl;
     var seats = sel.side === 'you' ? [me] : sel.side === 'opp' ? [opp] : [me, opp];
@@ -50,6 +51,20 @@
       if (sel.attr && c.attribute.indexOf(sel.attr) < 0) return false;
       if (sel.hasKw && !S.hasKeyword(s, u, sel.hasKw)) return false;
       if (sel.name && c.name !== sel.name) return false;
+      // CR 2-1-2 — [Name] means cards with that card name.
+      if (sel.names && sel.names.indexOf(c.name) < 0) return false;
+      // CR 2-4-3-1 — a type in quotation marks means a type CONTAINING that text.
+      if (sel.typeIncludes && !c.types.some(function (ty) {
+        return ty.toLowerCase().indexOf(sel.typeIncludes.toLowerCase()) >= 0;
+      })) return false;
+      // "A or B" written as two alternative selectors sharing one filter.
+      if (sel.anyOf && !sel.anyOf.some(function (alt) {
+        if (alt.names && alt.names.indexOf(c.name) >= 0) return true;
+        if (alt.typeIncludes && c.types.some(function (ty) {
+          return ty.toLowerCase().indexOf(alt.typeIncludes.toLowerCase()) >= 0;
+        })) return true;
+        return false;
+      })) return false;
       return true;
     });
   }
@@ -259,8 +274,9 @@
     var p = s.players[ctx.ctrl];
     var n = Math.min(op.n, p.donDeck);
     if (n <= 0) return;
-    p.donDeck -= n; p.donActive += n;
-    NS.log.push(s, 'don.added', { seat: ctx.ctrl, n: n, donDeck: p.donDeck });
+    p.donDeck -= n;
+    if (op.rested) p.donRested += n; else p.donActive += n;
+    NS.log.push(s, 'don.added', { seat: ctx.ctrl, n: n, rested: !!op.rested, donDeck: p.donDeck });
   };
 
   // "Select up to 1 of your {T} type Leader or Character cards. Your opponent cannot activate
@@ -273,6 +289,40 @@
     });
   };
 
+  // "Add N cards from the top of your Life cards to your hand." CR 3-10-2 — always the top, and
+  // this is NOT damage, so no [Trigger] is offered (CR 10-1-5-1 fires on damage only).
+  H.lifeToHand = function (s, ctx, op) {
+    E.lifeToHand(s, ctx.ctrl, op.n);        // the one Life door lives in js/engine.js
+  };
+
+  // "you cannot play Character cards during this turn" — a prohibition, and CR 1-3-3 says a
+  // prohibiting effect always takes precedence over an effect that would allow the action.
+  H.lockPlay = function (s, ctx, op) {
+    s.lockPlay.push({ seat: ctx.ctrl, category: op.what, until: 'turn' });
+    NS.log.push(s, 'play.locked', { seat: ctx.ctrl, category: op.what });
+  };
+
+  // "Reveal 1 card from the top of your deck. If its type includes X, draw N." CR 11-2.
+  H.revealTop = function (s, ctx, op) {
+    var p = s.players[ctx.ctrl];
+    if (!p.deck.length) return;
+    var seen = p.deck.slice(0, op.n);
+    NS.log.push(s, 'deck.revealed', { seat: ctx.ctrl, ids: seen });
+    var hit = seen.some(function (id) {
+      return S.card(id).types.some(function (ty) {
+        return ty.toLowerCase().indexOf(op.typeIncludes.toLowerCase()) >= 0;
+      });
+    });
+    if (hit && op.thenDraw) E.draw(s, ctx.ctrl, op.thenDraw);
+  };
+
+  // CR 8-1-3-3-3 — "under the rules" effects are valid even from a secret area. The DON!! deck
+  // size is read at setup, so this handler exists only so the op has one; js/actions.js
+  // newGame() reads the Leader's static directly.
+  H.donDeckSize = function (s, ctx, op) {
+    NS.log.push(s, 'don.deckSize', { seat: ctx.ctrl, n: op.n });
+  };
+
   // =======================================================================================
   // Describers — CLAUDE.md hard rule 7. js/text.js renders these; the auditor diffs the
   // result against the printed text. A describer that returns nothing is a thrown error.
@@ -282,6 +332,17 @@
 
   function selText(sel) {
     sel = sel || {};
+    if (sel.anyOf) {
+      // The branches share the outer selector's side, kind and filters; only the identity
+      // differs, so the prose names the identities and then the shared filter once.
+      var alts = sel.anyOf.map(function (a) {
+        if (a.names) return '[' + a.names.join('] or [') + ']';
+        if (a.typeIncludes) return 'with a type including "' + a.typeIncludes + '"';
+        return 'matching';
+      }).join(' or ');
+      var rest = Object.assign({}, sel); delete rest.anyOf;
+      return selText(rest).replace(/(Characters?|Leaders?)/, alts + ' $1');
+    }
     var min = sel.min === undefined ? 1 : sel.min, max = sel.max === undefined ? min : sel.max;
     var qty = min === 0 ? 'up to ' + max : max > 1 ? max : '1';
     var who = sel.side === 'you' ? 'your' : sel.side === 'opp' ? "your opponent's" : '';
@@ -291,9 +352,20 @@
     var bits = [];
     if (sel.state) bits.push(sel.state);
     if (sel.type) bits.push('{' + sel.type + '}' + ' type');
+    if (sel.names) bits.push(sel.names.map(function (n) { return '[' + n + ']'; }).join(' and '));
+    if (sel.typeIncludes) bits.push('with a type including "' + sel.typeIncludes + '"');
+    if (sel.anyOf) {
+      bits.push(sel.anyOf.map(function (a) {
+        return a.names ? a.names.map(function (n) { return '[' + n + ']'; }).join(' and ')
+                       : 'with a type including "' + a.typeIncludes + '"';
+      }).join(' or '));
+    }
     var tail = [];
     if (sel.costMax !== undefined) tail.push('with a cost of ' + sel.costMax + ' or less');
     if (sel.powerMax !== undefined) tail.push('with ' + sel.powerMax + ' power or less');
+    if (sel.powerMin !== undefined) tail.push('with ' + sel.powerMin + ' power or more');
+    if (sel.basePowerMin !== undefined) tail.push('with ' + sel.basePowerMin + ' base power or more');
+    if (sel.costMin !== undefined) tail.push('with a cost of ' + sel.costMin + ' or more');
     if (sel.notSelf) tail.push('other than this card');
     return (qty + ' of ' + who + ' ' + bits.join(' ') + ' ' + what + (max > 1 ? 's' : '') +
             (tail.length ? ' ' + tail.join(' ') : '')).replace(/\s+/g, ' ').trim();
@@ -323,13 +395,35 @@
       (op.powerMin ? 'a [Blocker] Character that has ' + op.powerMin + ' or more power' : '[Blocker]') +
       ' ' + (DUR[op.scope] || DUR.battle);
   };
-  D.gainKw = function (op) { return 'This Character gains [' + N.keyword(op.kw) + ']'; };
+  D.gainKw = function (op) {
+    // A describer that drops its selector is a describer that lies, and the auditor caught this
+    // one: OP16-001 grants [Rush] to a chosen Character with 8000 power or more, and this used
+    // to render "This Character gains [Rush]" regardless (hard rule 7).
+    var sel = op.sel || {};
+    var subject = sel.onlySelf ? 'This Character' : selText(sel);
+    var dur = op.until === 'battle' ? ' during this battle'
+            : op.until === 'turn' ? ' during this turn' : '';
+    return subject + ' gains [' + NS.names.keyword(op.kw) + ']' + dur;
+  };
   D.lookAdd = function (op) {
     return 'Look at ' + op.n + ' cards from the top of your deck; reveal up to ' + (op.add || 1) +
       ' ' + (op.type ? '{' + op.type + '} type ' : '') + 'card and add it to your hand. ' +
       'Then, place the rest at the bottom of your deck in any order';
   };
   D.playCard = function (op) { return 'Play ' + op.id; };
+  D.lifeToHand = function (op) {
+    return 'Add ' + op.n + ' card' + (op.n === 1 ? '' : 's') + ' from the top of your Life cards to your hand';
+  };
+  D.lockPlay = function (op) {
+    return 'You cannot play ' + (op.what === 'CHARACTER' ? 'Character' : op.what) + ' cards during this turn';
+  };
+  D.revealTop = function (op) {
+    return 'Reveal ' + op.n + ' card from the top of your deck. If the revealed card\u2019s type includes "' +
+           op.typeIncludes + '", draw ' + op.thenDraw + ' card' + (op.thenDraw === 1 ? '' : 's');
+  };
+  D.donDeckSize = function (op) {
+    return 'Under the rules of this game, your DON!! deck consists of ' + op.n + ' cards';
+  };
   D.bounce = function (op) {
     var where = op.to === 'hand' ? "the owner's hand"
       : op.to === 'top' ? "the top of the owner's deck" : "the bottom of the owner's deck";

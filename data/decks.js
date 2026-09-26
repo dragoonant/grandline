@@ -271,15 +271,8 @@
       "blurb": "S-tier on onepiece.gg's OP17 Standard list — 20.3% of 758 placed decks from 34 events.",
       "source": "https://onepiece.gg/meta/op14-020-dracule-mihawk-standard-op17/",
       "countsInferred": false,
-      "measuredSlots": 28,
+      "measuredSlots": 24,
       "list": [
-        [
-          "OP06-038",
-          4,
-          "measured",
-          100,
-          0
-        ],
         [
           "OP12-025",
           4,
@@ -295,11 +288,11 @@
           0
         ],
         [
-          "ST16-004",
+          "OP17-022",
           4,
           "measured",
           98,
-          0
+          2
         ],
         [
           "OP12-023",
@@ -358,7 +351,14 @@
           0
         ],
         [
-          "EB02-017",
+          "EB01-015",
+          4,
+          "inferred",
+          null,
+          0
+        ],
+        [
+          "EB01-016",
           2,
           "inferred",
           null,
@@ -367,6 +367,7 @@
       ],
       "skipped": [],
       "notes": [
+        "\"The Billion-fold World Trichiliocosm\" 4x — no colour-legal printing this engine can play",
         "\"Coffin Boat\" 3x — no colour-legal printing this engine can play",
         "\"Otama\" 4x — no colour-legal printing this engine can play",
         "\"You Can Be My Samurai!!\" 4x — no colour-legal printing this engine can play",
@@ -386,8 +387,15 @@
       "blurb": "A-tier on onepiece.gg's OP17 Standard list — 13.1% of 758 placed decks from 34 events.",
       "source": "https://onepiece.gg/meta/op09-062-nico-robin-standard-op17/",
       "countsInferred": false,
-      "measuredSlots": 20,
+      "measuredSlots": 24,
       "list": [
+        [
+          "OP17-109",
+          4,
+          "measured",
+          100,
+          0
+        ],
         [
           "OP08-065",
           4,
@@ -400,7 +408,7 @@
           4,
           "measured",
           99,
-          0
+          2
         ],
         [
           "OP17-107",
@@ -421,6 +429,13 @@
           4,
           "measured",
           93,
+          2
+        ],
+        [
+          "OP17-066",
+          4,
+          "inferred",
+          null,
           0
         ],
         [
@@ -432,6 +447,13 @@
         ],
         [
           "OP06-108",
+          4,
+          "inferred",
+          null,
+          0
+        ],
+        [
+          "OP03-115",
           4,
           "inferred",
           null,
@@ -452,28 +474,7 @@
           0
         ],
         [
-          "OP04-103",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
-          "OP04-113",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
-          "OP03-103",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
-          "OP03-107",
+          "OP17-067",
           2,
           "inferred",
           null,
@@ -482,7 +483,6 @@
       ],
       "skipped": [],
       "notes": [
-        "\"Charlotte Pudding\" 4x — no colour-legal printing this engine can play",
         "\"Charlotte Linlin\" 4x — no colour-legal printing this engine can play",
         "\"Gum-Gum Giant\" 4x — no colour-legal printing this engine can play",
         "\"Sweet 3 Generals\" 4x — no colour-legal printing this engine can play",
@@ -517,14 +517,14 @@
           4,
           "measured",
           97,
-          8
+          9
         ],
         [
           "OP11-003",
           4,
           "measured",
           97,
-          4
+          5
         ],
         [
           "OP02-109",
@@ -534,11 +534,11 @@
           0
         ],
         [
-          "OP10-089",
+          "OP17-087",
           4,
           "measured",
           97,
-          5
+          6
         ],
         [
           "OP04-016",
@@ -552,7 +552,7 @@
           3,
           "measured",
           95,
-          6
+          7
         ],
         [
           "OP01-022",
@@ -562,18 +562,18 @@
           4
         ],
         [
-          "OP16-086",
+          "OP17-082",
           4,
           "measured",
           93,
-          4
+          6
         ],
         [
-          "ST21-005",
+          "OP08-085",
           2,
           "measured",
           89,
-          3
+          4
         ],
         [
           "OP14-005",
@@ -623,8 +623,15 @@
       "blurb": "B-tier on onepiece.gg's OP17 Standard list — 8.4% of 758 placed decks from 34 events.",
       "source": "https://onepiece.gg/meta/op17-039-standard-op17/",
       "countsInferred": false,
-      "measuredSlots": 4,
+      "measuredSlots": 8,
       "list": [
+        [
+          "OP17-056",
+          4,
+          "measured",
+          100,
+          0
+        ],
         [
           "OP17-046",
           4,
@@ -641,6 +648,13 @@
         ],
         [
           "OP07-054",
+          4,
+          "inferred",
+          null,
+          0
+        ],
+        [
+          "OP17-057",
           4,
           "inferred",
           null,
@@ -697,20 +711,6 @@
         ],
         [
           "OP04-051",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
-          "OP03-044",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
-          "OP03-052",
           2,
           "inferred",
           null,
@@ -721,7 +721,6 @@
       "notes": [
         "\"Shiki\" 4x — no colour-legal printing this engine can play",
         "\"Rocks.D.Xebec\" 4x — no colour-legal printing this engine can play",
-        "\"Rocks Pirates\" 4x — no colour-legal printing this engine can play",
         "\"There's No Authority in the World That Lasts Forever!!!\" 4x — no colour-legal printing this engine can play",
         "\"Charlotte Linlin\" 4x — no colour-legal printing this engine can play",
         "\"Kyo\" 4x — no colour-legal printing this engine can play",
@@ -744,7 +743,7 @@
       "blurb": "B-tier on onepiece.gg's OP17 Standard list — 7.5% of 758 placed decks from 34 events.",
       "source": "https://onepiece.gg/meta/st30-001-luffy-ace-standard-op17/",
       "countsInferred": false,
-      "measuredSlots": 24,
+      "measuredSlots": 27,
       "list": [
         [
           "ST01-017",
@@ -786,7 +785,14 @@
           4,
           "measured",
           98,
-          5
+          6
+        ],
+        [
+          "OP17-017",
+          3,
+          "measured",
+          71,
+          0
         ],
         [
           "OP14-005",
@@ -825,14 +831,7 @@
         ],
         [
           "OP01-016",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
-          "EB02-017",
-          2,
+          3,
           "inferred",
           null,
           0
@@ -841,8 +840,7 @@
       "skipped": [],
       "notes": [
         "\"Demon Aura Nine Sword Style Asura Blades Drawn Dead Man's Game\" 3x — no colour-legal printing this engine can play",
-        "\"I Know You're Strong... So I'll Go All Out from the Very Start!!!\" 3x — no colour-legal printing this engine can play",
-        "\"Ga Ha Ha Ha!!\" 3x — no colour-legal printing this engine can play"
+        "\"I Know You're Strong... So I'll Go All Out from the Very Start!!!\" 3x — no colour-legal printing this engine can play"
       ]
     },
     {
@@ -858,7 +856,7 @@
       "blurb": "C-tier on onepiece.gg's OP17 Standard list — 7.3% of 758 placed decks from 34 events.",
       "source": "https://onepiece.gg/meta/op17-079-standard-op17/",
       "countsInferred": false,
-      "measuredSlots": 22,
+      "measuredSlots": 26,
       "list": [
         [
           "ST14-013",
@@ -868,18 +866,25 @@
           0
         ],
         [
-          "ST08-011",
+          "ST14-002",
           4,
           "measured",
           100,
           0
         ],
         [
-          "OP10-089",
+          "ST14-012",
           4,
           "measured",
           100,
-          0
+          2
+        ],
+        [
+          "OP17-087",
+          4,
+          "measured",
+          100,
+          2
         ],
         [
           "OP02-109",
@@ -889,11 +894,11 @@
           0
         ],
         [
-          "OP16-086",
+          "OP17-082",
           4,
           "measured",
           98,
-          0
+          3
         ],
         [
           "OP16-090",
@@ -917,14 +922,21 @@
           0
         ],
         [
-          "OP16-088",
+          "OP17-090",
           4,
           "inferred",
           null,
           0
         ],
         [
-          "OP04-077",
+          "OP16-081",
+          4,
+          "inferred",
+          null,
+          0
+        ],
+        [
+          "OP16-088",
           4,
           "inferred",
           null,
@@ -936,26 +948,11 @@
           "inferred",
           null,
           0
-        ],
-        [
-          "OP02-107",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
-          "OP02-108",
-          4,
-          "inferred",
-          null,
-          0
         ]
       ],
       "skipped": [],
       "notes": [
         "\"Loki\" 4x — no colour-legal printing this engine can play",
-        "\"Usopp\" 4x — no colour-legal printing this engine can play",
         "\"Gerd\" 4x — no colour-legal printing this engine can play",
         "\"Rodo\" 4x — no colour-legal printing this engine can play",
         "\"Nami\" 3x — no colour-legal printing this engine can play"
@@ -977,6 +974,13 @@
       "measuredSlots": 15,
       "list": [
         [
+          "OP01-106",
+          4,
+          "measured",
+          100,
+          0
+        ],
+        [
           "ST04-005",
           4,
           "measured",
@@ -989,13 +993,6 @@
           "measured",
           100,
           3
-        ],
-        [
-          "OP15-078",
-          4,
-          "measured",
-          95,
-          0
         ],
         [
           "OP07-076",
@@ -1072,10 +1069,10 @@
       "notes": [
         "\"Charlotte Linlin\" 4x — no colour-legal printing this engine can play",
         "\"Yamato\" 4x — no colour-legal printing this engine can play",
-        "\"Basil Hawkins\" 4x — no colour-legal printing this engine can play",
         "\"Kaido\" 4x — no colour-legal printing this engine can play",
         "\"We're Going to Claim the One Piece!!!\" 4x — no colour-legal printing this engine can play",
         "\"Kaido\" 3x — no colour-legal printing this engine can play",
+        "\"Mamaragan\" 4x — no colour-legal printing this engine can play",
         "\"Lead Performers\" 3x — no colour-legal printing this engine can play"
       ]
     },
@@ -1092,15 +1089,8 @@
       "blurb": "C-tier on onepiece.gg's OP17 Standard list — 4.2% of 758 placed decks from 34 events.",
       "source": "https://onepiece.gg/meta/op15-058-enel-standard-op17/",
       "countsInferred": false,
-      "measuredSlots": 10,
+      "measuredSlots": 6,
       "list": [
-        [
-          "OP15-078",
-          4,
-          "measured",
-          100,
-          0
-        ],
         [
           "OP05-077",
           3,
@@ -1116,7 +1106,21 @@
           0
         ],
         [
+          "OP16-070",
+          4,
+          "inferred",
+          null,
+          0
+        ],
+        [
           "OP10-066",
+          4,
+          "inferred",
+          null,
+          0
+        ],
+        [
+          "OP14-075",
           4,
           "inferred",
           null,
@@ -1151,6 +1155,13 @@
           0
         ],
         [
+          "OP14-074",
+          4,
+          "inferred",
+          null,
+          0
+        ],
+        [
           "OP12-064",
           4,
           "inferred",
@@ -1170,24 +1181,11 @@
           "inferred",
           null,
           0
-        ],
-        [
-          "OP14-066",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
-          "OP14-073",
-          4,
-          "inferred",
-          null,
-          0
         ]
       ],
       "skipped": [],
       "notes": [
+        "\"Mamaragan\" 4x — no colour-legal printing this engine can play",
         "\"Lightning Dragon\" 4x — no colour-legal printing this engine can play",
         "\"Lightning Beast Kiten\" 4x — no colour-legal printing this engine can play",
         "\"Ohm\" 4x — no colour-legal printing this engine can play",
@@ -1211,8 +1209,15 @@
       "blurb": "D-tier on onepiece.gg's OP17 Standard list — 3.3% of 758 placed decks from 34 events.",
       "source": "https://onepiece.gg/meta/op16-001-portgasdace-standard-op17/",
       "countsInferred": false,
-      "measuredSlots": 27,
+      "measuredSlots": 33,
       "list": [
+        [
+          "OP02-024",
+          4,
+          "measured",
+          100,
+          0
+        ],
         [
           "OP14-013",
           4,
@@ -1239,7 +1244,7 @@
           4,
           "measured",
           100,
-          3
+          2
         ],
         [
           "OP02-020",
@@ -1249,11 +1254,11 @@
           0
         ],
         [
-          "OP02-013",
+          "P-028",
           3,
           "measured",
           91,
-          3
+          2
         ],
         [
           "OP17-006",
@@ -1261,6 +1266,13 @@
           "measured",
           82,
           2
+        ],
+        [
+          "OP17-017",
+          2,
+          "measured",
+          73,
+          0
         ],
         [
           "OP14-005",
@@ -1284,13 +1296,6 @@
           0
         ],
         [
-          "OP03-005",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
           "OP01-016",
           4,
           "inferred",
@@ -1299,7 +1304,7 @@
         ],
         [
           "EB01-005",
-          3,
+          1,
           "inferred",
           null,
           0
@@ -1308,10 +1313,8 @@
       "skipped": [],
       "notes": [
         "\"Monkey.D.Garp\" 4x — no colour-legal printing this engine can play",
-        "\"Moby Dick\" 4x — no colour-legal printing this engine can play",
         "\"Edward.Newgate\" 4x — folds into OP12-002, already at 4 copies",
-        "\"If You're Coming with Me... Kiss Your Lives Goodbye!!\" 2x — no colour-legal printing this engine can play",
-        "\"Ga Ha Ha Ha!!\" 2x — no colour-legal printing this engine can play"
+        "\"If You're Coming with Me... Kiss Your Lives Goodbye!!\" 2x — no colour-legal printing this engine can play"
       ]
     },
     {
@@ -1386,13 +1389,6 @@
           0
         ],
         [
-          "OP03-005",
-          4,
-          "inferred",
-          null,
-          0
-        ],
-        [
           "OP01-006",
           4,
           "inferred",
@@ -1415,6 +1411,13 @@
         ],
         [
           "EB01-005",
+          4,
+          "inferred",
+          null,
+          0
+        ],
+        [
+          "ST23-005",
           2,
           "inferred",
           null,

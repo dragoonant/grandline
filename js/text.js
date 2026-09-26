@@ -16,7 +16,10 @@
     endOfOpponentTurn: "[End of Your Opponent's Turn]",
     activateMain: '[Activate: Main]', main: '[Main]', counter: '[Counter]',
     trigger: '[Trigger]', onOpponentAttack: "[On Your Opponent's Attack]",
-    whenAttacked: '[When Attacked]', endOfBattle: '', static: ''
+    whenAttacked: '[When Attacked]', endOfBattle: '', static: '',
+    endOfYourTurn: '[End of Your Turn]', whenAttacking: '[When Attacking]',
+    onBlock: '[On Block]', main: '[Main]', counter: '[Counter]',
+    onOpponentAttack: "[On Your Opponent's Attack]"
   };
 
   var CONDS = {
@@ -31,7 +34,11 @@
     oppAttrIs: function (c) { return "If your opponent's Leader has the <" + c.attr + '> attribute,'; },
     leaderType: function (c) { return 'If your Leader has the {' + c.type + '} type,'; },
     donOnFieldAtLeast: function (c) { return 'If you have ' + c.n + ' or more DON!! cards on your field,'; },
-    battled: function (c) { return 'If this Character battles your opponent’s ' + (c.what === 'leader' ? 'Leader' : 'Character') + ','; }
+    battled: function (c) { return 'If this Character battles your opponent’s ' + (c.what === 'leader' ? 'Leader' : 'Character') + ','; },
+    lifeAtLeast: function (c) { return 'If you have ' + c.n + ' or more Life cards,'; },
+    haveCharCostAtLeast: function (c) { return 'If there is a Character with a cost of ' + c.n + ' or more,'; },
+    haveCharBasePowerAtLeast: function (c) { return 'If you have a Character with ' + c.n + ' base power or more,'; },
+    turnAtLeast: function (c) { return 'If it is turn ' + c.n + ' or later,'; }
   };
 
   var COSTS = {

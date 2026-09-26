@@ -216,6 +216,16 @@
         case 'lifeAtMost':   return s.players[seat].life.length <= cd.n;
         case 'oppAttrIs':    return S.card(s.players[1 - seat].leader.id).attribute.indexOf(cd.attr) >= 0;
         case 'leaderType':   return S.card(s.players[seat].leader.id).types.indexOf(cd.type) >= 0;
+        case 'lifeAtLeast':  return s.players[seat].life.length >= cd.n;
+        case 'turnAtLeast':  return s.turn >= cd.n;
+        case 'haveCharCostAtLeast':
+          return s.players[seat].chars.some(function (x) {
+            var cc = S.card(x.id); return cc.cost !== null && cc.cost >= cd.n;
+          });
+        case 'haveCharBasePowerAtLeast':
+          return s.players[seat].chars.some(function (x) {
+            var cc = S.card(x.id); return cc.power !== null && cc.power >= cd.n;
+          });
         case 'oppLifeAtMost': return s.players[1 - seat].life.length <= cd.n;
         case 'oppCharCountAtLeast': return s.players[1 - seat].chars.length >= cd.n;
         case 'donOnFieldAtLeast': {
@@ -233,7 +243,9 @@
 
   function fireAuto(s, when, info) {
     var u = info.unit, seat = info.seat;
-    var abs = abilitiesOf(u).filter(function (a) { return a.when === when; });
+    // CR 10-2-5 / 10-2-16 — "[When Attacking]/[On Your Opponent's Attack]" is one ability with
+    // two activation timings, so it answers to either.
+    var abs = abilitiesOf(u).filter(function (a) { return a.when === when || a.alsoWhen === when; });
     for (var i = 0; i < abs.length; i++) {
       var ab = abs[i];
       if (!condsMet(s, u, ab, info)) continue;
@@ -304,6 +316,7 @@
       u.keywords = [];
     });
     s.noBlock = s.noBlock.filter(function (l) { return l.scope !== 'turn' && l.scope !== 'battle'; });
+    s.lockPlay = [];
 
     // CR 6-6-1-4 — the turn ends and the other player becomes the turn player.
     s.active = 1 - s.active;
@@ -443,6 +456,19 @@
     return endBattle(s);
   }
 
+  // THE OTHER LIFE DOOR — CR 3-10-2. Some cards read "Add 1 card from the top of your Life
+  // cards to your hand". That is NOT damage processing: no [Trigger] is offered, because
+  // CR 10-1-5-1 fires a [Trigger] only on taking damage. It lives here next to
+  // dealLeaderDamage so tools/check-pages.mjs still has exactly one file to allow.
+  function lifeToHand(s, seat, n) {
+    var p = s.players[seat];
+    for (var i = 0; i < n && p.life.length; i++) {
+      p.hand.push(p.life.shift());                       // always the top (CR 3-10-2)
+      NS.log.push(s, 'life.toHand', { seat: seat, left: p.life.length });
+    }
+    return s;
+  }
+
   function endBattle(s) {
     if (s.battle) {
       NS.log.push(s, 'battle.end', { attacker: s.battle.attacker });
@@ -470,7 +496,7 @@
     koUnit: koUnit, playCardFree: playCardFree, fireAuto: fireAuto, condsMet: condsMet,
     beginTurn: beginTurn, endTurn: endTurn, declareAttack: declareAttack,
     openBlockStep: openBlockStep, openCounterStep: openCounterStep, damageStep: damageStep,
-    dealLeaderDamage: dealLeaderDamage, endBattle: endBattle, blockers: blockers,
+    dealLeaderDamage: dealLeaderDamage, lifeToHand: lifeToHand, endBattle: endBattle, blockers: blockers,
     counterOptions: counterOptions, checkDefeat: checkDefeat, clone: clone, gone: gone,
     _bind: bind
   };

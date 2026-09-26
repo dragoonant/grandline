@@ -23,19 +23,26 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 // THE STYLE CONSTANT. PLAN.md D3, the owner's call on 2026-09-26. Byte-identical on every
 // prompt; changing it means paying for every render again.
 // ===========================================================================================
+// Revised 2026-09-26 on the owner's call: the first pass was painterly Western-fantasy key art
+// and the characters did not read as themselves. This is cel animation as a RENDERING
+// TECHNIQUE — flat colour, hard shadow terminators, ink linework — which is a broad medium and
+// not anyone's property. What it is NOT is an imitation of any particular show's house style,
+// and the lint below still refuses any prompt that names a franchise, studio or artist.
 export const STYLE =
-  'painted tropical-adventure key art, rich painterly digital illustration, ' +
-  'sun-bleached seas and towering storm skies, bold readable silhouette, ' +
-  'saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, ' +
-  'dynamic angled hero framing, original character design';
+  'bold cel-shaded anime illustration, clean confident ink linework with varied weight, ' +
+  'flat colour blocks and hard-edged cel shadow, bright saturated palette, ' +
+  'expressive exaggerated features and strong silhouette, dynamic action pose, ' +
+  'dramatic low camera angle, crisp highlights, original character design';
 
+// Flat graphic backdrops, so the figure stays the subject at 34px. Cel shading wants simple
+// backgrounds; a busy painterly sky fights the linework.
 const SCENE = {
-  Red:    'a burning orange sky over open water, spray lit from behind',
-  Green:  'a green coast under moving cloud, long grass bending in wind',
-  Blue:   'deep blue swell and cold spray, a squall on the horizon',
-  Purple: 'a bruised violet storm sky, lightning far off over black water',
-  Black:  'iron-grey rain and dark rock, a low hard light',
-  Yellow: 'high gold cloud and hot light, thin air above the sea'
+  Red:    'flat burning-orange sky and graphic sunburst rays behind the figure',
+  Green:  'flat jade-green sky and stylised wind-bent grass behind the figure',
+  Blue:   'flat deep-blue sky and stylised cresting wave shapes behind the figure',
+  Purple: 'flat violet sky and graphic lightning forks behind the figure',
+  Black:  'flat charcoal sky and hard diagonal rain streaks behind the figure',
+  Yellow: 'flat gold sky and stylised radiating cloud bands behind the figure'
 };
 
 const BANNED_NOUNS = /\b(sign|signage|banner|poster|logo|label|text|lettering|letters|words|title|caption|subtitle|newspaper|book|page|scroll|placard|billboard|nameplate|watermark|signature|inscription)\b/i;
@@ -78,10 +85,10 @@ for (const id of [...ids].sort()) {
   const subject = clause || derivedClause(c);
   const scene = SCENE[c.color[0]] || SCENE.Blue;
   const frame = c.category === 'LEADER'
-    ? 'full-length heroic portrait, the figure filling the frame'
+    ? 'full-length hero shot, the figure filling the frame, face clearly visible'
     : c.category === 'CHARACTER'
-      ? 'waist-up portrait, the figure filling the frame'
-      : 'wide landscape with the horizon low';
+      ? 'waist-up hero shot, the figure filling the frame, face clearly visible'
+      : 'wide graphic landscape with the horizon low';
   const prompt = `${subject}. ${frame}. ${scene}. ${STYLE}.`;
   prompts.push({ id, name: c.name, category: c.category, color: c.color[0] || 'Blue', prompt });
 }
