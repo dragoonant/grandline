@@ -110,6 +110,12 @@
     }).join(' ');
   }
 
-  NS.text = { describeCard: describeCard, describeTrigger: describeTrigger,
+  // Exposed so ops.js can render a condition that guards a nested clause (D.ifThen).
+  function condPhrase(c) {
+    var p = describeCond(c);
+    return p.charAt(0) === '[' ? 'While ' + p : p;
+  }
+
+  NS.text = { describeCard: describeCard, describeTrigger: describeTrigger, condPhrase: condPhrase,
               describeAbility: describeAbility };
 }(window.OP = window.OP || {}));

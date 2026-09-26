@@ -33,6 +33,7 @@
 
     return out.filter(function (u) {
       var c = S.card(u.id);
+      if (sel.prevTarget && (ctx.lastPicked || []).indexOf(u.uid) < 0) return false;
       if (sel.notSelf && u.uid === ctx.self) return false;
       if (sel.onlySelf && u.uid !== ctx.self) return false;
       if (sel.state === 'rested' && !u.rested) return false;
@@ -83,7 +84,12 @@
       }),
       min: min, max: max
     });
-    return chosen.map(function (uid) { return S.findUnit(s, uid); }).filter(Boolean);
+    var units = chosen.map(function (uid) { return S.findUnit(s, uid); }).filter(Boolean);
+    // CR 8-4-4 — a later clause may say "that card", meaning the one just chosen. The engine
+    // remembers the last selection on the invocation context so the follow-on clause is a
+    // selector like any other rather than a special case.
+    ctx.lastPicked = units.map(function (u) { return u.uid; });
+    return units;
   }
 
   // =======================================================================================
@@ -192,6 +198,8 @@
       if (op.type && c.types.indexOf(op.type) < 0) return false;
       if (op.category && c.category !== op.category) return false;
       if (op.costMax !== undefined && !(c.cost !== null && c.cost <= op.costMax)) return false;
+      if (op.costMin !== undefined && !(c.cost !== null && c.cost >= op.costMin)) return false;
+      if (op.excludeName && c.name === op.excludeName) return false;   // CR 2-1-2
       return true;
     });
     var chosen = eligible.length ? E.offerChoice(s, {
@@ -323,6 +331,16 @@
     NS.log.push(s, 'don.deckSize', { seat: ctx.ctrl, n: op.n });
   };
 
+  // CR 4-10-1 — "Then, if <condition>, <effect>": if the "if" clause cannot be resolved,
+  // the clause that follows it is not resolved either. One op that guards a nested run, so a
+  // conditional follow-on is data like everything else.
+  H.ifThen = function (s, ctx, op) {
+    var u = S.findUnit(s, ctx.self);
+    var probe = u || { uid: ctx.self, id: ctx.cardId, don: 0, rested: false, onceUsed: {} };
+    if (!E.condsMet(s, probe, { conds: [op.cond] }, {}, ctx.ctrl)) return;
+    run(s, ctx, op.ops);
+  };
+
   // ---------------------------------------------------------------------------------------
   // Activation costs as ops (CR 8-3-1). An AUTO effect must pay its cost too, and paying may
   // itself ask a question (trashing from hand). Running the cost as the first ops of the same
@@ -363,6 +381,7 @@
 
   function selText(sel) {
     sel = sel || {};
+    if (sel.prevTarget) return 'that card';
     if (sel.anyOf) {
       // The branches share the outer selector's side, kind and filters; only the identity
       // differs, so the prose names the identities and then the shared filter once.
@@ -467,6 +486,10 @@
   D.markNoBlocker = function (op) {
     return 'Select ' + selText(op.sel) +
            '. Your opponent cannot activate [Blocker] if that card attacks during this turn';
+  };
+  D.ifThen = function (op) {
+    return NS.text.condPhrase(op.cond) + ' ' +
+           op.ops.map(function (o) { return describe(o); }).join('. Then, ');
   };
   D.payRestDon = function (op) { return 'rest ' + op.n + ' DON!! card' + (op.n === 1 ? '' : 's'); };
   D.payDonMinus = function (op) { return 'DON!! \u2212' + op.n; };

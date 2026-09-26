@@ -204,8 +204,11 @@
     return (c.abilities || []).slice();
   }
 
-  function condsMet(s, u, ab, ctx) {
+  function condsMet(s, u, ab, ctx, seatHint) {
+    // An Event has no unit on the field, so its controller cannot be derived from the board.
     var seat = S.seatOf(s, u.uid);
+    if (seat < 0 && seatHint !== undefined) seat = seatHint;
+    if (seat < 0) return false;
     return (ab.conds || []).every(function (cd) {
       switch (cd.k) {
         case 'donAtLeast':   return u.don >= cd.n;                        // CR 8-3-2-3

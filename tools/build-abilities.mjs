@@ -259,6 +259,14 @@ function parseClause(raw) {
     return sel ? [{ k: 'power', sel, n, until }] : null;
   }
 
+  // CR 8-4-4 — "that card" refers back to the target chosen by the clause before it.
+  if ((m = t.match(/^that card gains an additional ([+-])(\d+) power(?: (.+))?$/i))) {
+    const until = m[3] ? DUR(m[3]) : 'battle';
+    if (!until) return null;
+    return [{ k: 'power', sel: { prevTarget: true, of: ['leader', 'character'], min: 1, max: 9 },
+              n: (m[1] === '-' ? -1 : 1) * +m[2], until }];
+  }
+
   // "This Character gains [Rush]"
   if ((m = t.match(/^This (?:Character|card) gains? (\[[^\]]+\])$/i))) {
     const kw = KEYWORDS[m[1]];
@@ -311,9 +319,12 @@ function parseClause(raw) {
 
   // "Look at N cards from the top of your deck; reveal up to 1 {T} type card and add it to your
   //  hand. Then, place the rest at the bottom of your deck in any order"
-  if ((m = t.match(/^Look at (\d+) cards? from the top of your deck; reveal up to (\d+) (?:\{([^}]+)\} type )?card(?: other than \[([^\]]+)\])? and add it to your hand$/i)))
+  if ((m = t.match(/^Look at (\d+) cards? from the top of your deck; reveal up to (\d+) (?:\{([^}]+)\} type )?(?:(Character|Event|Stage) )?card(?: with a cost of (\d+) or (less|more))?(?: other than \[([^\]]+)\])? and add it to your hand$/i)))
     return [{ k: 'lookAdd', n: +m[1], add: +m[2], type: m[3] || undefined,
-              excludeName: m[4] || undefined }];
+              category: m[4] ? m[4].toUpperCase() : undefined,
+              costMax: (m[5] && m[6].toLowerCase() === 'less') ? +m[5] : undefined,
+              costMin: (m[5] && m[6].toLowerCase() === 'more') ? +m[5] : undefined,
+              excludeName: m[7] || undefined }];
 
   if ((m = t.match(/^Play up to (\d+) (?:\{([^}]+)\} type )?card(?: with a cost of (\d+) or less)? from your hand$/i)))
     return [{ k: 'playFromHand', n: +m[1], type: m[2] || undefined,
@@ -369,6 +380,21 @@ function parseClause(raw) {
   return null;
 }
 
+// The inline conditions the compiler understands, as a function so both a whole line and a
+// single "Then, if ..." clause can use the same table (CR 4-10).
+function parseInlineCond(t) {
+  let cm;
+  if ((cm = t.match(/^If you have (\d+) or more Characters,\s*/i))) return { k: 'charCountAtLeast', n: +cm[1] };
+  if ((cm = t.match(/^If you have (\d+) or more \{([^}]+)\} type Characters,\s*/i))) return { k: 'charCountAtLeast', n: +cm[1], type: cm[2] };
+  if ((cm = t.match(/^If you have (\d+) or less Life cards?,\s*/i))) return { k: 'lifeAtMost', n: +cm[1] };
+  if ((cm = t.match(/^If you have (\d+) or more Life cards?,\s*/i))) return { k: 'lifeAtLeast', n: +cm[1] };
+  if ((cm = t.match(/^If your opponent has (\d+) or less Life cards?,\s*/i))) return { k: 'oppLifeAtMost', n: +cm[1] };
+  if ((cm = t.match(/^If your opponent has (\d+) or more Characters?,\s*/i))) return { k: 'oppCharCountAtLeast', n: +cm[1] };
+  if ((cm = t.match(/^If your Leader has the \{([^}]+)\} type,\s*/i))) return { k: 'leaderType', type: cm[1] };
+  if ((cm = t.match(/^If this Character is rested,\s*/i))) return { k: 'selfRested' };
+  return null;
+}
+
 // "Then, X" and "Then X" chain onto the previous ops (CR 4-10-2).
 function parseBody(body) {
   const cleaned = stripNotes(norm(body));
@@ -393,6 +419,17 @@ function parseBody(body) {
   for (const part of parts) {
     const clause = part.replace(/^Then,?\s*/i, '').replace(/^Also,?\s*/i, '');
     let got = parseClause(clause);
+
+    // CR 4-10 — "Then, if <condition>, <effect>". The condition guards only the clause that
+    // follows it, so it compiles to an ifThen op rather than onto the whole ability.
+    if (!got) {
+      const g = clause.match(/^[Ii]f (.+?),\s*(.+)$/);
+      if (g) {
+        const cond = parseInlineCond('If ' + g[1] + ', ');
+        const inner = cond ? parseClause(g[2].replace(/\.$/, '')) : null;
+        if (cond && inner) got = [{ k: 'ifThen', cond, ops: inner }];
+      }
+    }
     if (!got && / and /i.test(clause)) {
       // "Draw 2 cards and trash 1 card from your hand." — two ops in one sentence. Only split
       // when the whole clause failed, so an " and " inside a selector is never cut in half.
