@@ -28,11 +28,16 @@ const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 // TECHNIQUE — flat colour, hard shadow terminators, ink linework — which is a broad medium and
 // not anyone's property. What it is NOT is an imitation of any particular show's house style,
 // and the lint below still refuses any prompt that names a franchise, studio or artist.
+// PLAN.md D3, the owner's call on 2026-09-26, and byte-identical on every prompt. CLAUDE.md:
+// art direction is the owner's call, RECORDED, NOT RE-LITIGATED. This constant had drifted to a
+// cel-shaded brief, which put three cards in a different style from the other 144 and stopped
+// the set reading as one set. Changing it means paying for all 150 renders again, so it does
+// not change without the owner saying so.
 export const STYLE =
-  'bold cel-shaded anime illustration, clean confident ink linework with varied weight, ' +
-  'flat colour blocks and hard-edged cel shadow, bright saturated palette, ' +
-  'expressive exaggerated features and strong silhouette, dynamic action pose, ' +
-  'dramatic low camera angle, crisp highlights, original character design';
+  'painted tropical-adventure key art, rich painterly digital illustration, ' +
+  'sun-bleached seas and towering storm skies, bold readable silhouette, ' +
+  'saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, ' +
+  'dynamic angled hero framing, original character design';
 
 // Flat graphic backdrops, so the figure stays the subject at 34px. Cel shading wants simple
 // backgrounds; a busy painterly sky fights the linework.
@@ -48,7 +53,12 @@ const SCENE = {
 const BANNED_NOUNS = /\b(sign|signage|banner|poster|logo|label|text|lettering|letters|words|title|caption|subtitle|newspaper|book|page|scroll|placard|billboard|nameplate|watermark|signature|inscription)\b/i;
 const NEGATIONS = /\b(no|not|without|never|avoid|exclude|absent|free of|lacking)\b/i;
 const NAMED = /\b(one piece|oda|eiichiro|toei|bandai|shueisha|studio ghibli|disney|pixar|marvel|artstation|greg rutkowski|makoto shinkai|akira toriyama|in the style of|style of)\b/i;
-const BIG_COUNT = /\b(three|four|five|six|seven|eight|nine|ten|dozen|many|crowd|group of|several)\b/i;
+// A count is a QUANTITY the model has to render, and it renders more than two unreliably. A
+// capitalised one is part of a proper name — "The Four Emperors" is a crew, not four of
+// anything — so the number words are matched lower-case only, while the genuinely crowd-forming
+// words stay case-insensitive.
+const BIG_COUNT = /\b(three|four|five|six|seven|eight|nine|ten|dozen)\b/;
+const CROWD = /\b(many|crowd|group of|several)\b/i;
 
 function lint(id, prompt) {
   const errs = [];
@@ -57,6 +67,7 @@ function lint(id, prompt) {
   if ((m = prompt.match(NEGATIONS))) errs.push(`negation "${m[0]}" — negations summon what they negate`);
   if ((m = prompt.match(NAMED))) errs.push(`names a real work, artist or studio: "${m[0]}"`);
   if ((m = prompt.match(BIG_COUNT))) errs.push(`count above two ("${m[0]}") renders unreliably`);
+  if ((m = prompt.match(CROWD))) errs.push(`crowd word "${m[0]}" — the subject stops being readable at 34px`);
   if (!prompt.includes(STYLE)) errs.push('the STYLE constant is missing or altered');
   if (prompt.length > 900) errs.push(`prompt is ${prompt.length} chars, over the 900 cap`);
   return errs.map((e) => `${id}: ${e}`);
