@@ -179,8 +179,8 @@
     "ST34-003": "art/cards/ST34-003.webp"
   };
   NS.artMeta = {
-    generated: "2026-09-26",
+    generated: "2026-09-27",
     count: 172,
-    style: "painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design"
+    style: "premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour"
   };
 }(window.OP = window.OP || {}));

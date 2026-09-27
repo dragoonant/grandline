@@ -46,8 +46,8 @@ list) and an animation layer.
 1. **Does the Counter Step feel right?** It is the novel mechanic and the one place the game
    stops and asks you something during the opponent's turn. It currently asks every time you
    have any legal counter at all.
-2. **Is the art direction right?** 147 renders are one decision and regenerating is paying
-   twice. Look at a deck's worth before asking for more.
+2. **Is the art direction right?** Re-rendered 2026-09-27 in the owner's chosen style (D3). Look
+   at a deck's worth before asking for more.
 3. **Do the meta decks play like the real ones?** Where a deck is mostly `inferred` slots
    (Enel at 6/50, Rocks.D.Xebec at 8/50) it will not, and the fix is compiler coverage.
 
@@ -65,12 +65,24 @@ carries a second `original` pack behind one constant so the whole game renames i
 program at runtime and costs nothing. Rules: `--dry-run` makes zero network calls; sample three
 and look at them before any batch; idempotent by default; `--limit` caps a paid run.
 
-### D3 — Art direction · 2026-09-26 · owner
-**Painted tropical-adventure key art.** Rich painterly digital illustration, sun-bleached seas
-and storm skies, bold silhouettes, saturated primaries; readable at 34px, original at 512px.
-One byte-identical `STYLE` constant in `tools/gen-art.mjs`. Three constants that do not move:
-no text rendered in an image; no reproduction of a specific official illustration; never name a
-real artist or studio.
+### D3 — Art direction · revised 2026-09-27 · owner
+**Anime trading-card illustration that looks like the show.** Polished cel shading, thick ink
+outlines, energetic effects, explosive composition. Chosen as candidate **E** from a ten-style
+audition on ST01-001. One byte-identical `STYLE` constant in `tools/build-art-prompts.mjs`.
+- **Characters are named, with their recognisable design** (`WHO` in `tools/art-identity.mjs`,
+  one clause per character). The 2026-09-26 pass described anonymous "pirate captains" and
+  ended "original character design", and nobody on the cards read as themselves.
+- **Every card has its own setting, taken from the arc it comes from** (`CARDS` in the same file):
+  Wano, Dressrosa, Punk Hazard, Elbaph, Whole Cake, Marineford, Skypiea, Sabaody and so on. The
+  first pass put one flat sky per colour behind everything.
+- **A card is not limited to one figure.** Events are the move being performed, Stages are the
+  place, and a card may carry two characters.
+- A card with no table entry fails the build; there is no generic fallback.
+
+Three constants that do not move: no text rendered in an image; no reproduction of a specific
+official illustration; never name a real artist, studio or franchise in a prompt.
+
+*Superseded 2026-09-26 brief:* painted tropical-adventure key art.
 
 ### D4 — Reactive-window feel · 2026-09-26 · owner
 **Ask always, but auto-skip a window where the player has no legal option.** The Block, Counter

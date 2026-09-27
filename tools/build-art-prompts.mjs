@@ -15,40 +15,19 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
-import { IDENTITY, derivedClause } from './art-identity.mjs';
+import { WHO, CARDS } from './art-identity.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
 // ===========================================================================================
-// THE STYLE CONSTANT. PLAN.md D3, the owner's call on 2026-09-26. Byte-identical on every
-// prompt; changing it means paying for every render again.
+// THE STYLE CONSTANT. PLAN.md D3, the owner's call — revised 2026-09-27 to candidate E of a
+// ten-style audition on ST01-001. Byte-identical on every prompt; changing it means paying for
+// every render again. The 2026-09-26 painterly brief ended "original character design" and
+// described nobody by name, and the owner could not tell who anyone was.
 // ===========================================================================================
-// Revised 2026-09-26 on the owner's call: the first pass was painterly Western-fantasy key art
-// and the characters did not read as themselves. This is cel animation as a RENDERING
-// TECHNIQUE — flat colour, hard shadow terminators, ink linework — which is a broad medium and
-// not anyone's property. What it is NOT is an imitation of any particular show's house style,
-// and the lint below still refuses any prompt that names a franchise, studio or artist.
-// PLAN.md D3, the owner's call on 2026-09-26, and byte-identical on every prompt. CLAUDE.md:
-// art direction is the owner's call, RECORDED, NOT RE-LITIGATED. This constant had drifted to a
-// cel-shaded brief, which put three cards in a different style from the other 144 and stopped
-// the set reading as one set. Changing it means paying for all 150 renders again, so it does
-// not change without the owner saying so.
 export const STYLE =
-  'painted tropical-adventure key art, rich painterly digital illustration, ' +
-  'sun-bleached seas and towering storm skies, bold readable silhouette, ' +
-  'saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, ' +
-  'dynamic angled hero framing, original character design';
-
-// Flat graphic backdrops, so the figure stays the subject at 34px. Cel shading wants simple
-// backgrounds; a busy painterly sky fights the linework.
-const SCENE = {
-  Red:    'flat burning-orange sky and graphic sunburst rays behind the figure',
-  Green:  'flat jade-green sky and stylised wind-bent grass behind the figure',
-  Blue:   'flat deep-blue sky and stylised cresting wave shapes behind the figure',
-  Purple: 'flat violet sky and graphic lightning forks behind the figure',
-  Black:  'flat charcoal sky and hard diagonal rain streaks behind the figure',
-  Yellow: 'flat gold sky and stylised radiating cloud bands behind the figure'
-};
+  'premium trading card game anime illustration, polished cel shading, thick clean ink outlines, ' +
+  'energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour';
 
 const BANNED_NOUNS = /\b(sign|signage|banner|poster|logo|label|text|lettering|letters|words|title|caption|subtitle|newspaper|book|page|scroll|placard|billboard|nameplate|watermark|signature|inscription)\b/i;
 const NEGATIONS = /\b(no|not|without|never|avoid|exclude|absent|free of|lacking)\b/i;
@@ -88,20 +67,28 @@ const ids = new Set();
 for (const d of D.decks) { ids.add(d.leader); d.list.forEach(([id]) => ids.add(id)); }
 
 const prompts = [];
-let named = 0, derived = 0;
+const missing = [];
 for (const id of [...ids].sort()) {
   const c = BY_ID.get(id);
-  const clause = IDENTITY[c.name];
-  if (clause) named++; else derived++;
-  const subject = clause || derivedClause(c);
-  const scene = SCENE[c.color[0]] || SCENE.Blue;
-  const frame = c.category === 'LEADER'
-    ? 'full-length hero shot, the figure filling the frame, face clearly visible'
-    : c.category === 'CHARACTER'
-      ? 'waist-up hero shot, the figure filling the frame, face clearly visible'
-      : 'wide graphic landscape with the horizon low';
-  const prompt = `${subject}. ${frame}. ${scene}. ${STYLE}.`;
+  const card = CARDS[id];
+  const who = WHO[c.name];
+  // No derived fallback: a card with no entry is a hole in the table, and the build refuses.
+  if (!card || (!card.subject && !who)) { missing.push(`${id} ${c.name}`); continue; }
+  const stage = c.category === 'STAGE';
+  let subject = card.subject || who;
+  if (card.with) subject += ', with ' + card.with;
+  if (card.act) subject += ', ' + card.act;
+  const frame = stage ? 'the place itself is the subject'
+    : card.with || card.pair || /\bbeside\b|side by side/.test(subject)
+      ? 'both figures filling the frame, faces clearly visible'
+      : c.category === 'EVENT' ? 'the action filling the frame'
+        : 'dynamic action pose, the figure filling the frame, face clearly visible';
+  const prompt = `${subject}. ${frame}. ${card.scene}. ${STYLE}.`;
   prompts.push({ id, name: c.name, category: c.category, color: c.color[0] || 'Blue', prompt });
+}
+if (missing.length) {
+  console.error(`${missing.length} card(s) have no entry in tools/art-identity.mjs:\n  ` + missing.join('\n  '));
+  process.exit(1);
 }
 
 const errs = prompts.flatMap((p) => lint(p.id, p.prompt));
@@ -117,5 +104,4 @@ await writeFile(join(ROOT, 'tools', 'art-prompts.json'),
                    count: prompts.length, prompts }, null, 2));
 
 console.log(`${prompts.length} prompts, lint clean.`);
-console.log(`  ${named} from the identity table, ${derived} derived from card data.`);
 console.log(`  style: ${STYLE.slice(0, 70)}…`);

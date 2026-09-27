@@ -1,6 +1,6 @@
 {
-  "style": "painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design",
-  "built": "2026-09-26",
+  "style": "premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour",
+  "built": "2026-09-27",
   "model": "black-forest-labs/FLUX.1-schnell",
   "size": "768x1088",
   "count": 150,
@@ -10,1050 +10,1050 @@
       "name": "Doma",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a scarred duellist in a long coat with a slender rapier. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Doma, knight captain in a horned helmet and cape, a slender rapier. dynamic action pose, the figure filling the frame, face clearly visible. on the burning deck at the summit war, a sea fortress smoking behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "EB01-015",
       "name": "Scratchmen Apoo",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a long-armed musician with a wide grin and horn-shaped hair, his own body played like an instrument. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Scratchmen Apoo, a lanky grinning pirate man with very long arms, sharp shark-like teeth, dark hair in two horn-like tufts, gold earrings, long coat, drumming on small drums slung at his hips. dynamic action pose, the figure filling the frame, face clearly visible. on a festival stage in a feudal Japanese town, paper lanterns swinging. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "EB01-016",
       "name": "Bingoh",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a pirate-world fighter of the Land of Wano, a calm, reading expression. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Bingoh, wiry Wano ruffian with a sly grin and a short blade. dynamic action pose, the figure filling the frame, face clearly visible. in a dusty wasteland village of feudal Japan, ruined huts and dark smoke. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "EB04-037",
       "name": "Porche",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a bright-eyed performer in a ruffled costume, mid-pirouette. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Porche, bright-eyed performer with purple pigtails in a ruffled costume, baton twirling, mid-pirouette. dynamic action pose, the figure filling the frame, face clearly visible. on a vast grassy plain of a long thin island, a race track in the grass. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-006",
       "name": "Otama",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a small girl in a patched kimono with a tail-like topknot, a dumpling in each hand. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Otama, little kunoichi girl with a big straw hat, red cheeks, kimono, a millet dumpling in hand. dynamic action pose, the figure filling the frame, face clearly visible. in a scorched wasteland of feudal Japan, a small shack and a mountain behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-010",
       "name": "Komachiyo",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "an enormous shaggy dog-lion the size of a cart, tongue out, harness jingling. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Komachiyo, a huge shaggy dog-lion beast with a big grin, harness jingling, with Otama riding on its back. both figures filling the frame, faces clearly visible. bounding across rice paddies of feudal Japan, mountains behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-016",
       "name": "Nami",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Nami, long orange hair, tattoo on her left shoulder, blue-and-white striped top, a segmented blue weather staff crackling with static. dynamic action pose, the figure filling the frame, face clearly visible. on the lawn deck of a lion-headed pirate ship, a thunderhead she summoned overhead. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-022",
       "name": "Brook",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a towering skeleton in a tailcoat and top hat, a slender cane-sword drawn, an enormous afro. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Brook, tall skeleton gentleman with a black afro, top hat, black tailcoat, cane sword drawn, violin at his side. dynamic action pose, the figure filling the frame, face clearly visible. in a foggy ghost-ship graveyard sea, a ruined galleon behind him. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-023",
       "name": "Marco",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a sleepy-eyed blond man in an open purple coat, blue and gold flame unfurling behind him like wings. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Marco, blond pineapple-crest hair, sleepy eyes, open purple shirt, blue-and-gold phoenix flames flaring from his arms. dynamic action pose, the figure filling the frame, face clearly visible. above a vast white navy fortress plaza in a war, ice floes cracked below. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-036",
       "name": "Otsuru",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "an elderly innkeeper in a plain kimono, sleeves tied back, steam from a teahouse behind her. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Otsuru, gentle teahouse proprietress in a kimono, pouring tea. dynamic action pose, the figure filling the frame, face clearly visible. in a warm teahouse in a feudal Japanese flower capital, cherry blossoms outside. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-041",
       "name": "Kouzuki Momonosuke",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a small boy in an oversized lord’s kimono, trying very hard to look tall. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kouzuki Momonosuke, small boy with a topknot and oversized kimono, fierce little face, a pink dragon form curling behind him. dynamic action pose, the figure filling the frame, face clearly visible. over a flame-lit skull-shaped island fortress at night. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-104",
       "name": "Speed",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a woman in a horned helm, the lower half of a horse, hooves striking sparks. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Speed, centaur-horse woman with long hair and a cowgirl hat, galloping. dynamic action pose, the figure filling the frame, face clearly visible. galloping across a smoke-filled island of feudal Japan, factory chimneys glowing. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-106",
       "name": "Basil Hawkins",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a pale soothsayer with long blond hair and hollow eyes, straw effigies hanging from his sleeves. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Basil Hawkins, long straight blond hair, pale stoic face, long purple coat, straw dolls and tarot cards swirling. dynamic action pose, the figure filling the frame, face clearly visible. in a dim lantern-lit shrine in feudal Japan, straw dolls hanging. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP01-109",
       "name": "Who's.Who",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Who’s Who, towering saber-tooth tiger man with a zipped mask pulled down, fangs bared. dynamic action pose, the figure filling the frame, face clearly visible. in a snowy prison island stronghold, iron gates and torches. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP02-001",
       "name": "Edward.Newgate",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "an immense white-moustached old giant of a man, bare-chested and scarred, a colossal bladed polearm planted in the deck. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Edward Newgate, enormous old pirate captain with a crescent white moustache, captain’s coat draped on his shoulders, a huge bisento spear, bisento raised, the air itself cracking like glass around his fist. dynamic action pose, the figure filling the frame, face clearly visible. at the navy summit war on a frozen bay, a huge white fortress and towering tidal waves behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP02-020",
       "name": "LittleOars Jr.",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a mountain-sized giant in a striped tunic, an anchor used as a club. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Little Oars Jr., mountain-sized giant with a horned helmet and a chain-anchor weapon. dynamic action pose, the figure filling the frame, face clearly visible. wading through ice floes at the navy summit war, a sea fortress behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP02-024",
       "name": "Moby Dick",
       "category": "STAGE",
       "color": "Red",
-      "prompt": "a place on the sea near the Whitebeard Pirates. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Moby Dick, an enormous white pirate ship with a whale-head prow, cannons blazing. the place itself is the subject. ploughing through a stormy sea at golden sunset, other pirate ships in its wake. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP02-080",
       "name": "Dobon",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a squat armoured brute with a hippo-jawed helm. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Dobon, stout pirate with a bulldog face and a horned helmet, swinging a club. dynamic action pose, the figure filling the frame, face clearly visible. at a night banquet in a skull-shaped island fortress, lantern light. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP02-097",
       "name": "Komille",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a uniformed officer with cropped hair and a straight sabre. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Komille, navy officer with cropped hair, pistol and sabre. dynamic action pose, the figure filling the frame, face clearly visible. on the deck of a navy warship with seagull sails, cannons behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP02-104",
       "name": "Sentomaru",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a squat axe-wielding officer in a shoulder-plated coat, hair in a stiff topknot. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sentomaru, massive navy bodyguard with a square beard, sailor cap and a giant battle-axe. dynamic action pose, the figure filling the frame, face clearly visible. in a giant mangrove archipelago with floating soap bubbles, ready to fight. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP02-109",
       "name": "Jaguar.D.Saul",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a colossal bearded giant in a torn coat, laughing with his whole chest, an island-sized shadow. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Jaguar D. Saul, huge bearded giant in a navy vice-admiral coat, laughing warmly. dynamic action pose, the figure filling the frame, face clearly visible. on the burning scholar island of the great tree library, fire raging behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP03-115",
       "name": "Streusen",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a wiry old chef in a tall hat and a long coat, an enormous knife over one shoulder. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Streusen, tiny old chef with a huge white moustache and chef hat, wielding cleavers. dynamic action pose, the figure filling the frame, face clearly visible. in a colossal cake kitchen, towers of frosting and giant fruit. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP04-007",
       "name": "Sanji",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sanji, blond hair covering one eye, curly eyebrow, sharp black suit and tie, cigarette, one leg raised to kick, mid spinning kick. dynamic action pose, the figure filling the frame, face clearly visible. in the sandstone streets of a desert kingdom, the palace dome behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP04-016",
       "name": "Bad Manners Kick Course",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the Alabasta. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sanji, blond hair over one eye, black suit, delivering a flurry of whirling kicks. the action filling the frame. in a desert kingdom’s sandstone plaza, dust exploding, the palace dome behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP04-041",
       "name": "Apis",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a small girl with wild hair in a fisherman’s smock, a tiny dragon curled on her shoulder. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Apis, small girl with wild pink hair in a fisherman’s smock, a tiny dragon curled on her shoulder. dynamic action pose, the figure filling the frame, face clearly visible. on a craggy island of old warships, a white dragon soaring overhead. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP04-051",
       "name": "Who's.Who",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Who’s Who, towering saber-tooth tiger man with a zipped mask pulled down, fangs bared. dynamic action pose, the figure filling the frame, face clearly visible. in a shadowy stone dungeon of a skull island fortress. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP05-010",
       "name": "Nico Robin",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Nico Robin, long straight black hair, calm blue eyes, purple coat, arms crossed as extra arms bloom like flower petals. dynamic action pose, the figure filling the frame, face clearly visible. among the ruined stone pillars of an ancient desert tomb, sand drifting. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP05-015",
       "name": "Belo Betty",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a woman in a plumed hat with a flag furled at her shoulder, one arm thrown up in a rallying shout. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Belo Betty, revolutionary commander in a plumed hat and long coat, a furled flag on her shoulder, rallying shout. dynamic action pose, the figure filling the frame, face clearly visible. leading a rebel charge through a toy-filled Mediterranean city, strings in the sky. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP05-077",
       "name": "Gamma Knife",
       "category": "EVENT",
       "color": "Purple",
-      "prompt": "a surge of motion across open water near the Heart Pirates. wide graphic landscape with the horizon low. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Trafalgar Law in a spotted fur hat thrusting a glowing blue energy blade into a tall man in a pink feather coat. both figures filling the frame, faces clearly visible. inside a translucent blue dome over a Mediterranean city in ruins. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP06-050",
       "name": "Tashigi",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a dark-haired officer in glasses and a naval coat, katana half-drawn, jaw set. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Tashigi, short dark hair, glasses, navy jacket, gripping a katana in both hands. dynamic action pose, the figure filling the frame, face clearly visible. on a half-fire half-ice island, snow on one side and lava on the other. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP06-108",
       "name": "Tenguyama Hitetsu",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a tiny old swordsmith in a long-nosed mask, hammer in hand, a forge glowing red. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Tenguyama Hitetsu, old swordsmith in a long-nosed red tengu mask, hammer raised. dynamic action pose, the figure filling the frame, face clearly visible. in a smoky blacksmith forge of feudal Japan, sparks flying. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP07-034",
       "name": "Roronoa Zoro",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Roronoa Zoro, short green hair, scar over his left eye, open green kimono, green haramaki sash, a katana in each hand and one clenched in his teeth. dynamic action pose, the figure filling the frame, face clearly visible. in a giant mangrove archipelago with floating soap bubbles, cutting through the air. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP07-046",
       "name": "Sengoku",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a silver-bearded commander in a naval cap and long coat, arms folded, gulls circling. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sengoku, navy fleet admiral with braided beard, a seagull on his cap, glowing golden Buddha-like aura. dynamic action pose, the figure filling the frame, face clearly visible. atop a navy headquarters fortress at war, shockwaves bursting. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP07-054",
       "name": "Marguerite",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a blonde archer in a feathered green outfit, bow drawn, jungle light behind her. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Marguerite, blonde warrior woman of the island of women, snake-bow drawn. dynamic action pose, the figure filling the frame, face clearly visible. in a lush jungle with snake-shaped rocks, a palace of warrior women behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP07-058",
       "name": "Island of Women",
       "category": "STAGE",
       "color": "Blue",
-      "prompt": "a place on the sea near the Amazon Lily. wide graphic landscape with the horizon low. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "the island of women, an eastern-style palace of red lacquered towers and golden roofs with giant coiled serpent statues, set among jagged green karst peaks. the place itself is the subject. rising from a calm sea wrapped in jungle, sea kings coiled in the waves, wide establishing view. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP07-076",
       "name": "Slow-Slow Beam Sword",
       "category": "EVENT",
       "color": "Purple",
-      "prompt": "a surge of motion across open water near the Foxy Pirates. wide graphic landscape with the horizon low. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a pirate captain with a split afro and long nose firing a pink photon beam from a mirror-sword. the action filling the frame. on a vast grassy plain during a pirate game, everything caught in slow motion. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP08-048",
       "name": "Sweetpea",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a heavyset warrior woman in patterned wrappings, a club across her shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sweetpea, huge warrior woman of the island of women with a round face, bow in hand. dynamic action pose, the figure filling the frame, face clearly visible. in a jungle arena of the island of women, stone pillars and vines. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP08-061",
       "name": "Charlotte Oven",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a scowling giant of a man with a squared jaw, hands glowing furnace-red. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Charlotte Oven, towering muscular man with heated glowing hands and a fur-collared coat. dynamic action pose, the figure filling the frame, face clearly visible. in a candy-coloured island kingdom of cake castles, steam and heat rising. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP08-065",
       "name": "Charlotte Smoothie",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "an immensely tall woman in a sleeveless gown, a wine glass in one hand, a heavy blade in the other. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Charlotte Smoothie, extremely tall elegant woman in black with a long blade, wringing water from the air. dynamic action pose, the figure filling the frame, face clearly visible. on a sweet island of cake towers and chocolate rivers. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP08-085",
       "name": "Jinbe",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a massive blue whale-shark fish-man in an open patterned kimono, arms folded, calm as deep water. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Jinbe, huge blue whale-shark fish-man, dark topknot, tusks, blue kimono with a haori, stern calm face, fish-man karate stance. dynamic action pose, the figure filling the frame, face clearly visible. charging through a sweets-covered island, a raging sea behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP08-104",
       "name": "Charlotte Poire",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a small solemn girl in a layered pastry-frilled dress. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Charlotte Poire, elegant young woman of the cake-island family in a frilled pastel dress. dynamic action pose, the figure filling the frame, face clearly visible. in the grand hall of a cake chateau, huge sugar chandeliers. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP09-002",
       "name": "Uta",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a singer with white and red hair in a bright stage coat, one hand raised, ribbons of sound spiralling out. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Uta, singer with half-red half-white hair in two loops, white dress, headphones, singing with one arm outstretched, musical energy swirling. dynamic action pose, the figure filling the frame, face clearly visible. on a glowing concert stage on an island of ruined music halls, colourful light beams. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP09-062",
       "name": "Nico Robin",
       "category": "LEADER",
       "color": "Purple",
-      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. full-length hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Nico Robin, long straight black hair, calm blue eyes, purple coat, arms crossed as extra arms bloom like flower petals, a whirl of extra arms blooming around her. dynamic action pose, the figure filling the frame, face clearly visible. in a burning scholar island with a giant tree library, embers drifting. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP10-004",
       "name": "Vergo",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a bamboo-armoured officer with round sunglasses and a stiff collar, stance low. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Vergo, navy officer with round sunglasses and a stiff collar, arms and bamboo staff turned black with haki. dynamic action pose, the figure filling the frame, face clearly visible. in a frozen navy laboratory on a half-fire half-ice island. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP10-005",
       "name": "Sanji",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sanji, blond hair covering one eye, curly eyebrow, sharp black suit and tie, cigarette, one leg raised to kick. dynamic action pose, the figure filling the frame, face clearly visible. on a half-fire half-ice island, flames on one side and snow on the other. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP10-013",
       "name": "Nami",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Nami, long orange hair, tattoo on her left shoulder, blue-and-white striped top, a segmented blue weather staff crackling with static. dynamic action pose, the figure filling the frame, face clearly visible. on a half-fire half-ice island, a frozen lake and a burning mountain. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP10-066",
       "name": "Giolla",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "an eccentric artist in a voluminous gown, a palette knife raised, the air behind her warping into paint. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Giolla, flamboyant woman in a big wig, turning the world into swirling abstract art. dynamic action pose, the figure filling the frame, face clearly visible. in a toy-filled Mediterranean city twisted into surreal art. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP10-068",
       "name": "Diamante",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a flamboyant swordsman in a plumed hat and a coat of banners, a rippling blade. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Diamante, extremely tall gladiator with a cape and a fluttering flag-thin sword. dynamic action pose, the figure filling the frame, face clearly visible. in a roaring gladiator colosseum of a Mediterranean city. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP10-073",
       "name": "Buffalo",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a round man with a spinning propeller topknot and a striped coat. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Buffalo, stout pirate with a propeller on his head spinning like a helicopter. dynamic action pose, the figure filling the frame, face clearly visible. flying above a Mediterranean island city at dusk. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP10-076",
       "name": "Baby 5",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a dark-haired woman in a tight uniform, one arm already changing into a weapon, eyes full of tears. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Baby 5, maid-outfitted assassin with black hair, her arm turned into a smoking gun barrel. dynamic action pose, the figure filling the frame, face clearly visible. on a rooftop of a Mediterranean island city, flowers and toys below. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP10-077",
       "name": "Bellamy",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a grinning blond brawler with springs coiled in his legs, bouncing forward. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Bellamy, blond pirate with sunglasses and spring-coiled legs, leaping. dynamic action pose, the figure filling the frame, face clearly visible. springing off the walls of a gladiator colosseum. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP11-003",
       "name": "Usopp",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a long-nosed marksman in goggles and overalls, a slingshot drawn taut, one eye squeezed shut in aim. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Usopp, long nose, curly black hair under a bandana, sniper goggles, overalls, a huge slingshot drawn back. dynamic action pose, the figure filling the frame, face clearly visible. aiming from a treetop of a giant tree kingdom of giants. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP11-007",
       "name": "Tashigi",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a dark-haired officer in glasses and a naval coat, katana half-drawn, jaw set. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Tashigi, short dark hair, glasses, navy jacket, gripping a katana in both hands. dynamic action pose, the figure filling the frame, face clearly visible. in the snowy courtyard of a navy base on a winter island. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP12-002",
       "name": "Edward.Newgate",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "an immense white-moustached old giant of a man, bare-chested and scarred, a colossal bladed polearm planted in the deck. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Edward Newgate, enormous old pirate captain with a crescent white moustache, captain’s coat draped on his shoulders, a huge bisento spear, cracking the air with a shockwave punch. dynamic action pose, the figure filling the frame, face clearly visible. on the deck of his whale-headed flagship, the crew roaring behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP12-023",
       "name": "Kawamatsu",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a huge kappa fish-man samurai with a dished head and a fanged grin, a battered sword across his back. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kawamatsu, a stout kappa samurai with a round green face, a beak-like mouth, a flat dish on his head, straw raincoat, a katana drawn. dynamic action pose, the figure filling the frame, face clearly visible. wading through a rushing river in a misty mountain gorge, waterfalls behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP12-025",
       "name": "Kin'emon",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a topknotted samurai in a fox-patterned kimono, blade drawn, fire licking along the steel. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kin’emon, samurai with a big topknot and red kimono, fox-fire blade blazing. dynamic action pose, the figure filling the frame, face clearly visible. on a flame-lit skull-shaped island fortress, a raid under way. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP12-064",
       "name": "Vergo",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a bamboo-armoured officer with round sunglasses and a stiff collar, stance low. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Vergo, navy officer with round sunglasses and a stiff collar, arms and bamboo staff turned black with haki. dynamic action pose, the figure filling the frame, face clearly visible. in a snowy navy research base, frosted steel corridors. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP12-076",
       "name": "Monet",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a green-haired woman with feathered wings and harpy legs, snow gathering on her shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monet, harpy woman with green hair and wide feathered wings, snow swirling from her body. dynamic action pose, the figure filling the frame, face clearly visible. in a blizzard over a frozen island laboratory. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP13-004",
       "name": "Sabo",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "a blond young man in a long dark coat and top hat, a lead pipe in one hand, claws of fire on the other. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sabo, blond wavy hair, top hat with goggles, blue coat and cravat, scar over his left eye, fists wreathed in flame, metal pipe, fists blazing with fire. dynamic action pose, the figure filling the frame, face clearly visible. in a toy-filled Mediterranean city under a sky of razor-thin strings. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP13-043",
       "name": "Otama",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a small girl in a patched kimono with a tail-like topknot, a dumpling in each hand. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Otama, little kunoichi girl with a big straw hat, red cheeks, kimono, a millet dumpling in hand. dynamic action pose, the figure filling the frame, face clearly visible. by a sparkling blue river in feudal Japan, cherry blossoms on the water. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-005",
       "name": "Killer",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a silent figure in a full featureless helmet, long blond hair, two enormous spinning scythe-blades. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Killer, long wild blond hair, striped round mask, twin spinning scythe blades on his wrists. dynamic action pose, the figure filling the frame, face clearly visible. on the rooftop of a skull-shaped island fortress at night. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-007",
       "name": "Jewelry Bonney",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a pink-haired young captain in a flat cap and jacket, sprawled over a barrel mid-meal, entirely unbothered. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Jewelry Bonney, long pink hair, green cap, cheeky grin, a pizza slice in one hand. dynamic action pose, the figure filling the frame, face clearly visible. on a futuristic island of science and snow-white towers. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-013",
       "name": "Monkey.D.Luffy",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monkey D. Luffy, black messy hair, straw hat with a red band, scar under his left eye, X-shaped chest scar, open red shirt, blue shorts, yellow sash, straw sandals. dynamic action pose, the figure filling the frame, face clearly visible. charging up the walls of a skull-shaped island fortress, the night sky burning. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-015",
       "name": "Roronoa Zoro",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Roronoa Zoro, short green hair, scar over his left eye, open green kimono, green haramaki sash, a katana in each hand and one clenched in his teeth. dynamic action pose, the figure filling the frame, face clearly visible. on a moonlit rooftop of a skull-shaped fortress in feudal Japan, blade trails glowing. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-020",
       "name": "Dracule Mihawk",
       "category": "LEADER",
       "color": "Green",
-      "prompt": "a gaunt swordsman in a wide plumed hat and a long black coat, a cross-hilted greatsword taller than he is, golden hawk eyes. full-length hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Dracule Mihawk, hawk-like golden eyes, thin black beard, wide plumed hat, open coat, huge black cross-shaped greatsword, one slash splitting the sea. dynamic action pose, the figure filling the frame, face clearly visible. on a small coffin-shaped boat with candles on a calm sea at twilight. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-023",
       "name": "Kikunojo",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a tall elegant samurai in a pale kimono, a single long blade held low, snow drifting. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kikunojo, elegant samurai with long dark hair and a kimono, cold icy blade drawn. dynamic action pose, the figure filling the frame, face clearly visible. in a snowy ruined castle of feudal Japan. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-026",
       "name": "Kouzuki Oden",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a broad bare-chested lord with a flame-patterned haori and two katana, hair tied back, feet planted. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kouzuki Oden, wild-haired samurai with a big grin and topknot, twin katana crossed. dynamic action pose, the figure filling the frame, face clearly visible. in the grand flower capital of feudal Japan, a castle on the hill behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-071",
       "name": "Pica",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a colossal stone man rising out of the ground, a stern carved face, arms of rubble. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Pica, towering armoured man with a stern face, a stone giant rising from the ground behind him. dynamic action pose, the figure filling the frame, face clearly visible. in a Mediterranean city torn apart by stone, a royal palace plateau. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-074",
       "name": "Monet",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a green-haired woman with feathered wings and harpy legs, snow gathering on her shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monet, harpy woman with green hair and wide feathered wings, snow swirling from her body. dynamic action pose, the figure filling the frame, face clearly visible. in a snowstorm over a frozen island laboratory. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP14-075",
       "name": "Lao.G",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a pirate-world fighter of the Donquixote Pirates, fists set and braced. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Lao G, tiny old martial artist with a long white beard and pointed cap, kung-fu pose. dynamic action pose, the figure filling the frame, face clearly visible. in a toy-filled Mediterranean city plaza. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP15-040",
       "name": "Viola",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a dark-haired dancer in a long dress, one eye glowing violet, arms in a slow sweep. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Viola, dancer with long dark hair in a flamenco dress, clairvoyant eyes glowing. dynamic action pose, the figure filling the frame, face clearly visible. on a palace balcony of a Mediterranean island city, sunflower fields below. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP15-053",
       "name": "Rebecca",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "a pink-haired gladiator in a plated outfit and a battered helm, a shield raised. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Rebecca, pink-haired gladiator girl in light armour with a sword and shield. dynamic action pose, the figure filling the frame, face clearly visible. in the arena of a gladiator colosseum, sand flying. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP15-058",
       "name": "Enel",
       "category": "LEADER",
       "color": "Purple",
-      "prompt": "a serene man with enormous earlobes in a white shroud, a golden staff, lightning crawling over his skin. full-length hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Enel, god-like figure with long earlobes, headband, bare chest, golden drums ringed at his back, blue lightning crackling, laughing arrogantly. dynamic action pose, the figure filling the frame, face clearly visible. on the gilded ruins of a golden city in the sky, a giant beanstalk behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP16-001",
       "name": "Portgas.D.Ace",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "a freckled young man in an open shirt and a wide orange hat, fire curling off his shoulders. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Portgas D. Ace, freckles, black wavy hair, orange cowboy hat with a smiley pin, shirtless, red bead necklace, fists blazing with fire, hurling a fist of fire. dynamic action pose, the figure filling the frame, face clearly visible. on the deck of a pirate ship in a desert harbour at sunset, sea exploding into steam. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP16-004",
       "name": "Curiel",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a tattooed gunner with a shaved head and a long rifle. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Curiel, tattooed gunner with a shaved head and a heavy cannon-rifle on his shoulder. dynamic action pose, the figure filling the frame, face clearly visible. on the deck of a huge whale-headed flagship, cannon smoke drifting. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP16-023",
       "name": "Arlong",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a saw-nosed shark fish-man with a jagged grin, a serrated blade over his shoulder. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Arlong, sawshark fish-man with a long jagged nose, cap, open floral shirt, great saw-sword. dynamic action pose, the figure filling the frame, face clearly visible. in a fish-man pirate stronghold of stone on a tropical island. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP16-068",
       "name": "Trafalgar Law",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a tattooed surgeon in a spotted fur hat and long coat, a nodachi resting on his shoulder, shadowed eyes. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Trafalgar Law, spotted white fur hat, goatee, tattooed hands, yellow-and-black hoodie, long nodachi sword. dynamic action pose, the figure filling the frame, face clearly visible. in a snowy northern town of steel and smoke. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP16-070",
       "name": "Donquixote Rosinante",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a very tall clown-faced man in a black feathered coat, a cigarette burning a hole in his lapel, silence pooling around him. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Donquixote Rosinante, tall clumsy man with a black feather coat, heart-patterned shirt, clown-like makeup, smoking. dynamic action pose, the figure filling the frame, face clearly visible. in a snowy forest at night, footprints in the snow. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP16-081",
       "name": "Otama",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a small girl in a patched kimono with a tail-like topknot, a dumpling in each hand. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Otama, little kunoichi girl with a big straw hat, red cheeks, kimono, a millet dumpling in hand. dynamic action pose, the figure filling the frame, face clearly visible. in a burning Japanese village at night. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP16-088",
       "name": "Shimotsuki Ushimaru",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a stern old lord in dark armour and a topknot, a single blade planted point-down. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Shimotsuki Ushimaru, noble samurai lord with a calm face and white robes, katana in hand. dynamic action pose, the figure filling the frame, face clearly visible. at the gates of a feudal Japanese castle at dusk. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP16-090",
       "name": "Tony Tony.Chopper",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a small blue-nosed reindeer in a pink brimmed hat and red shorts, hooves braced, far too brave for his size. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Tony Tony Chopper, small reindeer with a blue nose, antlers, pink top hat with a white cross. dynamic action pose, the figure filling the frame, face clearly visible. in a feudal Japanese town, in samurai costume, lanterns glowing. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-006",
       "name": "Kingdew",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a hugely muscled sailor with an anchor tattoo, bracing a mast. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kingdew, hugely muscled sailor with an anchor tattoo, bracing a mast. dynamic action pose, the figure filling the frame, face clearly visible. on a storm-battered pirate galleon deck. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-017",
       "name": "Ga Ha Ha Ha!!",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the The Four Emperors. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Edward Newgate, enormous old pirate captain with a crescent white moustache, throwing his head back in a thunderous laugh, bisento planted. the action filling the frame. on the deck of his whale-headed flagship at sunset, his crew cheering. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-022",
       "name": "Shanks",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a red-haired captain in a dark cloak over one shoulder, one sleeve empty, parallel scars raking his left eye. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Shanks, red hair, triple scar over his left eye, long black cloak, single arm gripping a sabre, calm commanding stare, haki crackling in black lightning. dynamic action pose, the figure filling the frame, face clearly visible. on the prow of his red-sailed pirate ship, a dragon-head bow. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-039",
       "name": "Rocks.D.Xebec",
       "category": "LEADER",
       "color": "Blue",
-      "prompt": "a broad old sea captain in a long dark coat, wild hair, a curved blade held loose, an ugly calm about him. full-length hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Rocks D. Xebec, towering pirate captain with a wild mane of dark hair, black coat, sinister grin, massive curved sword, arms spread wide. dynamic action pose, the figure filling the frame, face clearly visible. on a doomed holy island in flames, ancient palace ruins behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-046",
       "name": "Gloriosa",
       "category": "CHARACTER",
       "color": "Blue",
-      "prompt": "an ancient tiny woman with an enormous hair knot, a walking stick, absolutely unafraid. waist-up hero shot, the figure filling the frame, face clearly visible. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Gloriosa, the old wise woman of the island of women, tiny wrinkled face, long cane. dynamic action pose, the figure filling the frame, face clearly visible. in a jungle palace courtyard of the island of women, serpent statues. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-056",
       "name": "Rocks Pirates",
       "category": "EVENT",
       "color": "Blue",
-      "prompt": "a surge of motion across open water near the Rocks Pirates. wide graphic landscape with the horizon low. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Rocks D. Xebec, a towering pirate with a wild dark mane and black coat, beside a young giant with a crescent moustache. both figures filling the frame, faces clearly visible. on the deck of a monstrous pirate ship, a blood-red sky over a burning island. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-057",
       "name": "Fullalead",
       "category": "STAGE",
       "color": "Blue",
-      "prompt": "a place on the sea near the Rocks Pirates. wide graphic landscape with the horizon low. flat deep-blue sky and stylised cresting wave shapes behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "a sinister pirate fortress built into a jagged black sea cliff. the place itself is the subject. on a moonlit stormy sea, pirate ships anchored in its cove, wide establishing view. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-058",
       "name": "Kaido",
       "category": "LEADER",
       "color": "Purple",
-      "prompt": "a vast horned man with a wild mane and a spiked club, storm-scales along his arms, lightning in the clouds behind. full-length hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kaido, colossal warlord with long black hair, horns, a gourd of sake, a spiked iron club, a blue dragon form coiling behind him, swinging his club. dynamic action pose, the figure filling the frame, face clearly visible. atop a skull-shaped island fortress wreathed in flame and thunder. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-064",
       "name": "King",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a winged figure in a full flame-slit mask and dark coat, black wings spread, fire trailing. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "King, tall winged warrior in a black leather mask, fire blazing on his back, long katana. dynamic action pose, the figure filling the frame, face clearly visible. in the burning halls of a skull-shaped island fortress. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-066",
       "name": "Kurozumi Orochi",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a pirate-world fighter of the Land of Wano, a calm, reading expression. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kurozumi Orochi, scheming shogun in lavish robes with a fan, giant serpent heads rising behind him. dynamic action pose, the figure filling the frame, face clearly visible. in a lavish golden palace of feudal Japan. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-067",
       "name": "Kurozumi Kanjuro",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a pirate-world fighter of the Land of Wano, a drawn blade catching the light. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Kurozumi Kanjuro, kabuki-faced samurai with an enormous paintbrush, ink monsters leaping from its strokes. dynamic action pose, the figure filling the frame, face clearly visible. on a blood-red moonlit bridge in feudal Japan. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-071",
       "name": "Who's.Who",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a masked figure in a striped coat with feline teeth, twin blades crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Who’s Who, towering saber-tooth tiger man with a zipped mask pulled down, fangs bared. dynamic action pose, the figure filling the frame, face clearly visible. on the roof of a skull-shaped island fortress, a fire dragon overhead. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-072",
       "name": "Black Maria",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a towering woman in an elaborate robe, spider silk trailing from her sleeves. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Black Maria, giant spider-woman in a courtesan kimono with a sly smile, webs stretched between her arms. dynamic action pose, the figure filling the frame, face clearly visible. in a lantern-lit pleasure hall of a skull island fortress. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-079",
       "name": "Monkey.D.Luffy",
       "category": "LEADER",
       "color": "Black",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. full-length hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monkey D. Luffy in his awakened form, wild white hair, white clothes, straw hat, a ring of white cloud-like steam around his shoulders, laughing wildly, rubber limbs bouncing. dynamic action pose, the figure filling the frame, face clearly visible. in a colossal Nordic kingdom of giants, an enormous tree trunk rising behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-082",
       "name": "Sanji",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sanji, blond hair covering one eye, curly eyebrow, sharp black suit and tie, cigarette, one leg raised to kick. dynamic action pose, the figure filling the frame, face clearly visible. in a colossal Nordic kingdom of giants, giant mead halls and snow. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-087",
       "name": "Nico Robin",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Nico Robin, long straight black hair, calm blue eyes, purple coat, arms crossed as extra arms bloom like flower petals. dynamic action pose, the figure filling the frame, face clearly visible. beneath the roots of a colossal tree in a Nordic kingdom of giants. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-090",
       "name": "Franky",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a hulking cyborg shipwright with blue hair and metal forearms, an open shirt, steam venting from his shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Franky, blue pompadour, star-shaped sunglasses on his forehead, huge metal forearms with star tattoos, open floral shirt. dynamic action pose, the figure filling the frame, face clearly visible. in a colossal Nordic kingdom of giants, giant longships in a fjord. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-107",
       "name": "Charlotte Daifuku",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a bearded man in patterned robes, a huge smoke-genie rising from his own shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Charlotte Daifuku, huge bald man with a moustache rubbing his belly as a genie erupts from it. dynamic action pose, the figure filling the frame, face clearly visible. in a candy-coloured island kingdom, a cake chateau behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-109",
       "name": "Charlotte Pudding",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a pirate-world fighter of the Big Mom Pirates, a calm, reading expression. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Charlotte Pudding, girl with short brown hair and a third eye on her forehead, sly smile. dynamic action pose, the figure filling the frame, face clearly visible. in a chocolate town, sweets shops and cocoa rivers. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "OP17-113",
       "name": "Streusen",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a wiry old chef in a tall hat and a long coat, an enormous knife over one shoulder. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Streusen, tiny old chef with a huge white moustache and chef hat, wielding cleavers. dynamic action pose, the figure filling the frame, face clearly visible. in the kitchens of a giant wedding cake, frosting towers. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "P-028",
       "name": "Portgas.D.Ace",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a freckled young man in an open shirt and a wide orange hat, fire curling off his shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Portgas D. Ace, freckles, black wavy hair, orange cowboy hat with a smiley pin, shirtless, red bead necklace, fists blazing with fire. dynamic action pose, the figure filling the frame, face clearly visible. on a small fire-powered boat racing across the sea. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-001",
       "name": "Monkey.D.Luffy",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monkey D. Luffy, black messy hair, straw hat with a red band, scar under his left eye, X-shaped chest scar, open red shirt, blue shorts, yellow sash, straw sandals, stretched rubber arm punching toward the viewer. dynamic action pose, the figure filling the frame, face clearly visible. in a dense tropical jungle, giant leaves and vines, shafts of green light. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-002",
       "name": "Usopp",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a long-nosed marksman in goggles and overalls, a slingshot drawn taut, one eye squeezed shut in aim. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Usopp, long nose, curly black hair under a bandana, sniper goggles, overalls, a huge slingshot drawn back. dynamic action pose, the figure filling the frame, face clearly visible. on the lawn deck of a lion-headed pirate ship at sea, a sniper tower above. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-003",
       "name": "Karoo",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a tall flightless duck in a sailor collar, chest out, absurdly earnest. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Karoo, a big yellow spot-billed duck with a goofy determined face, rider’s saddle on his back, running full tilt, with Nefeltari Vivi on his back. both figures filling the frame, faces clearly visible. racing across desert dunes, a sandstone city behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-004",
       "name": "Sanji",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a lean blond cook in a sharp black suit, one leg raised mid-kick, a curl of cigarette smoke crossing his face. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sanji, blond hair covering one eye, curly eyebrow, sharp black suit and tie, cigarette, one leg raised to kick. dynamic action pose, the figure filling the frame, face clearly visible. in the kitchen of a floating restaurant ship on a bright sea. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-005",
       "name": "Jinbe",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a massive blue whale-shark fish-man in an open patterned kimono, arms folded, calm as deep water. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Jinbe, huge blue whale-shark fish-man, dark topknot, tusks, blue kimono with a haori, stern calm face, fish-man karate stance. dynamic action pose, the figure filling the frame, face clearly visible. riding a surging wave on a fish-man island under the sea, coral and bubbles. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-006",
       "name": "Tony Tony.Chopper",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a small blue-nosed reindeer in a pink brimmed hat and red shorts, hooves braced, far too brave for his size. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Tony Tony Chopper, small reindeer with a blue nose, antlers, pink top hat with a white cross. dynamic action pose, the figure filling the frame, face clearly visible. on a snowy winter island with a castle on the summit. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-007",
       "name": "Nami",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a red-haired navigator in a cropped orange top, a sectioned blue staff across her shoulders, charts fluttering at her belt. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Nami, long orange hair, tattoo on her left shoulder, blue-and-white striped top, a segmented blue weather staff crackling with static. dynamic action pose, the figure filling the frame, face clearly visible. on the wind-swept deck of a small caravel with a ram figurehead. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-008",
       "name": "Nico Robin",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a tall dark-haired archaeologist in a long violet coat, arms crossed, extra arms blossoming out of the stone around her. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Nico Robin, long straight black hair, calm blue eyes, purple coat, arms crossed as extra arms bloom like flower petals. dynamic action pose, the figure filling the frame, face clearly visible. on the canal city docks of a water metropolis, stone bridges behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-009",
       "name": "Nefeltari Vivi",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a blue-haired desert princess in flowing white, twin ringed blades spinning at her wrists. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Nefeltari Vivi, desert princess with a long light-blue ponytail, gold earrings, peacock-slasher bladed strings on her fingers. dynamic action pose, the figure filling the frame, face clearly visible. on the sandstone palace wall of a desert kingdom, silk awnings fluttering. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-010",
       "name": "Franky",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a hulking cyborg shipwright with blue hair and metal forearms, an open shirt, steam venting from his shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Franky, blue pompadour, star-shaped sunglasses on his forehead, huge metal forearms with star tattoos, open floral shirt. dynamic action pose, the figure filling the frame, face clearly visible. in a shipbuilding yard of a water metropolis, dockyard cranes. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-011",
       "name": "Brook",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a towering skeleton in a tailcoat and top hat, a slender cane-sword drawn, an enormous afro. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Brook, tall skeleton gentleman with a black afro, top hat, black tailcoat, cane sword drawn, violin at his side. dynamic action pose, the figure filling the frame, face clearly visible. on a gloomy ghost island at night, a creepy mansion behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-012",
       "name": "Monkey.D.Luffy",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monkey D. Luffy, black messy hair, straw hat with a red band, scar under his left eye, X-shaped chest scar, open red shirt, blue shorts, yellow sash, straw sandals. dynamic action pose, the figure filling the frame, face clearly visible. on the ram figurehead of a small caravel, open blue ocean behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-013",
       "name": "Roronoa Zoro",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Roronoa Zoro, short green hair, scar over his left eye, open green kimono, green haramaki sash, a katana in each hand and one clenched in his teeth. dynamic action pose, the figure filling the frame, face clearly visible. on a navy base execution ground in a seaside town. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-014",
       "name": "Guard Point",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the Animal. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Tony Tony Chopper puffed up into a giant round ball of fur with a tiny pink hat on top. the action filling the frame. on a pirate ship deck as a cannonball bounces off, sparks flying. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-015",
       "name": "Gum-Gum Jet Pistol",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the Supernovas. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monkey D. Luffy in a straw hat, pink steam rising off his skin, firing a blur of a punch. the action filling the frame. in a courthouse island at the end of the world, a waterfall into the void behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-016",
       "name": "Diable Jambe",
       "category": "EVENT",
       "color": "Red",
-      "prompt": "a surge of motion across open water near the Straw Hat Crew. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sanji in a black suit, his raised leg blazing red-hot with fire, spinning kick. the action filling the frame. on a dark courthouse tower at night, embers swirling. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST01-017",
       "name": "Thousand Sunny",
       "category": "STAGE",
       "color": "Red",
-      "prompt": "a place on the sea near the Straw Hat Crew. wide graphic landscape with the horizon low. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "the Thousand Sunny, a pirate ship with a sunflower lion figurehead and a straw-hat jolly roger sail. the place itself is the subject. sailing a sparkling sea at dawn toward a tropical island, wide establishing view. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-001",
       "name": "Eustass\"Captain\"Kid",
       "category": "LEADER",
       "color": "Green",
-      "prompt": "a red-haired brawler with a scavenged metal arm, goggles pushed up, scrap iron rising around him. full-length hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Eustass Kid, spiky red hair, goggles, dark lipstick, fur coat, a giant arm of magnetised scrap metal, scrap metal swirling into a giant arm. dynamic action pose, the figure filling the frame, face clearly visible. in a giant mangrove archipelago with floating soap bubbles, auction house behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-002",
       "name": "Vito",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a young gangster in a chalk-stripe suit and round glasses, twin pistols crossed. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Vito, gangster with a towering greased pompadour and wide grin, pistol raised. dynamic action pose, the figure filling the frame, face clearly visible. on a gloomy fortress-ship deck at night. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-003",
       "name": "Urouge",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a huge grinning monk with a curled top-knot, scarred arms, an enormous mace across his back. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Urouge, giant winged monk with a huge smile, rosary beads, a massive spiked mace. dynamic action pose, the figure filling the frame, face clearly visible. on a gigantic mangrove root, soap bubbles floating up. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-004",
       "name": "Capone\"Gang\"Bege",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a squat pinstriped gangster with a cigar and a fortress silhouette rising behind him. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Capone Bege, short gangster in a pinstripe suit and fedora, cigar, cannon barrels bursting from his coat. dynamic action pose, the figure filling the frame, face clearly visible. in a smoky mob den with a fortress-ship docked outside. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-005",
       "name": "Killer",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a silent figure in a full featureless helmet, long blond hair, two enormous spinning scythe-blades. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Killer, long wild blond hair, striped round mask, twin spinning scythe blades on his wrists. dynamic action pose, the figure filling the frame, face clearly visible. among giant mangrove trunks and floating bubbles. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-006",
       "name": "Koby",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "an earnest pink-haired young officer in a white coat, fists clenched, sea wind at his back. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Koby, pink hair, navy captain’s coat, headband, determined face, punching forward. dynamic action pose, the figure filling the frame, face clearly visible. on a war-torn navy fortress plaza, ice and rubble. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-007",
       "name": "Jewelry Bonney",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a pink-haired young captain in a flat cap and jacket, sprawled over a barrel mid-meal, entirely unbothered. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Jewelry Bonney, long pink hair, green cap, cheeky grin, a pizza slice in one hand. dynamic action pose, the figure filling the frame, face clearly visible. in a giant mangrove archipelago diner, bubbles outside. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-008",
       "name": "Scratchmen Apoo",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a long-armed musician with a wide grin and horn-shaped hair, his own body played like an instrument. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Scratchmen Apoo, a lanky grinning pirate man with very long arms, sharp shark-like teeth, dark hair in two horn-like tufts, gold earrings, long coat, drumming on small drums slung at his hips. dynamic action pose, the figure filling the frame, face clearly visible. on a bubble-covered boardwalk of a mangrove archipelago. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-009",
       "name": "Trafalgar Law",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a tattooed surgeon in a spotted fur hat and long coat, a nodachi resting on his shoulder, shadowed eyes. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Trafalgar Law, spotted white fur hat, goatee, tattooed hands, yellow-and-black hoodie, long nodachi sword. dynamic action pose, the figure filling the frame, face clearly visible. in front of a yellow submarine surfacing, a blue sphere expanding. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-010",
       "name": "Basil Hawkins",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a pale soothsayer with long blond hair and hollow eyes, straw effigies hanging from his sleeves. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Basil Hawkins, long straight blond hair, pale stoic face, long purple coat, straw dolls and tarot cards swirling. dynamic action pose, the figure filling the frame, face clearly visible. in a dim fortune-teller alley of a mangrove archipelago. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-011",
       "name": "Heat",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a lanky crewman with slicked hair and a high collar, blue flame at his lips. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Heat, pale blue-skinned pirate with tall blue hair and stitched mouth, breathing blue fire. dynamic action pose, the figure filling the frame, face clearly visible. on the deck of a ship in a raging sea storm, green-blue fire. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-012",
       "name": "Bepo",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a polite white bear in an orange jumpsuit, standing upright, apologising. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Bepo, white polar bear mink in an orange jumpsuit, martial-arts kick. dynamic action pose, the figure filling the frame, face clearly visible. in a snowy submarine hangar, yellow sub hull behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-013",
       "name": "Eustass\"Captain\"Kid",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a red-haired brawler with a scavenged metal arm, goggles pushed up, scrap iron rising around him. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Eustass Kid, spiky red hair, goggles, dark lipstick, fur coat, a giant arm of magnetised scrap metal. dynamic action pose, the figure filling the frame, face clearly visible. in a feudal Japanese scrapyard at night, magnetic debris orbiting. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-014",
       "name": "X.Drake",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a scarred officer in a feathered captain hat and long coat, a battle-axe in hand, dinosaur bone-plates surfacing along his arm. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "X Drake, scarred chin, black hat with an X, half-transformed into an allosaurus. dynamic action pose, the figure filling the frame, face clearly visible. in a prehistoric jungle island, giant ferns and volcano. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-015",
       "name": "Scalpel",
       "category": "EVENT",
       "color": "Green",
-      "prompt": "a surge of motion across open water near the Supernovas. wide graphic landscape with the horizon low. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Trafalgar Law in a spotted fur hat slicing with a nodachi inside a translucent blue sphere, pieces floating apart. the action filling the frame. on a frozen island battlefield. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-016",
       "name": "Repel",
       "category": "EVENT",
       "color": "Green",
-      "prompt": "a surge of motion across open water near the Supernovas. wide graphic landscape with the horizon low. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Eustass Kid with spiky red hair blasting a wave of scrap metal outward with magnetic force. the action filling the frame. on a skull-shaped fortress rooftop, debris and lightning. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST02-017",
       "name": "Straw Sword",
       "category": "EVENT",
       "color": "Green",
-      "prompt": "a surge of motion across open water near the Supernovas. wide graphic landscape with the horizon low. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Basil Hawkins with long blond hair, his arm transformed into a spiked bundle of straw, slashing. the action filling the frame. in a lantern-lit shrine of feudal Japan. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST04-005",
       "name": "Queen",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a grinning bald brute in a purple coat, mechanical legs, far too pleased with himself. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Queen, obese cyborg with dreadlocks and a cane, part dinosaur, dancing with swagger. dynamic action pose, the figure filling the frame, face clearly visible. in a toxic mining prison of feudal Japan, green smoke. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST04-007",
       "name": "Sheepshead",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a horned brute with ram-curled horns and bladed arms. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Sheepshead, ram-headed pirate with curled horns and a rifle. dynamic action pose, the figure filling the frame, face clearly visible. in a smoky factory district of feudal Japan. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST04-009",
       "name": "Ginrummy",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a sharp-faced woman in a fur collar, a long cigarette holder, cold eyes. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Ginrummy, woman with a panda-eared hood and a giant spiked club. dynamic action pose, the figure filling the frame, face clearly visible. in a wasteland prison gate of feudal Japan. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST04-011",
       "name": "Black Maria",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a towering woman in an elaborate robe, spider silk trailing from her sleeves. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Black Maria, giant spider-woman in a courtesan kimono with a sly smile, webs stretched between her arms. dynamic action pose, the figure filling the frame, face clearly visible. in a burning pagoda of a skull-shaped island fortress. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST06-003",
       "name": "Jango",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a lanky hypnotist in a striped shirt and shades, swinging a pendulum ring. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Jango, lanky hypnotist with heart-shaped sunglasses and a pendulum ring, moonwalking. dynamic action pose, the figure filling the frame, face clearly visible. on a cliffside road of a sleepy seaside village at dawn. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST07-002",
       "name": "Charlotte Anana",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a young woman with a stiff pineapple-shaped hairstyle and an unimpressed stare. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Charlotte Anana, pineapple-haired daughter of the cake-island family with a bright grin. dynamic action pose, the figure filling the frame, face clearly visible. in a bright fruit-candy orchard of a sweet island kingdom. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST12-005",
       "name": "Perona",
       "category": "CHARACTER",
       "color": "Green",
-      "prompt": "a pink-haired girl in a gothic dress with a parasol, small ghosts drifting around her. waist-up hero shot, the figure filling the frame, face clearly visible. flat jade-green sky and stylised wind-bent grass behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Perona, gothic girl with long pink hair, crown, umbrella, and grinning ghosts floating around her. dynamic action pose, the figure filling the frame, face clearly visible. in a misty haunted castle garden, bats at a full moon. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST14-002",
       "name": "Usopp",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a long-nosed marksman in goggles and overalls, a slingshot drawn taut, one eye squeezed shut in aim. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Usopp, long nose, curly black hair under a bandana, sniper goggles, overalls, a huge slingshot drawn back. dynamic action pose, the figure filling the frame, face clearly visible. on a big sea arena under the sun, other ships behind. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST14-012",
       "name": "Monkey.D.Luffy",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a wiry young pirate captain in an open red vest, a battered straw hat slung on his back, bare feet planted wide, grinning into the wind. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monkey D. Luffy, black messy hair, straw hat with a red band, scar under his left eye, X-shaped chest scar, open red shirt, blue shorts, yellow sash, straw sandals, arm cloaked in black haki, punching. dynamic action pose, the figure filling the frame, face clearly visible. on the burning rooftop of a skull-shaped fortress, crimson sky. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST14-013",
       "name": "Roronoa Zoro",
       "category": "CHARACTER",
       "color": "Black",
-      "prompt": "a broad-shouldered swordsman in a dark green coat, a bundle of sheathed katana at his hip, one eye scarred shut, standing perfectly still. waist-up hero shot, the figure filling the frame, face clearly visible. flat charcoal sky and hard diagonal rain streaks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Roronoa Zoro, short green hair, scar over his left eye, open green kimono, green haramaki sash, a katana in each hand and one clenched in his teeth, aura of black flame, blades crossed. dynamic action pose, the figure filling the frame, face clearly visible. on a crumbling skull-shaped fortress roof. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST23-005",
       "name": "Yasopp",
       "category": "CHARACTER",
       "color": "Red",
-      "prompt": "a pirate-world fighter of the Red-Haired Pirates, a weapon levelled at distance. waist-up hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Yasopp, dreadlocked sniper with a bandana and a long musket levelled. dynamic action pose, the figure filling the frame, face clearly visible. on the crow’s nest of a red-sailed pirate ship at sea. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST28-005",
       "name": "Yamato",
       "category": "CHARACTER",
       "color": "Yellow",
-      "prompt": "a tall white-haired warrior with horns and a heavy studded club, a rope belt over bare shoulders. waist-up hero shot, the figure filling the frame, face clearly visible. flat gold sky and stylised radiating cloud bands behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Yamato, tall warrior with long white-and-teal hair, horns, white kimono, a huge spiked club, wolf-like ice spirit. dynamic action pose, the figure filling the frame, face clearly visible. on a snowy mountain of feudal Japan, a wolf spirit howling. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST30-001",
       "name": "Luffy & Ace",
       "category": "LEADER",
       "color": "Red",
-      "prompt": "two young brothers back to back, one in a straw hat and vest, one in an orange wide-brimmed hat, fire and wind between them. full-length hero shot, the figure filling the frame, face clearly visible. flat burning-orange sky and graphic sunburst rays behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Monkey D. Luffy in a straw hat, open red shirt and blue shorts, beside his older brother Portgas D. Ace, shirtless and freckled in an orange cowboy hat with black shorts, side by side facing the viewer with matching grins, Luffy punching and Ace’s fist blazing with fire. both figures filling the frame, faces clearly visible. in a burning undersea prison, flames and shattered iron bars. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     },
     {
       "id": "ST34-003",
       "name": "Charlotte Brulee",
       "category": "CHARACTER",
       "color": "Purple",
-      "prompt": "a thin sharp-faced woman with a wide slit smile, stepping half out of a tall mirror. waist-up hero shot, the figure filling the frame, face clearly visible. flat violet sky and graphic lightning forks behind the figure. painted tropical-adventure key art, rich painterly digital illustration, sun-bleached seas and towering storm skies, bold readable silhouette, saturated primaries with deep shadow, dramatic low sun, loose confident brushwork, dynamic angled hero framing, original character design."
+      "prompt": "Charlotte Brulee, crooked-nosed witch of the cake-island family cackling at a mirror. dynamic action pose, the figure filling the frame, face clearly visible. inside a mirror world of shimmering glass reflections. premium trading card game anime illustration, polished cel shading, thick clean ink outlines, energetic effects, glowing aura, explosive dynamic composition, vivid saturated colour."
     }
   ]
 }
