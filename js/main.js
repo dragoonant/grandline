@@ -11,9 +11,17 @@
     });
     NS.cards.build();
 
-    document.getElementById('btn-log').onclick = function () {
-      document.getElementById('sidebar').classList.toggle('open');
-    };
+    // The log panel used to cover the very button that opened it, with no close control and
+    // only an unadvertised L key to dismiss it. It now has a Close button, Esc closes it, and it
+    // opens below the top bar so the Log button stays reachable as a toggle.
+    function toggleLog(open) {
+      var sb = document.getElementById('sidebar');
+      var on = open === undefined ? !sb.classList.contains('open') : open;
+      sb.classList.toggle('open', on);
+      document.getElementById('btn-log').classList.toggle('on', on);
+    }
+    document.getElementById('btn-log').onclick = function () { toggleLog(); };
+    document.getElementById('btn-log-close').onclick = function () { toggleLog(false); };
     document.getElementById('btn-menu').onclick = function () { NS.screens.show('menu'); };
     document.getElementById('btn-sound').onclick = function (e) {
       e.target.textContent = NS.audio.setMuted(!NS.audio.isMuted()) ? '🔇' : '🔊';
@@ -22,8 +30,11 @@
     document.getElementById('btn-trace').onclick = function () { NS.bugreport.download(); };
 
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') NS.ui.cancel();
-      if (e.key === 'l' || e.key === 'L') document.getElementById('sidebar').classList.toggle('open');
+      if (e.key === 'Escape') {
+        if (document.getElementById('sidebar').classList.contains('open')) { toggleLog(false); return; }
+        NS.ui.cancel();
+      }
+      if (e.key === 'l' || e.key === 'L') toggleLog();
       if (e.key === 'e' || e.key === 'E' || e.key === ' ') {
         if (e.target && /INPUT|TEXTAREA|BUTTON/.test(e.target.tagName)) return;
         e.preventDefault();

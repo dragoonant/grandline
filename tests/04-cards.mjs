@@ -922,3 +922,72 @@ test('Vanilla cards carry no ability and only their printed keywords', (t) => {
     t.eq((c.abilities || []).length, 0, id + ' has no abilities');
   }
 });
+
+// ---------------------------------------------------------------------------------------
+// PLAN.md D8 — never assume a choice.
+// ---------------------------------------------------------------------------------------
+test('D8: a single legal target is still offered, never taken silently', (t) => {
+  const { OP } = t;
+  let s = G(t);
+  const only = H.put(t, s, 1, 'ST02-004');
+  s.players[0].hand = ['OP05-010'];                // K.O. up to 1 with 1000 power or less
+  s = OP.engine.apply(s, { t: 'play', id: 'OP05-010', ix: 0, cost: 1 });
+  t.eq(s.queue[0] && s.queue[0].k, 'choice', 'the one legal target is offered');
+  t.eq(s.queue[0].q.options.length, 1, 'exactly one option');
+  t.eq(s.queue[0].q.options[0].uid, only.uid, 'and it is that card');
+  // A MANDATORY single target ("1 of your Characters", min 1) is asked too.
+  s = G(t);
+  const c = H.put(t, s, 0, 'ST01-003');
+  s.players[0].donRested = 2;
+  H.leader(t, s, 0, 'OP15-058');
+  s.players[0].donDeck = 6;
+  s = OP.engine.apply(s, OP.engine.legalActions(s).find((a) => a.t === 'activate'));
+  t.eq(s.queue[0] && s.queue[0].k, 'choice', 'Enel\'s "give to 1 of your Characters" asks with one Character');
+  t.eq(s.queue[0].q.options[0].uid, c.uid, 'offering that Character');
+});
+
+test('D8: a hand of one is still chosen from when a card must be trashed', (t) => {
+  const { OP } = t;
+  let s = G(t);
+  s.players[0].hand = ['OP16-090'];
+  s.players[0].deck = ['ST01-003', 'OP01-036'].concat(s.players[0].deck);
+  s = OP.engine.apply(s, { t: 'play', id: 'OP16-090', ix: 0, cost: 3 });   // draw 2, trash 2
+  t.eq(s.queue[0].q.kind, 'trash', 'asked which card to trash');
+});
+
+test('D8 / CR 8-3-1-6: the player picks WHICH DON!! cards pay DON!! −X', (t) => {
+  const { OP } = t;
+  let s = G(t);
+  const v = H.put(t, s, 1, 'ST02-006');
+  const z = H.put(t, s, 0, 'ST01-013', { don: 1 });
+  s.players[0].donActive = 2; s.players[0].donRested = 0;
+  s.players[0].hand = ['OP05-077'];                // Gamma Knife, cost 2, DON!! −1
+  s = OP.engine.apply(s, { t: 'event', id: 'OP05-077', ix: 0, cost: 2 });
+  // cost 2 rests both active; the DON!! −1 is offered: pay? then which DON!!.
+  s = OP.engine.apply(s, OP.engine.legalActions(s).find((a) => a.v === 'yes'));
+  const q = s.queue[0].q;
+  t.eq(q.kind, 'donMinus', 'asked which DON!! to return');
+  const vs = q.options.map((o) => o.v);
+  t.ok(vs.includes('__rested'), 'a rested one from the cost area is offered');
+  t.ok(vs.includes(z.uid), 'and the one given to Zoro');
+  s = OP.engine.apply(s, OP.engine.legalActions(s).find((a) => a.v === z.uid));
+  s = H.settle(t, s, H.choose(v.uid));
+  t.eq(H.find(t, s, z).don, 0, 'the DON!! came off Zoro, as chosen');
+  t.eq(s.players[0].donRested, 2, 'the cost area was untouched');
+  t.eq(H.pw(t, s, v), 1000, 'and the effect resolved');
+});
+
+test('D8: a "look at N" with nothing that qualifies still shows the cards', (t) => {
+  const { OP } = t;
+  let s = G(t);
+  s.players[0].deck = Array(8).fill('OP01-036');
+  s.players[0].hand = ['OP01-016'];
+  s = OP.engine.apply(s, { t: 'play', id: 'OP01-016', ix: 0, cost: 1 });
+  t.eq(s.queue[0] && s.queue[0].q.kind, 'deckpick', 'the look is shown');
+  t.eq(s.queue[0].q.seen.length, 5, 'with all five cards');
+  t.eq(s.queue[0].q.options.length, 0, 'none of them takeable');
+  const acts = OP.engine.legalActions(s);
+  t.eq(acts.length, 1, 'the only action is to acknowledge');
+  s = OP.engine.apply(s, acts[0]);
+  t.eq(s.players[0].hand.length, 0, 'nothing added');
+});

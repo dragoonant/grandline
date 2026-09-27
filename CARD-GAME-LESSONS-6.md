@@ -267,6 +267,22 @@ And write the grep: an effect that says "look at", "reveal" or "your opponent's 
 render its cards, and the gate should fail a question with a `seen` list that the UI ignores.
 The same list, with the zone names changed, applies to every card game this series will build.
 
+## 9.1a NEVER ASSUME A CHOICE — not a target, not a payment. (Owner's note — every project.)
+
+The second half of the same failure. The choice door "helpfully" took the options without asking
+whenever there were no more of them than it needed: a single legal target was hit silently, a
+hand of one was trashed without a prompt, a "look at 5" with no qualifier never appeared at all,
+and "DON!! −1" chose the DON!! for the player. **The player then cannot tell what just happened
+to which card, and the game is making the player's decisions.** In this game the DON!! choice is
+a real one: stripping a given DON!! can switch off a [DON!! xN] effect, and returning an active
+one costs a play.
+
+The rule for every future project: **the choice door has no auto-take path.** If the rules say
+the player chooses, the player is asked, with one option or with fifty. The only things not
+asked are the ones that are not choices — "this card", "that card", "all of" — and a reactive
+window with nothing legal in it. Put it in PLAN.md as a decision on day one (here, D8), and test
+it with a single-target case, because every other test passes either way.
+
 ## 9.2 One cost door, or costs quietly stop being paid
 
 Costs were paid in three different places and missed in four more. Events paid only the DON!!

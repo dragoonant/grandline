@@ -38,13 +38,19 @@
     if (max < min) throw new Error('offerChoice: max < min');
     var options = opts.options || [];
 
-    // Fewer legal options than `min`: take them all and do not ask. This is also PLAN.md D4 —
-    // a window with no real choice is never shown.
-    if (options.length <= min) return options.map(function (o) { return o.v; });
+    // PLAN.md D8 — NEVER ASSUME A CHOICE. Even a single legal option is shown and confirmed, so
+    // the player always knows which card an effect touched. This used to take the options
+    // without asking whenever there were no more of them than `min`, and a forced single target
+    // resolved silently. The only thing skipped is a question with nothing to choose from,
+    // unless the caller has cards to SHOW regardless (a "look at N" with no qualifier).
+    if (!options.length && !opts.showEmpty) return [];
 
     var picked = [];
     var pool = options.slice();
-    while (picked.length < max && pool.length) {
+    var shown = false;
+    while (picked.length < max && (pool.length || (opts.showEmpty && !shown))) {
+      shown = true;
+      if (!pool.length && picked.length) break;
       var ans = ask(s, {
         kind: opts.kind || 'target',
         ctrl: opts.ctrl,

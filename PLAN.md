@@ -10,7 +10,8 @@ the Status every session.
 **Per-card audit done.** Every card in a registered deck was read literally and played on a board
 (`tests/04-cards.mjs`, suite 25 → 103). Eight engine bugs and four compiler bugs fixed, and open
 information is now viewable: both trash piles, every card a "look at N" shows you, and a log that
-names what either player reveals or trashes. Details in `CARD-GAME-LESSONS-6.md` §9. Art was
+names what either player reveals or trashes. Details in `CARD-GAME-LESSONS-6.md` §9. Then D8: no choice is ever assumed — single targets are
+confirmed and the player picks which DON!! pay DON!! −X. The log panel gained a Close button. Art was
 re-rendered in the owner's chosen style the same day (D3).
 
 ## Status — 2026-09-26 (overnight run, unsupervised)
@@ -131,3 +132,14 @@ ST-01 Straw Hat Crew against ST-02 Worst Generation, both complete 51-card produ
 Leader / Character / Event / Stage, DON!!, blockers, counters, triggers and life. The engine is
 proven on those before a meta deck is authored. **If the night runs short the cut is deck
 count, never quality** — a finished four-deck game beats ten half-authored ones.
+
+
+### D8 — Never assume a choice · 2026-09-27 · owner
+**Every choice the rules give the player is shown to the player, even when there is only one
+option.** A single legal target is offered and confirmed, never taken silently; a "look at N" is
+shown even when nothing qualifies; the player picks which DON!! cards pay "DON!! −X" (CR 8-3-1-6),
+one at a time, from active or rested DON!! in the cost area or DON!! given to a named card; an
+effect with no legal target says so in the log. One door enforces it: `offerChoice` in
+`js/engine.js` has no auto-take path. Not a choice, and so not asked: "this Character" and "that
+card" (the text names the card), "all of" (every match), and the NUMBER of indistinguishable DON!!
+an "up to N" DON!! effect moves. Reactive windows with zero legal options stay skipped (D4).

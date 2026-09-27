@@ -48,14 +48,6 @@ divergence and it is invisible to the player, which is why it is written down he
 When several `[End of Your Turn]` effects resolve together the turn player may choose the order.
 The engine resolves them in board order. It matters only when two such effects interact.
 
-
-## D-7 — Which DON!! cards pay "DON!! −X" is not offered · CR 8-3-1-6
-
-The player should select the DON!! cards returned, from the Leader area, Character area and cost
-area. The engine takes rested ones from the cost area first, then active ones, then given ones.
-That is never worse for the player than any other selection, which is why it has not been made a
-question, but it is not the rule as written.
-
 ---
 
 ## Not deviations, recorded so they are not mistaken for one

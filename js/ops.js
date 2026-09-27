@@ -78,6 +78,14 @@
     var cands = candidates(s, ctx, sel);
     // "all of ..." chooses nothing: every match is affected (OP17-022 Shanks).
     if (sel && sel.all) { ctx.lastPicked = cands.map(function (u) { return u.uid; }); return cands; }
+    // "this Character" and "that card" are not selections — the text names the card.
+    if (sel && (sel.onlySelf || sel.prevTarget)) { ctx.lastPicked = cands.map(function (u) { return u.uid; }); return cands; }
+    // Nothing legal to choose: say so, rather than resolve in silence.
+    if (!cands.length) {
+      NS.log.push(s, 'effect.noTarget', { seat: ctx.ctrl, id: ctx.cardId || null, prompt: prompt || '' });
+      ctx.lastPicked = [];
+      return [];
+    }
     var min = sel.min === undefined ? 1 : sel.min;
     var max = sel.max === undefined ? Math.max(min, 1) : sel.max;
     var chosen = E.offerChoice(s, {
@@ -215,12 +223,16 @@
     // CR 8-4-4-4 — the player looks at every card's face, including the ones they may not take,
     // so the question carries all of them. It used to carry only the eligible ones, and the
     // player never saw what they were putting on the bottom.
-    var chosen = eligible.length && op.add ? E.offerChoice(s, {
-      kind: 'deckpick', ctrl: ctx.ctrl, source: ctx.self, seen: seen.slice(),
-      prompt: 'Add up to ' + (op.add || 1) + ' card to your hand',
-      options: eligible.map(function (id, i) { return { v: id + '#' + i, label: S.card(id).name, cardId: id }; }),
-      min: 0, max: op.add || 1
-    }) : [];
+    // Shown even when nothing qualifies — the player still looked at those cards (PLAN.md D8).
+    var chosen = E.offerChoice(s, {
+      kind: 'deckpick', ctrl: ctx.ctrl, source: ctx.self, seen: seen.slice(), showEmpty: true,
+      prompt: !op.add ? 'You looked at these cards; they go to the bottom of your deck'
+        : eligible.length ? 'Add up to ' + op.add + ' card to your hand'
+        : 'None of these qualify — they all go to the bottom of your deck',
+      options: (op.add ? eligible : []).map(function (id, i) { return { v: id + '#' + i, label: S.card(id).name, cardId: id }; }),
+      min: 0, max: Math.max(1, op.add || 0)
+    }).filter(function (v) { return v !== '__done'; });
+    if (!op.add) chosen = [];
     var taken = chosen.map(function (v) { return v.split('#')[0]; });
     taken.forEach(function (id) {
       var at = p.deck.indexOf(id);
@@ -368,19 +380,30 @@
     NS.log.push(s, 'cost.restDon', { seat: ctx.ctrl, n: op.n });
   };
 
+  // CR 8-3-1-6 — "DON!! −X": the PLAYER selects X DON!! cards from their Leader area, Character
+  // area and cost area and returns them to the DON!! deck. One card at a time, through the
+  // choice door, and asked even when only one source is left (PLAN.md D8). The engine used to
+  // pick for the player, and the choice matters: stripping a given DON!! can switch off a
+  // [DON!! xN] effect, and returning an active one costs a play this turn.
   H.payDonMinus = function (s, ctx, op) {
-    // CR 8-3-1-6 — return that many DON!! from the Leader area, Character area and cost area.
-    // The player selects which; the engine takes RESTED ones first, which is never worse for
-    // the player than any other selection (DEVIATIONS.md D-7).
     var p = s.players[ctx.ctrl];
-    var left = op.n;
-    var take = Math.min(left, p.donRested); p.donRested -= take; left -= take;
-    take = Math.min(left, p.donActive); p.donActive -= take; left -= take;
-    [p.leader].concat(p.chars).forEach(function (u) {
-      var t = Math.min(left, u.don); u.don -= t; left -= t;
-    });
-    p.donDeck += op.n - left;
-    NS.log.push(s, 'cost.donMinus', { seat: ctx.ctrl, n: op.n - left });
+    for (var k = 0; k < op.n; k++) {
+      var opts = [];
+      if (p.donActive > 0) opts.push({ v: '__active', label: 'An ACTIVE DON!! in your cost area (' + p.donActive + ')' });
+      if (p.donRested > 0) opts.push({ v: '__rested', label: 'A RESTED DON!! in your cost area (' + p.donRested + ')' });
+      [p.leader].concat(p.chars).forEach(function (u) {
+        if (u.don > 0) opts.push({ v: u.uid, uid: u.uid, label: 'A DON!! given to ' + S.card(u.id).name + ' (' + u.don + ')' });
+      });
+      if (!opts.length) break;
+      var got = E.offerChoice(s, { kind: 'donMinus', ctrl: ctx.ctrl, source: ctx.self, cardId: ctx.cardId,
+                                   prompt: 'Return a DON!! card to your DON!! deck (' + (k + 1) + ' of ' + op.n + ')',
+                                   options: opts, min: 1, max: 1 })[0];
+      if (got === '__active') p.donActive -= 1;
+      else if (got === '__rested') p.donRested -= 1;
+      else { var gu = S.findUnit(s, got); if (gu && gu.don > 0) gu.don -= 1; else throw new Error('payDonMinus: no DON!! on ' + got); }
+      p.donDeck += 1;
+      NS.log.push(s, 'cost.donMinus', { seat: ctx.ctrl, n: 1, from: got.charAt(0) === '_' ? got.slice(2) : got });
+    }
   };
 
   H.payRestSelf = function (s, ctx) {

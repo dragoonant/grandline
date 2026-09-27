@@ -59,9 +59,9 @@
   // CARD-LOG-AND-TARGETING-SPEC §2 — log by player index, translate to second person last.
   var LOGLINE = {
     'game.start': function () { return 'The game begins.'; },
-    'mulligan.redraw': function (e) { return who(e.seat) + ' redrew.'; },
-    'mulligan.keep': function (e) { return who(e.seat) + ' kept the opening hand.'; },
-    'life.set': function (e) { return who(e.seat) + ' set ' + e.data.n + ' Life.'; },
+    'mulligan.redraw': function (e) { return who(e.data.seat) + ' redrew.'; },
+    'mulligan.keep': function (e) { return who(e.data.seat) + ' kept the opening hand.'; },
+    'life.set': function (e) { return who(e.data.seat) + ' set ' + e.data.n + ' Life.'; },
     'phase.main': function (e) { return '─ Turn ' + e.data.turn + ', ' + who(e.data.seat) + ' ─'; },
     'phase.don': function (e) { return who(e.data.seat) + ' took ' + e.data.n + ' DON!!.'; },
     'card.drawn': function (e) { return who(e.data.seat) + ' drew ' + e.data.n + '.'; },
@@ -94,6 +94,12 @@
     'life.toHand': function (e) { return who(e.data.seat) + ' added a Life card to hand — ' + e.data.left + ' Life left.'; },
     'don.added': function (e) { return who(e.data.seat) + ' added ' + e.data.n + ' DON!!' + (e.data.rested ? ' (rested)' : '') + '.'; },
     'ability.activated': function (e) { return nm(e.data.id) + ' activated its effect.'; },
+    'effect.noTarget': function (e) { return (e.data.id ? nm(e.data.id) + ': ' : '') + 'no legal target, so that part does nothing.'; },
+    'cost.donMinus': function (e) {
+      var f = e.data.from;
+      return who(e.data.seat) + ' returned a DON!! ' + (f === 'active' ? 'from the cost area (active)'
+        : f === 'rested' ? 'from the cost area (rested)' : 'given to ' + unm(f)) + ' to the DON!! deck.';
+    },
     'power.mod': function (e) { return unm(e.data.uid) + ' ' + (e.data.n >= 0 ? '+' : '−') + Math.abs(e.data.n) + ' power.'; },
     'unit.rested': function (e) { return unm(e.data.uid) + ' was rested.'; },
     'unit.active': function (e) { return unm(e.data.uid) + ' was set active.'; },
@@ -433,10 +439,17 @@
       }
       var o4 = el('div', 'modal-opts');
       acts.filter(function (a) { return a.t === 'choose' && a.v !== '__done'; }).forEach(function (a) {
-        var wrap = el('div', 'opt-card');
         var cid = a.cardId || (a.uid && S.findUnit(state, a.uid) && S.findUnit(state, a.uid).id);
-        if (cid) wrap.appendChild(NS.render.render(S.card(cid), 'board', {}));
-        else wrap.appendChild(el('div', 'cap', a.label));
+        // An option with a card shows the card; one without (Pay / Decline, a DON!! in the cost
+        // area) is a real button. It used to be a tiny caption printed twice.
+        if (!cid) {
+          var ob = el('button', 'opt-btn' + (a.v === 'yes' ? ' primary' : ''), a.label);
+          ob.onclick = function () { commit(a); };
+          o4.appendChild(ob);
+          return;
+        }
+        var wrap = el('div', 'opt-card');
+        wrap.appendChild(NS.render.render(S.card(cid), 'board', {}));
         wrap.appendChild(el('div', 'cap', a.label));
         wrap.onclick = function () { commit(a); };
         o4.appendChild(wrap);
