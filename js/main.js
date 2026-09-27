@@ -24,6 +24,11 @@
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') NS.ui.cancel();
       if (e.key === 'l' || e.key === 'L') document.getElementById('sidebar').classList.toggle('open');
+      if (e.key === 'e' || e.key === 'E' || e.key === ' ') {
+        if (e.target && /INPUT|TEXTAREA|BUTTON/.test(e.target.tagName)) return;
+        e.preventDefault();
+        NS.ui.endTurn();
+      }
     });
     // Any first gesture satisfies the autoplay policy; refusal before that is "wait".
     ['pointerdown', 'keydown'].forEach(function (ev) {

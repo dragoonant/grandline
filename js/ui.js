@@ -111,6 +111,43 @@
   // ---------------------------------------------------------------------------------------
   // Affordances. Everything below reads legalActions and nothing else.
   // ---------------------------------------------------------------------------------------
+
+  // Some actions are clicked ON a card; the rest need a button. This decides which is which by
+  // asking the ACTION rather than from a hand-written list of buttons, so a legal action can
+  // never again exist in the rules with nowhere to click.
+  //
+  // End Turn had no control at all. legalActions offered it from the first commit, the AI used
+  // it every turn, 25 tests exercised it — and no human could press it, because every one of
+  // those paths goes through apply() and none of them goes through the screen. This is
+  // CLAUDE.md hard rule 15 in one bug: green tests plus a page you cannot play.
+  var CARD_BOUND = { play: 1, event: 1, attack: 1, giveDon: 1, activate: 1, choose: 1 };
+
+  var ACTION_LABEL = {
+    endTurn: 'End turn',
+    noBlock: 'Do not block',
+    noCounter: 'Done countering',
+    keepHand: 'Keep this hand',
+    redraw: 'Redraw'
+  };
+
+  function renderActionBar(acts) {
+    var bar = document.getElementById('actions');
+    if (!bar) return;
+    bar.textContent = '';
+    acts.filter(function (a) { return !CARD_BOUND[a.t]; }).forEach(function (a) {
+      var b = el('button', a.t === 'endTurn' ? 'primary' : null,
+                 ACTION_LABEL[a.t] || a.label || a.t);
+      if (a.t === 'endTurn') b.title = 'End your turn  (E, or Space)';
+      b.onclick = function () { commit(a); };
+      bar.appendChild(b);
+    });
+  }
+
+  function clearActionBar() {
+    var bar = document.getElementById('actions');
+    if (bar) bar.textContent = '';
+  }
+
   function myActions() {
     if (state.winner !== null) return [];
     if (E.whoActs(state) !== you) return [];
@@ -121,6 +158,7 @@
     var acts = myActions();
     var head = state.queue[0];
 
+    clearActionBar();
     if (head) { promptEl.textContent = headPrompt(head, acts); if (E.whoActs(state) === you) showModal(head, acts); return; }
     if (E.whoActs(state) !== you) { promptEl.textContent = 'The opponent is taking their turn…'; return; }
 
@@ -128,6 +166,7 @@
     if (pendingAttacker) return wireAttack(acts);
 
     promptEl.textContent = 'Your Main Phase — play a card, give DON!!, attack, or end the turn.';
+    renderActionBar(acts);
 
     // Hand: a card you can pay for is actable; any card can be inspected.
     var handCards = root.querySelectorAll('#hand .card[data-card-id]');
@@ -431,6 +470,13 @@
 
   function cancel() { if (pendingAttacker) { pendingAttacker = null; render(); } else closeModal(); }
 
-  NS.ui = { init: init, setState: setState, render: render, cancel: cancel,
+  // E, or Space. js/main.js binds them; this is the only thing that decides whether ending is
+  // legal right now, so the shortcut cannot end a turn the rules would not.
+  function endTurn() {
+    var end = myActions().filter(function (a) { return a.t === 'endTurn'; })[0];
+    if (end) commit(end);
+  }
+
+  NS.ui = { init: init, setState: setState, render: render, cancel: cancel, endTurn: endTurn,
             get state() { return state; }, get you() { return you; } };
 }(window.OP = window.OP || {}));

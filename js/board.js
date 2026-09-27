@@ -101,6 +101,12 @@
     var prompt = el('div', null, '');
     prompt.id = 'prompt';
     mid.appendChild(prompt);
+    // Every legal action that is NOT attached to a card on the board goes here. js/ui.js fills
+    // it straight from legalActions, so an action can never again exist in the rules with
+    // nowhere to click — which is exactly how End Turn went missing.
+    var actions = el('div', null, '');
+    actions.id = 'actions';
+    mid.appendChild(actions);
     b.appendChild(mid);
 
     b.appendChild(sideNode(s, youSeat, true));
