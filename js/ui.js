@@ -42,6 +42,7 @@
     promptEl = document.getElementById('prompt');
     renderLog();
     renderTop();
+    wireTrash();
     wire();
     if (state.winner !== null) showResult();
   }
@@ -81,6 +82,18 @@
     'life.banished': function (e) { return who(e.data.seat) + '’s Life card was banished — ' + e.data.left + ' left.'; },
     'trigger.used': function (e) { return 'Trigger! ' + nm(e.data.id) + '.'; },
     'trigger.declined': function () { return 'The Trigger was declined.'; },
+    // What a player reveals or trashes is public (CR 3-5-2, 2-7-2), so the log names it.
+    'deck.looked': function (e) {
+      var r = (e.data.revealed || []).map(nm);
+      return who(e.data.seat) + ' looked at ' + e.data.n + ' cards' +
+        (r.length ? ', revealed ' + r.join(', ') + ' and added it to hand' : ' and took none') + '.';
+    },
+    'deck.revealed': function (e) { return who(e.data.seat) + ' revealed ' + e.data.ids.map(nm).join(', ') + ' from the top of the deck.'; },
+    'card.trashed': function (e) { return who(e.data.seat) + ' trashed ' + nm(e.data.id) + ' from hand.'; },
+    'cost.declined': function (e) { return who(e.data.seat) + ' chose not to pay for ' + nm(e.data.id) + '.'; },
+    'life.toHand': function (e) { return who(e.data.seat) + ' added a Life card to hand — ' + e.data.left + ' Life left.'; },
+    'don.added': function (e) { return who(e.data.seat) + ' added ' + e.data.n + ' DON!!' + (e.data.rested ? ' (rested)' : '') + '.'; },
+    'ability.activated': function (e) { return nm(e.data.id) + ' activated its effect.'; },
     'power.mod': function (e) { return unm(e.data.uid) + ' ' + (e.data.n >= 0 ? '+' : '−') + Math.abs(e.data.n) + ' power.'; },
     'unit.rested': function (e) { return unm(e.data.uid) + ' was rested.'; },
     'unit.active': function (e) { return unm(e.data.uid) + ' was set active.'; },
@@ -152,6 +165,37 @@
     if (state.winner !== null) return [];
     if (E.whoActs(state) !== you) return [];
     try { return E.legalActions(state); } catch (e) { return []; }
+  }
+
+  // CR 3-5-2 — both trash piles are open information, available whatever else is going on.
+  // Closing the viewer re-renders, which re-opens any prompt that was waiting underneath.
+  function wireTrash() {
+    [].forEach.call(root.querySelectorAll('.trash-view'), function (b) {
+      b.onclick = function () { viewTrash(+b.dataset.seat); };
+    });
+  }
+
+  function viewTrash(seat) {
+    var p = state.players[seat];
+    var box = el('div', 'modal-box');
+    box.appendChild(el('div', 'modal-title', (seat === you ? 'Your' : 'The opponent’s') + ' trash — ' +
+                       p.trash.length + ' card' + (p.trash.length === 1 ? '' : 's')));
+    box.appendChild(el('div', 'modal-sub', p.trash.length
+      ? 'Newest first. The trash is face-up: either player may look at it at any time.'
+      : 'Nothing has been trashed yet.'));
+    var o = el('div', 'modal-opts trash-grid');
+    p.trash.slice().reverse().forEach(function (id) {
+      var wrap = el('div', 'opt-card');
+      var n = NS.render.render(S.card(id), 'board', {});
+      hover(n);
+      wrap.appendChild(n);
+      o.appendChild(wrap);
+    });
+    box.appendChild(o);
+    var close = el('button', 'primary', 'Close');
+    close.onclick = function () { closeModal(); render(); };
+    var row = el('div', 'row'); row.appendChild(close); box.appendChild(row);
+    openModal(box);
   }
 
   function wire() {
@@ -361,7 +405,32 @@
     if (head.k === 'choice') {
       box.appendChild(el('div', 'modal-title', head.q.prompt || 'Choose'));
       box.appendChild(el('div', 'modal-sub',
-        head.q.min === 0 ? 'You may choose none.' : 'You must choose.'));
+        head.q.kind === 'confirm' ? 'The card says "you may" — paying is your choice. Decline and its effect does not happen.'
+          : head.q.min === 0 ? 'You may choose none.' : 'You must choose.'));
+      // Whose effect is asking. A yes/no about a cost means nothing without the card.
+      var srcId = head.q.cardId || (head.q.source && S.findUnit(state, head.q.source) && S.findUnit(state, head.q.source).id);
+      if (head.q.kind === 'confirm' && srcId) {
+        var so = el('div', 'modal-opts');
+        so.appendChild(NS.render.render(S.card(srcId), 'preview', {}));
+        box.appendChild(so);
+      }
+      // CR 8-4-4-4 — a "look at N" shows the player every card's face, not only the takeable ones.
+      if (head.q.seen && head.q.seen.length) {
+        var takeable = {};
+        acts.forEach(function (a) { if (a.cardId) takeable[a.cardId] = true; });
+        box.appendChild(el('div', 'modal-sub', 'You looked at these ' + head.q.seen.length +
+          ' cards from the top of your deck. Dimmed cards do not qualify; the rest go to the bottom.'));
+        var sn = el('div', 'modal-opts seen-row');
+        head.q.seen.forEach(function (id) {
+          var w = el('div', 'opt-card' + (takeable[id] ? '' : ' dim'));
+          var n = NS.render.render(S.card(id), 'board', {});
+          hover(n);
+          w.appendChild(n);
+          sn.appendChild(w);
+        });
+        box.appendChild(sn);
+        box.appendChild(el('div', 'modal-sub', 'Choose the card to add to your hand:'));
+      }
       var o4 = el('div', 'modal-opts');
       acts.filter(function (a) { return a.t === 'choose' && a.v !== '__done'; }).forEach(function (a) {
         var wrap = el('div', 'opt-card');

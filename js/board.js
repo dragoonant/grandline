@@ -34,7 +34,12 @@
     w.appendChild(el('div', null, NS.names.term('don') + ' ' + p.donActive + '/' +
                      (p.donActive + p.donRested) + '  (deck ' + p.donDeck + ')'));
     w.appendChild(donRow(p.donActive, p.donRested));
-    w.appendChild(el('div', null, NS.names.term('trash') + ': ' + p.trash.length));
+    // CR 3-5-2 — the trash is an OPEN area: either player may view either trash at any time.
+    // It used to be a bare count, so nothing the opponent trashed could ever be looked at.
+    var tr = el('button', 'trash-view', NS.names.term('trash') + ': ' + p.trash.length + ' — view');
+    tr.dataset.seat = String(seat);
+    tr.title = 'Look at every card in ' + (mine ? 'your' : "the opponent's") + ' trash';
+    w.appendChild(tr);
     return w;
   }
 

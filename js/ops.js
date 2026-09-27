@@ -46,6 +46,7 @@
       if (sel.powerMax !== undefined && pw > sel.powerMax) return false;
       if (sel.powerMin !== undefined && pw < sel.powerMin) return false;
       if (sel.basePowerMin !== undefined && (c.power === null || c.power < sel.basePowerMin)) return false;
+      if (sel.basePowerMax !== undefined && !(c.power !== null && c.power <= sel.basePowerMax)) return false;
       if (sel.type && c.types.indexOf(sel.type) < 0) return false;
       if (sel.types && !sel.types.some(function (t) { return c.types.indexOf(t) >= 0; })) return false;
       if (sel.color && c.color.indexOf(sel.color) < 0) return false;
@@ -60,6 +61,9 @@
       })) return false;
       // "A or B" written as two alternative selectors sharing one filter.
       if (sel.anyOf && !sel.anyOf.some(function (alt) {
+        // An alternative may be narrower than the whole selector: OP02-024 Moby Dick reaches your
+        // [Edward.Newgate] Leader or Character, but only CHARACTERS by type.
+        if (alt.of && alt.of.indexOf(S.isLeader(s, u) ? 'leader' : 'character') < 0) return false;
         if (alt.names && alt.names.indexOf(c.name) >= 0) return true;
         if (alt.typeIncludes && c.types.some(function (ty) {
           return ty.toLowerCase().indexOf(alt.typeIncludes.toLowerCase()) >= 0;
@@ -72,6 +76,8 @@
 
   function pick(s, ctx, sel, prompt) {
     var cands = candidates(s, ctx, sel);
+    // "all of ..." chooses nothing: every match is affected (OP17-022 Shanks).
+    if (sel && sel.all) { ctx.lastPicked = cands.map(function (u) { return u.uid; }); return cands; }
     var min = sel.min === undefined ? 1 : sel.min;
     var max = sel.max === undefined ? Math.max(min, 1) : sel.max;
     var chosen = E.offerChoice(s, {
@@ -167,6 +173,10 @@
   // its [Trigger] resolves, so the engine hands the id in rather than moving it from a zone.
   H.playSelf = function (s, ctx) {
     if (!ctx.cardId) throw new Error('playSelf: no cardId in context');
+    // CR 10-1-5-3 — "trash that card unless otherwise specified". Playing it IS otherwise
+    // specified; the Trigger step reads this marker instead of trashing a card that is on the
+    // field. Without it every "[Trigger] Play this card." put one card in two places.
+    s._playedSelf = ctx.cardId;
     E.playCardFree(s, ctx.ctrl, ctx.cardId);
   };
 
@@ -202,8 +212,11 @@
       if (op.excludeName && c.name === op.excludeName) return false;   // CR 2-1-2
       return true;
     });
-    var chosen = eligible.length ? E.offerChoice(s, {
-      kind: 'deckpick', ctrl: ctx.ctrl, source: ctx.self,
+    // CR 8-4-4-4 — the player looks at every card's face, including the ones they may not take,
+    // so the question carries all of them. It used to carry only the eligible ones, and the
+    // player never saw what they were putting on the bottom.
+    var chosen = eligible.length && op.add ? E.offerChoice(s, {
+      kind: 'deckpick', ctrl: ctx.ctrl, source: ctx.self, seen: seen.slice(),
       prompt: 'Add up to ' + (op.add || 1) + ' card to your hand',
       options: eligible.map(function (id, i) { return { v: id + '#' + i, label: S.card(id).name, cardId: id }; }),
       min: 0, max: op.add || 1
@@ -220,7 +233,8 @@
     taken.forEach(function (id) { var i = rest.indexOf(id); if (i >= 0) rest.splice(i, 1); });
     p.deck = p.deck.slice(rest.length);
     p.deck = p.deck.concat(rest);
-    NS.log.push(s, 'deck.looked', { seat: ctx.ctrl, n: op.n, took: taken.length });
+    // "reveal up to 1 ... and add it" — the revealed card is public; the rest are not.
+    NS.log.push(s, 'deck.looked', { seat: ctx.ctrl, n: op.n, took: taken.length, revealed: taken.slice() });
   };
 
   // "Play up to 1 {type} card with a cost of N or less from your hand."
@@ -355,11 +369,13 @@
   };
 
   H.payDonMinus = function (s, ctx, op) {
-    // CR 10-2-10-1 — return that many DON!! from the field and the cost area to the DON!! deck.
+    // CR 8-3-1-6 — return that many DON!! from the Leader area, Character area and cost area.
+    // The player selects which; the engine takes RESTED ones first, which is never worse for
+    // the player than any other selection (DEVIATIONS.md D-7).
     var p = s.players[ctx.ctrl];
     var left = op.n;
-    var take = Math.min(left, p.donActive); p.donActive -= take; left -= take;
-    take = Math.min(left, p.donRested); p.donRested -= take; left -= take;
+    var take = Math.min(left, p.donRested); p.donRested -= take; left -= take;
+    take = Math.min(left, p.donActive); p.donActive -= take; left -= take;
     [p.leader].concat(p.chars).forEach(function (u) {
       var t = Math.min(left, u.don); u.don -= t; left -= t;
     });
@@ -370,6 +386,70 @@
   H.payRestSelf = function (s, ctx) {
     var u = S.findUnit(s, ctx.self);
     if (u) { u.rested = true; NS.log.push(s, 'cost.restSelf', { uid: u.uid }); }
+  };
+
+  // "trash 1 card (with a [Trigger]) from your hand" as a cost.
+  H.payTrashHand = function (s, ctx, op) {
+    E.trashFromHand(s, ctx.ctrl, op.n, op.withTrigger ? E.hasTrigger : null);
+  };
+
+  // "rest 1 of your cards" (OP14-020 Mihawk) — Leader, Character, Stage, or an active DON!!.
+  H.payRestOwn = function (s, ctx, op) {
+    var p = s.players[ctx.ctrl];
+    for (var r = 0; r < op.n; r++) {
+      var pool = [p.leader].concat(p.chars, p.stage ? [p.stage] : [])
+        .filter(function (x) { return !x.rested; })
+        .map(function (x) { return { v: x.uid, label: S.card(x.id).name, uid: x.uid }; });
+      if (p.donActive > 0) pool.push({ v: '__don', label: 'an active DON!! card' });
+      var got = E.offerChoice(s, { kind: 'cost', ctrl: ctx.ctrl, source: ctx.self,
+                                   prompt: 'Rest one of your cards to pay for this',
+                                   options: pool, min: 1, max: 1 })[0];
+      if (got === '__don') { p.donActive -= 1; p.donRested += 1; }
+      else { var pu = S.findUnit(s, got); if (pu) pu.rested = true; }
+      NS.log.push(s, 'cost.restOwn', { seat: ctx.ctrl });
+    }
+  };
+
+  // THE ONE COST DOOR — CR 8-3-1. Every activation cost is paid through this op at the front of
+  // its effect's invocation, so paying can ask questions and a declined or unpayable cost stops
+  // the effect after the colon (CR 8-3-1-3, 8-3-1-4). Before it existed, Event, Counter and
+  // Trigger costs were never paid at all, and "You may" costs on auto effects were taken
+  // without asking.
+  var COST_TEXT = {
+    restDon: function (c) { return 'rest ' + c.n + ' DON!!'; },
+    donMinus: function (c) { return 'return ' + c.n + ' DON!! to your DON!! deck'; },
+    restSelf: function () { return 'rest this card'; },
+    trashHand: function (c) { return 'trash ' + c.n + ' card' + (c.n === 1 ? '' : 's') + (c.withTrigger ? ' with a [Trigger]' : '') + ' from your hand'; },
+    restOwn: function (c) { return 'rest ' + c.n + ' of your cards'; }
+  };
+  H.cost = function (s, ctx, op) {
+    var u = S.findUnit(s, ctx.self);
+    if (!E.canAfford(s, ctx.ctrl, u || { rested: true }, { cost: op.costs })) { ctx.stop = true; return; }
+    if (op.optional) {
+      var yes = E.offerChoice(s, {
+        kind: 'confirm', ctrl: ctx.ctrl, source: ctx.self, cardId: ctx.cardId,
+        prompt: 'Pay the cost? (' + op.costs.map(function (c) { return COST_TEXT[c.k](c); }).join(', ') + ')',
+        options: [{ v: 'yes', label: 'Pay: ' + op.costs.map(function (c) { return COST_TEXT[c.k](c); }).join(', ') },
+                  { v: 'no', label: 'Decline' }],
+        min: 1, max: 1
+      })[0];
+      if (yes !== 'yes') {
+        ctx.stop = true;
+        // CR 8-3-1-4 — declining means the effect was not activated, so a [Once Per Turn]
+        // effect is still available (OP17-058 Kaido may pay on the NEXT attack instead).
+        if (ctx.onceKey && u) u.onceUsed[ctx.onceKey] = false;
+        NS.log.push(s, 'cost.declined', { seat: ctx.ctrl, id: ctx.cardId });
+        return;
+      }
+    }
+    op.costs.forEach(function (c) {
+      if (c.k === 'restDon') H.payRestDon(s, ctx, c);
+      else if (c.k === 'donMinus') H.payDonMinus(s, ctx, c);
+      else if (c.k === 'restSelf') H.payRestSelf(s, ctx, c);
+      else if (c.k === 'trashHand') H.payTrashHand(s, ctx, c);
+      else if (c.k === 'restOwn') H.payRestOwn(s, ctx, c);
+      else throw new Error('cost: unknown activation cost "' + c.k + '"');
+    });
   };
 
   // =======================================================================================
@@ -394,7 +474,7 @@
       return selText(rest).replace(/(Characters?|Leaders?)/, alts + ' $1');
     }
     var min = sel.min === undefined ? 1 : sel.min, max = sel.max === undefined ? min : sel.max;
-    var qty = min === 0 ? 'up to ' + max : max > 1 ? max : '1';
+    var qty = sel.all ? 'all' : min === 0 ? 'up to ' + max : max > 1 ? max : '1';
     var who = sel.side === 'you' ? 'your' : sel.side === 'opp' ? "your opponent's" : '';
     var what = (sel.of || ['character']).map(function (k) {
       return k === 'leader' ? 'Leader' : k === 'stage' ? 'Stage' : 'Character';
@@ -415,9 +495,10 @@
     if (sel.powerMax !== undefined) tail.push('with ' + sel.powerMax + ' power or less');
     if (sel.powerMin !== undefined) tail.push('with ' + sel.powerMin + ' power or more');
     if (sel.basePowerMin !== undefined) tail.push('with ' + sel.basePowerMin + ' base power or more');
+    if (sel.basePowerMax !== undefined) tail.push('with ' + sel.basePowerMax + ' base power or less');
     if (sel.costMin !== undefined) tail.push('with a cost of ' + sel.costMin + ' or more');
     if (sel.notSelf) tail.push('other than this card');
-    return (qty + ' of ' + who + ' ' + bits.join(' ') + ' ' + what + (max > 1 ? 's' : '') +
+    return (qty + ' of ' + who + ' ' + bits.join(' ') + ' ' + what + (max > 1 || sel.all ? 's' : '') +
             (tail.length ? ' ' + tail.join(' ') : '')).replace(/\s+/g, ' ').trim();
   }
 
@@ -494,6 +575,11 @@
   D.payRestDon = function (op) { return 'rest ' + op.n + ' DON!! card' + (op.n === 1 ? '' : 's'); };
   D.payDonMinus = function (op) { return 'DON!! \u2212' + op.n; };
   D.payRestSelf = function () { return 'rest this card'; };
+  D.payTrashHand = function (op) { return 'trash ' + op.n + ' card' + (op.n === 1 ? '' : 's') + ' from your hand'; };
+  D.payRestOwn = function (op) { return 'rest ' + op.n + ' of your cards'; };
+  D.cost = function (op) {
+    return (op.optional ? 'You may ' : '') + op.costs.map(function (c) { return COST_TEXT[c.k](c); }).join(' and ');
+  };
   D.playFromHand = function (op) {
     return 'Play up to ' + (op.n || 1) + ' ' + (op.type ? '{' + op.type + '} type ' : '') +
       'card' + (op.costMax !== undefined ? ' with a cost of ' + op.costMax + ' or less' : '') + ' from your hand';
@@ -503,6 +589,7 @@
   function run(s, ctx, ops) {
     if (!S) bind();
     for (var i = 0; i < ops.length; i++) {
+      if (ctx.stop) break;                       // a cost was declined or could not be paid
       var op = ops[i];
       var h = H[op.k];
       if (!h) throw new Error('ops.run: no handler for op "' + op.k + '"');

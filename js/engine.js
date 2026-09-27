@@ -53,7 +53,9 @@
         options: pool.slice(),
         canStop: picked.length >= min,
         already: picked.slice(),
-        min: min, max: max
+        min: min, max: max,
+        seen: opts.seen,                        // CR 8-4-4-4 — every card the player looked at
+        cardId: opts.cardId
       });
       if (ans === '__done') break;
       picked.push(ans);
@@ -75,7 +77,8 @@
     trial._ans = (inv.answers || []).slice();
     trial._ansIdx = 0;
     try {
-      NS.ops.run(trial, { ctrl: inv.ctrl, self: inv.self, cardId: inv.cardId, src: inv.src }, inv.ops);
+      NS.ops.run(trial, { ctrl: inv.ctrl, self: inv.self, cardId: inv.cardId, src: inv.src,
+                          onceKey: inv.onceKey }, inv.ops);
       delete trial._ans; delete trial._ansIdx;
       return afterEffect(trial);
     } catch (e) {
@@ -123,13 +126,23 @@
     return s;
   }
 
-  function trashFromHand(s, seat, n) {
+  function hasTrigger(id) {
+    return (S.card(id).abilities || []).some(function (a) { return a.when === 'trigger'; });
+  }
+
+  // `filter` narrows which cards qualify: "trash 1 card with a [Trigger] from your hand".
+  function trashFromHand(s, seat, n, filter) {
     var p = s.players[seat];
     for (var i = 0; i < n && p.hand.length; i++) {
+      var opts = [];
+      p.hand.forEach(function (id, ix) {
+        if (!filter || filter(id)) opts.push({ v: id + '#' + ix, label: S.card(id).name, cardId: id });
+      });
+      if (!opts.length) break;
       // The owner chooses which card to trash (CR 10-2-14). One card at a time through the door.
       var chosen = offerChoice(s, {
         kind: 'trash', ctrl: seat, prompt: 'Trash a card from your hand',
-        options: p.hand.map(function (id, ix) { return { v: id + '#' + ix, label: S.card(id).name, cardId: id }; }),
+        options: opts,
         min: 1, max: 1
       });
       var id = String(chosen[0]).split('#')[0];
@@ -199,6 +212,12 @@
   // Auto effects — CR 8-1-3-1. The engine collects matching abilities and runs them in turn.
   // A mandatory one runs; an optional one becomes a yes/no through the choice door.
   // =======================================================================================
+  // Leader, Characters and Stage, in that order: every card on a player's field with a timing.
+  function fieldOf(s, seat) {
+    var p = s.players[seat];
+    return [p.leader].concat(p.chars.slice(), p.stage ? [p.stage] : []);
+  }
+
   function abilitiesOf(u) {
     var c = S.card(u.id);
     return (c.abilities || []).slice();
@@ -225,6 +244,16 @@
           return s.players[seat].chars.some(function (x) {
             var cc = S.card(x.id); return cc.cost !== null && cc.cost >= cd.n;
           });
+        // "If there is a Character ..." names no player: either field (CR 3-1-2-1 defines only
+        // "you have"). OP14-020 Mihawk and the OP17 Elbaph Characters read this way.
+        case 'anyCharCostAtLeast':
+          return s.players[0].chars.concat(s.players[1].chars).some(function (x) {
+            var cc = S.card(x.id); return cc.cost !== null && cc.cost >= cd.n;
+          });
+        case 'anyCharBasePowerAtLeast':
+          return s.players[0].chars.concat(s.players[1].chars).some(function (x) {
+            var cc = S.card(x.id); return cc.power !== null && cc.power >= cd.n;
+          });
         case 'haveCharBasePowerAtLeast':
           return s.players[seat].chars.some(function (x) {
             var cc = S.card(x.id); return cc.power !== null && cc.power >= cd.n;
@@ -248,22 +277,28 @@
   // and its effect are one atomic run and a question asked while paying replays cleanly.
   // Without this an auto effect resolved for free: OP17-058 Kaido's DON!! -1 was never taken,
   // which only became visible once the timing itself started firing.
-  function costOps(ab) {
-    return (ab.cost || []).map(function (c) {
-      if (c.k === 'restDon') return { k: 'payRestDon', n: c.n };
-      if (c.k === 'donMinus') return { k: 'payDonMinus', n: c.n };
-      if (c.k === 'restSelf') return { k: 'payRestSelf' };
-      if (c.k === 'trashHand') return { k: 'trashHand', n: c.n };
-      throw new Error('costOps: unknown activation cost "' + c.k + '"');
-    });
+  //
+  // `ask` says whether to offer the payment as a yes/no. An activated ([Activate: Main]) effect
+  // never asks: choosing to activate it IS the choice. Everything else asks when the text says
+  // "you may", and DON!! −X always prints "(You may return ...)" (CR 8-3-1-4, 8-3-1-6).
+  function costOps(ab, ask) {
+    if (!ab.cost || !ab.cost.length) return [];
+    var optional = !!ask && (!!ab.optional || ab.cost.some(function (c) { return c.k === 'donMinus'; }));
+    return [{ k: 'cost', costs: ab.cost, optional: optional }];
   }
 
   function canAfford(s, seat, u, ab) {
     var p = s.players[seat];
     return (ab.cost || []).every(function (c) {
       if (c.k === 'restDon') return p.donActive >= c.n;            // CR 8-3-1-3
-      if (c.k === 'trashHand') return p.hand.length >= c.n;
+      if (c.k === 'trashHand') {
+        return p.hand.filter(function (id) { return !c.withTrigger || hasTrigger(id); }).length >= c.n;
+      }
       if (c.k === 'restSelf') return u.rested === false;
+      if (c.k === 'restOwn') {
+        return [p.leader].concat(p.chars, p.stage ? [p.stage] : [])
+          .filter(function (x) { return !x.rested; }).length + p.donActive >= c.n;
+      }
       if (c.k === 'donMinus') {
         return p.donActive + p.donRested + p.leader.don +
                p.chars.reduce(function (a, x) { return a + x.don; }, 0) >= c.n;
@@ -280,12 +315,15 @@
     var abs = abilitiesOf(u).filter(function (a) { return a.when === when; });
     for (var i = 0; i < abs.length; i++) {
       var ab = abs[i];
-      if (!condsMet(s, u, ab, info)) continue;
+      // The unit may already have left the field ([On K.O.]), so the seat comes from the caller.
+      // Without the hint condsMet found no seat and every [On K.O.] effect silently did nothing.
+      if (!condsMet(s, u, ab, info, seat)) continue;
       if (!canAfford(s, seat, u, ab)) continue;              // CR 8-3-1-3
       if (ab.once && u.onceUsed[when + i]) continue;         // CR 10-2-13
       if (ab.once) u.onceUsed[when + i] = true;
       var out = execute(s, { ctrl: seat, self: u.uid, cardId: u.id, src: u.uid,
-                             ops: costOps(ab).concat(ab.ops), answers: [] });
+                             onceKey: ab.once ? when + i : null,
+                             ops: costOps(ab, true).concat(ab.ops), answers: [] });
       // execute() returns a new state; copy it back onto `s` so callers keep their reference.
       Object.keys(out).forEach(function (k) { s[k] = out[k]; });
     }
@@ -313,6 +351,7 @@
     if (p.stage) p.stage.rested = false;
     p.donActive += p.donRested; p.donRested = 0;
     p.leader.onceUsed = {}; p.chars.forEach(function (u) { u.onceUsed = {}; });
+    if (p.stage) p.stage.onceUsed = {};
     NS.log.push(s, 'phase.refresh', { seat: seat });
 
     // CR 6-3-1 — draw 1. The player going first does not draw on their first turn.
@@ -337,10 +376,11 @@
     NS.log.push(s, 'phase.end', { seat: seat });
 
     // CR 6-6-1-1 — [End of Your Turn] then [End of Your Opponent's Turn].
-    s.players[seat].chars.concat([s.players[seat].leader]).forEach(function (u) {
+    // A Stage carries timings too (CR 3-8); it used to be skipped by every timing loop.
+    fieldOf(s, seat).forEach(function (u) {
       fireAuto(s, 'endOfYourTurn', { unit: u, seat: seat });
     });
-    s.players[1 - seat].chars.concat([s.players[1 - seat].leader]).forEach(function (u) {
+    fieldOf(s, 1 - seat).forEach(function (u) {
       fireAuto(s, 'endOfOpponentTurn', { unit: u, seat: 1 - seat });
     });
 
@@ -380,8 +420,11 @@
     // to the card being attacked: the Leader may carry it while a Character is the target.
     // OP17-058 Kaido prints it as the second half of a dual timing.
     var dSeat = 1 - seat;
-    [s.players[dSeat].leader].concat(s.players[dSeat].chars.slice()).forEach(function (u) {
-      if (S.findUnit(s, u.uid)) fireAuto(s, 'onOpponentAttack', { unit: u, seat: dSeat });
+    // OP17-057 Fullalead is a STAGE with this timing, and the loop used to skip Stages.
+    fieldOf(s, dSeat).forEach(function (u) {
+      if (S.findUnit(s, u.uid) || (s.players[dSeat].stage && s.players[dSeat].stage.uid === u.uid)) {
+        fireAuto(s, 'onOpponentAttack', { unit: u, seat: dSeat });
+      }
     });
 
     if (gone(s)) return endBattle(s);                          // CR 7-1-1-4
@@ -549,7 +592,7 @@
   NS.engine = {
     enqueue: enqueue,
     offerChoice: offerChoice, execute: execute, draw: draw, trashFromHand: trashFromHand,
-    koUnit: koUnit, playCardFree: playCardFree, fireAuto: fireAuto, condsMet: condsMet, costOps: costOps, canAfford: canAfford,
+    koUnit: koUnit, playCardFree: playCardFree, hasTrigger: hasTrigger, fieldOf: fieldOf, fireAuto: fireAuto, condsMet: condsMet, costOps: costOps, canAfford: canAfford,
     beginTurn: beginTurn, endTurn: endTurn, declareAttack: declareAttack,
     openBlockStep: openBlockStep, openCounterStep: openCounterStep, damageStep: damageStep,
     dealLeaderDamage: dealLeaderDamage, lifeToHand: lifeToHand, endBattle: endBattle, blockers: blockers,

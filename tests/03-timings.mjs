@@ -66,9 +66,13 @@ test('CR 8-3-1: an AUTO effect pays its activation cost', (t) => {
 
   let out = OP.engine.apply(s, { t: 'attack', uid: a.uid, target: s.players[1].chars[0].uid });
   const before = out.players[1].donActive + out.players[1].donRested;
-  // Answer the parked target question; the cost runs at the front of the same invocation.
-  const acts = OP.engine.legalActions(out);
-  out = OP.engine.apply(out, acts[0]);
+  // DON!! −1 prints "(You may return ...)", so the defender is asked first (CR 8-3-1-4); then the
+  // target. The cost runs at the front of the same invocation.
+  t.eq(out.queue[0].q.kind, 'confirm', 'the optional cost is offered, not taken');
+  out = OP.engine.apply(out, OP.engine.legalActions(out).find((a) => a.v === 'yes'));
+  while (out.queue[0] && out.queue[0].k === 'choice') {
+    out = OP.engine.apply(out, OP.engine.legalActions(out).find((a) => a.v !== '__done'));
+  }
   const after = out.players[1].donActive + out.players[1].donRested;
   t.eq(after, before - 1, 'DON!! -1 was actually taken (it used to resolve for free)');
   t.ok(out.log.some((e) => e.tag === 'cost.donMinus'), 'and the payment is in the log');

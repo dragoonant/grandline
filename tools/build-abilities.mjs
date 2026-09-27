@@ -69,7 +69,10 @@ function parseSel(raw, { defaultSide = 'any' } = {}) {
   const sel = {};
 
   let m = t.match(/\bup to (\d+)\b/i);
-  if (m) { sel.min = 0; sel.max = +m[1]; }
+  // "all of your opponent's Characters" — every match, no choice. `all` used to be stripped
+  // as filler, so OP17-022 Shanks rested ONE Character where the card rests them all.
+  if (/^\s*all\b/i.test(t)) { sel.min = 0; sel.max = 99; sel.all = true; }
+  else if (m) { sel.min = 0; sel.max = +m[1]; }
   else {
     m = t.match(/^\s*(\d+)\s+of\b/i);
     if (m) { sel.min = +m[1]; sel.max = +m[1]; } else { sel.min = 1; sel.max = 1; }
@@ -106,6 +109,9 @@ function parseSel(raw, { defaultSide = 'any' } = {}) {
   m = t.match(/with (\d+) power or less/i);               if (m) sel.powerMax = +m[1];
   m = t.match(/with (\d+) power or more/i);               if (m) sel.powerMin = +m[1];
   m = t.match(/with (\d+) base power or more/i);          if (m) sel.basePowerMin = +m[1];
+  // The KNOWN list below strips "base power or less", so without this line the filter was
+  // consumed and dropped: EB01-010 compiled as "K.O. up to 1 of your opponent's Characters".
+  m = t.match(/with (\d+) base power or less/i);          if (m) sel.basePowerMax = +m[1];
   if (/other than this card/i.test(t)) sel.notSelf = true;
   m = t.match(/\[(Blocker)\]/i);                          if (m) sel.hasKw = 'blocker';
 
@@ -238,6 +244,17 @@ function parseClause(raw) {
   if (/^you cannot play Character cards during this turn$/i.test(t))
     return [{ k: 'lockPlay', what: 'CHARACTER' }];
 
+  // "your [Name] and all your Characters with a type including "X" gain +N power" — OP02-024
+  // Moby Dick. Two alternative identities under one grant; parsed as one selector it demanded
+  // BOTH the name and the type, and matched nothing.
+  if ((m = t.match(/^your \[([^\]]+)\] and all (?:of )?your Characters with a type including "([^"]+)" gains? ([+-])(\d+) power(?: (.+))?$/i))) {
+    const until = m[5] ? DUR(m[5]) : 'turn';
+    if (!until) return null;
+    return [{ k: 'power', n: (m[3] === '-' ? -1 : 1) * +m[4], until,
+              sel: { side: 'you', of: ['leader', 'character'], min: 0, max: 99, all: true,
+                     anyOf: [{ names: [m[1]] }, { typeIncludes: m[2], of: ['character'] }] } }];
+  }
+
   // "your {A} or {B} type Leaders and Characters gain +N power" — the plural form.
   if ((m = t.match(/^(.+?) gain ([+-])(\d+) power(?: (.+))?$/i))) {
     const n2 = (m[2] === '-' ? -1 : 1) * +m[3];
@@ -332,7 +349,9 @@ function parseClause(raw) {
 
   // lookAdd's second sentence. "Then, place the rest at the bottom of your deck in any order"
   // describes what lookAdd already does (CR 11-3-3), so it contributes no ops of its own.
-  if (/^place the rest at the (?:bottom|top) of your deck in any order$/i.test(t)) return [];
+  // Only the BOTTOM form: lookAdd puts the rest at the bottom, so reading "top" here would be
+  // a silent divergence. The top form stays a refusal until lookAdd takes a destination.
+  if (/^place the rest at the bottom of your deck in any order$/i.test(t)) return [];
 
   // "Look at N cards from the top of your deck and place them at the top or bottom of your deck
   //  in any order." — a pure look with no take.
@@ -509,10 +528,14 @@ function parseLine(line) {
     conds.push({ k: 'lifeAtMost', n: +cm[1] }); t = t.slice(cm[0].length);
   } else if ((cm = t.match(/^If you have (\d+) or more Life cards?,\s*/i))) {
     conds.push({ k: 'lifeAtLeast', n: +cm[1] }); t = t.slice(cm[0].length);
-  } else if ((cm = t.match(/^If (?:you have|there is) an? Character with a cost of (\d+) or more,\s*/i))) {
-    conds.push({ k: 'haveCharCostAtLeast', n: +cm[1] }); t = t.slice(cm[0].length);
-  } else if ((cm = t.match(/^If (?:you have|there is) an? Character with (\d+) base power or more,\s*/i))) {
-    conds.push({ k: 'haveCharBasePowerAtLeast', n: +cm[1] }); t = t.slice(cm[0].length);
+  } else if ((cm = t.match(/^If (you have|there is) an? Character with a cost of (\d+) or more,\s*/i))) {
+    // CR 3-1-2-1 — "you have" is YOUR field. "There is" names no player, so it is either
+    // field: OP14-020 Mihawk counts the opponent's cost 5 Character. These were one condition.
+    conds.push({ k: /there/i.test(cm[1]) ? 'anyCharCostAtLeast' : 'haveCharCostAtLeast', n: +cm[2] });
+    t = t.slice(cm[0].length);
+  } else if ((cm = t.match(/^If (you have|there is) an? Character with (\d+) base power or more,\s*/i))) {
+    conds.push({ k: /there/i.test(cm[1]) ? 'anyCharBasePowerAtLeast' : 'haveCharBasePowerAtLeast', n: +cm[2] });
+    t = t.slice(cm[0].length);
   } else if ((cm = t.match(/^If it is your second turn or later,\s*/i))) {
     conds.push({ k: 'turnAtLeast', n: 2 }); t = t.slice(cm[0].length);
   } else if ((cm = t.match(/^If this Character battles your opponent's (Character|Leader),\s*/i))) {

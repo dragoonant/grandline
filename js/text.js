@@ -36,14 +36,18 @@
     donOnFieldAtLeast: function (c) { return 'If you have ' + c.n + ' or more DON!! cards on your field,'; },
     battled: function (c) { return 'If this Character battles your opponent’s ' + (c.what === 'leader' ? 'Leader' : 'Character') + ','; },
     lifeAtLeast: function (c) { return 'If you have ' + c.n + ' or more Life cards,'; },
-    haveCharCostAtLeast: function (c) { return 'If there is a Character with a cost of ' + c.n + ' or more,'; },
+    // "you have" is your field; "there is" is either field. This prose used to say "there is"
+    // for the your-field condition, which is how the auditor missed that the two were merged.
+    haveCharCostAtLeast: function (c) { return 'If you have a Character with a cost of ' + c.n + ' or more,'; },
+    anyCharCostAtLeast: function (c) { return 'If there is a Character with a cost of ' + c.n + ' or more,'; },
+    anyCharBasePowerAtLeast: function (c) { return 'If there is a Character with ' + c.n + ' base power or more,'; },
     haveCharBasePowerAtLeast: function (c) { return 'If you have a Character with ' + c.n + ' base power or more,'; },
     turnAtLeast: function (c) { return 'If it is turn ' + c.n + ' or later,'; }
   };
 
   var COSTS = {
     restDon: function (c) { return 'rest ' + c.n + ' DON!! card' + (c.n === 1 ? '' : 's'); },
-    trashHand: function (c) { return 'trash ' + c.n + ' card' + (c.n === 1 ? '' : 's') + ' from your hand'; },
+    trashHand: function (c) { return 'trash ' + c.n + ' card' + (c.n === 1 ? '' : 's') + (c.withTrigger ? ' with a [Trigger]' : '') + ' from your hand'; },
     restSelf: function () { return 'rest this card'; },
     donMinus: function (c) { return 'DON!! −' + c.n; },
     restOwn: function (c) { return 'rest ' + c.n + ' of your cards'; }

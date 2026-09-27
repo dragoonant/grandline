@@ -236,9 +236,75 @@ Recorded because they cost an hour each and are invariant.
 4. **Build the animation layer.** Five projects have now deferred it; project 5 measured it at
    about an hour.
 
+
+# 9. Added 2026-09-27 — the per-card audit, and the rule this series keeps forgetting
+
+The owner asked for every card in a registered deck to be read literally and made to do exactly
+what it says. `tests/04-cards.mjs` puts each of the 150 cards on a board and plays it through
+`apply()`. **22 of its first 78 tests failed, on a build whose 25 tests, auditor and page gate
+were all green.** Eight of those were engine bugs that touched every deck.
+
+## 9.1 OPEN INFORMATION IS A RULE. Build the viewers on day one. (Owner's note — every project.)
+
+The owner has seen this in every game of the series: **the player is never given a way to look
+at what the rules let them look at.** Here the trash was a bare count, a "look at 5" showed only
+the cards you were allowed to take, and nothing the opponent revealed or trashed was ever named.
+None of it is a UI nicety. Each one is a numbered rule, and a game that hides open information
+plays differently from the real one.
+
+Before the first playable build, go through the rules' zone list and give every zone its viewer:
+
+| What | Rule (OPTCG) | What the player must be able to do |
+|---|---|---|
+| Both trash piles | CR 3-5-2 open | open either one, any time, even mid-prompt |
+| Card counts in every zone | CR 3-1-4 | see hand, deck, Life, DON!! deck and trash counts for both sides |
+| "Look at N cards" | CR 8-4-4-4 | see **all N** faces, with the ones that do not qualify dimmed |
+| A card revealed by an effect | CR 2-7-2, 10-1-5 | have it named (log) and visible; this includes the opponent's |
+| A card trashed as a cost | CR 3-5-2 | have it named, and findable in the trash afterwards |
+| The opponent's hand, deck and Life | CR 3-4-3, 3-2-2, 3-10-2 | see **nothing** except counts, unless an effect says otherwise |
+
+And write the grep: an effect that says "look at", "reveal" or "your opponent's hand" must
+render its cards, and the gate should fail a question with a `seen` list that the UI ignores.
+The same list, with the zone names changed, applies to every card game this series will build.
+
+## 9.2 One cost door, or costs quietly stop being paid
+
+Costs were paid in three different places and missed in four more. Events paid only the DON!!
+printed in the corner, so `DON!! −1` on OP05-077 and "rest 5 DON!!" on OP17-056 were free;
+[Counter] and [Trigger] costs were never paid; "You may" costs on auto effects were taken without
+asking (CR 8-3-1-4); and a cost with a choice in it (which card to trash) ran OUTSIDE an
+invocation and froze the game. The fix was one `cost` op, run at the front of the effect's own
+invocation, that checks affordability, asks "pay this?" when the card says *may*, and stops the
+effect after the colon when declined. **Every effect-kind now goes through it.** Add a grep for
+any `ab.ops` executed without `costOps(ab)` in front of it.
+
+## 9.3 A describer that writes the right words for the wrong condition hides a merge
+
+"If you have a Character" and "If there is a Character" compiled to ONE condition (yours only).
+The auditor never saw it because the describer for that condition said *"If there is"*, which
+matched every print that says "there is". Mihawk's Leader could not be activated off the
+opponent's cost-5 Character. **When two phrasings compile to one op, the describer can only be
+right for one of them — the auditor needs a check that each op's prose is unique.**
+
+## 9.4 The rest of what the per-card tests found
+
+- **[Trigger] "Play this card" put the card in two places**: on the field and in the trash. Nine
+  cards in the pool.
+- **[On K.O.] never fired.** The engine asked where the card was *after* it had left the field.
+- **Counter Events with a target resolved after the damage.** The Counter step was re-queued in
+  front of the Event's own question (CR 8-6-1).
+- **Stages were skipped by every timing loop**, so OP17-057 Fullalead did nothing.
+- **"All of" was stripped as filler**: OP17-022 Shanks rested one Character, not all of them.
+- **Two alternative identities parsed as one selector** matched nothing: OP02-024 Moby Dick.
+- **"with a [Trigger]" was dropped from a cost**, so any card paid it.
+
+The pattern across all of them: *both sides of an existing test came from the same ability data*
+(§4), and no test had ever put the printed card on a board and checked the outcome. **Write one
+behaviour test per printed card before calling a card pool done.**
+
 ---
 
-*Suite green at 25 tests; `check-pages` clean; `check-art` clean at 147 entries;
+*(Written at handoff; see §9 for the 2026-09-27 audit — suite now 103 tests.)* *Suite green at 25 tests; `check-pages` clean; `check-art` clean at 147 entries;
 `audit-cards` at 0 FAIL / 9 WARN; `data/defects.js` empty; all twelve decks legal and offered.*
 
 *And the line that matters most, carried forward for a sixth time: **get something playable in

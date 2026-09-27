@@ -260,3 +260,11 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   .side { grid-template-columns: 6.5rem 1fr 6.5rem; }
   #sidebar { width: 100%; }
 }
+
+/* Open-information viewers: both trash piles, and every card a "look at N" showed you. */
+.trash-view { font: inherit; font-size: .74rem; text-align: left; padding: .15rem .4rem;
+  background: rgba(255,255,255,.05); color: var(--ink-dim); border: 1px solid rgba(255,255,255,.14);
+  border-radius: 6px; cursor: pointer; }
+.trash-view:hover { color: var(--ink); border-color: var(--gold); }
+.trash-grid { max-height: 60vh; overflow-y: auto; }
+.opt-card.dim { opacity: .38; filter: grayscale(.7); cursor: default; }

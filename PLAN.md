@@ -5,6 +5,14 @@ the Status every session.
 
 ---
 
+## Status — 2026-09-27
+
+**Per-card audit done.** Every card in a registered deck was read literally and played on a board
+(`tests/04-cards.mjs`, suite 25 → 103). Eight engine bugs and four compiler bugs fixed, and open
+information is now viewable: both trash piles, every card a "look at N" shows you, and a log that
+names what either player reveals or trashes. Details in `CARD-GAME-LESSONS-6.md` §9. Art was
+re-rendered in the owner's chosen style the same day (D3).
+
 ## Status — 2026-09-26 (overnight run, unsupervised)
 
 **It is playable.** Open `index.html`, or `node tools/serve.mjs`. Twelve decks, an AI opponent,

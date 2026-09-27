@@ -149,52 +149,11 @@
     return out.concat(o.chars.filter(function (u) { return u.rested; }));
   }
 
-  function canPayCost(s, seat, u, ab) {
-    var p = s.players[seat];
-    return (ab.cost || []).every(function (c) {
-      switch (c.k) {
-        case 'restDon':   return p.donActive >= c.n;            // CR 8-3-1-5
-        case 'trashHand': return p.hand.length >= c.n;
-        case 'restSelf':  return u.rested === false;
-        case 'donMinus':  return (p.donActive + p.donRested +
-                                  p.leader.don + p.chars.reduce(function (a, x) { return a + x.don; }, 0)) >= c.n;
-        case 'restOwn':   return [p.leader].concat(p.chars, p.stage ? [p.stage] : [])
-                                 .filter(function (x) { return !x.rested; }).length >= c.n;
-        default: throw new Error('canPayCost: unknown cost "' + c.k + '"');
-      }
-    });
-  }
-
-  function payCost(s, seat, u, ab) {
-    var p = s.players[seat];
-    (ab.cost || []).forEach(function (c) {
-      if (c.k === 'restDon') { p.donActive -= c.n; p.donRested += c.n; }
-      else if (c.k === 'trashHand') { E.trashFromHand(s, seat, c.n); }
-      else if (c.k === 'restSelf') { u.rested = true; }
-      else if (c.k === 'restOwn') {
-        // "rest N of your cards" — the player chooses which, through the one choice door.
-        for (var r = 0; r < c.n; r++) {
-          var pool = [p.leader].concat(p.chars, p.stage ? [p.stage] : [])
-                      .filter(function (x) { return !x.rested; });
-          if (!pool.length) break;
-          var got = E.offerChoice(s, {
-            kind: 'cost', ctrl: seat, prompt: 'Rest one of your cards to pay for this',
-            options: pool.map(function (x) { return { v: x.uid, label: S.card(x.id).name, uid: x.uid }; }),
-            min: 1, max: 1
-          });
-          var pickU = S.findUnit(s, got[0]);
-          if (pickU) pickU.rested = true;
-        }
-      }
-      else if (c.k === 'donMinus') {
-        var left = c.n;
-        var take = Math.min(left, p.donActive); p.donActive -= take; left -= take;
-        take = Math.min(left, p.donRested); p.donRested -= take; left -= take;
-        p.donDeck += c.n - left;                                // CR 10-2-10-1 — back to the DON!! deck
-      }
-    });
-    return s;
-  }
+  // One affordability check for every kind of effect: js/engine.js canAfford. This file had its
+  // own copy, and its own payCost that asked questions OUTSIDE an invocation — any cost with a
+  // choice in it (ST02-001 Kid's trash-1, OP14-020 Mihawk's rest-1) threw OP_NEED_CHOICE out of
+  // apply() and froze the game.
+  function canPayCost(s, seat, u, ab) { return E.canAfford(s, seat, u, ab); }
 
   // =======================================================================================
   // apply — deep-copies and returns a new state. Never mutates. CLAUDE.md hard rule 2.
@@ -278,8 +237,11 @@
         var ab = (c.abilities || []).filter(function (x) { return x.when === 'counter'; })[0];
         s.queue.shift();
         var after = E.execute(s, { ctrl: defSeat, self: s.battle.target, cardId: id,
-                                   src: null, ops: ab.ops, answers: [] });
-        after.queue.unshift({ k: 'counter', ctrl: defSeat });   // the loop re-offers itself
+                                   src: null, ops: E.costOps(ab, true).concat(ab.ops), answers: [] });
+        // The loop re-offers itself — BEHIND any question the Event parked (CR 8-6-1). It was
+        // unshifted in front, so "Done countering" ran the Damage Step before the Event's own
+        // target was chosen, and a Counter Event with a target never saved anything.
+        E.enqueue(after, { k: 'counter', ctrl: defSeat });
         return resumeAfterEffect(after);
       }
 
@@ -291,15 +253,17 @@
           var tab = (tc.abilities || []).filter(function (x) { return x.when === 'trigger'; })[0];
           NS.log.push(s, 'trigger.used', { id: cardId });
           var st = E.execute(s, { ctrl: tSeat, self: null, cardId: cardId, src: null,
-                                  ops: tab.ops, answers: [] });
+                                  ops: E.costOps(tab, true).concat(tab.ops), answers: [] });
           // CR 10-1-5-3 — after the [Trigger] resolves, trash the card unless told otherwise.
+          // "Play this card" is told otherwise, and only when it actually ran (a declined cost
+          // on OP08-104 Poire leaves the card to be trashed).
           if (!st.queue.length || st.queue[0].k !== 'choice') {
-            if (!tab.keepsCard) st.players[tSeat].trash.push(cardId);
+            var kept = st._playedSelf === cardId; delete st._playedSelf;
+            if (!kept) st.players[tSeat].trash.push(cardId);
             if (more > 0) return E.dealLeaderDamage(st, tSeat, more, h.banish);
             return E.endBattle(st);
           }
-          st._afterTrigger = { seat: tSeat, cardId: cardId, more: more, banish: h.banish,
-                               keeps: !!tab.keepsCard };
+          st._afterTrigger = { seat: tSeat, cardId: cardId, more: more, banish: h.banish };
           return st;
         }
         tp.hand.push(cardId);                                   // CR 10-1-5-2
@@ -317,7 +281,8 @@
     if (s.queue.length && s.queue[0].k === 'choice') return s;
     if (s._afterTrigger) {
       var t = s._afterTrigger; delete s._afterTrigger;
-      if (!t.keeps) s.players[t.seat].trash.push(t.cardId);
+      var kept = s._playedSelf === t.cardId; delete s._playedSelf;
+      if (!kept) s.players[t.seat].trash.push(t.cardId);
       if (t.more > 0) return E.dealLeaderDamage(s, t.seat, t.more, t.banish);
       return E.endBattle(s);
     }
@@ -351,18 +316,21 @@
         p.trash.push(a.id);                                     // trashed BEFORE it resolves
         NS.log.push(s, 'event.played', { seat: seat, id: a.id, cost: ec.cost });
         var eab = (ec.abilities || []).filter(function (x) { return x.when === 'main'; })[0];
+        // CR 8-4-1-3 — the Event's own activation cost (OP05-077 DON!! −1, OP17-056 rest 5) is
+        // paid through the one cost door. It used to be skipped and the effect was free.
         return resumeAfterEffect(E.execute(s, { ctrl: seat, self: null, cardId: a.id,
-                                                src: null, ops: eab.ops, answers: [] }));
+                                                src: null, ops: E.costOps(eab, true).concat(eab.ops), answers: [] }));
       }
 
       case 'activate': {
         var u = S.findUnit(s, a.uid);
         var ab = S.card(u.id).abilities[a.i];
-        payCost(s, seat, u, ab);                                // CR 8-4-1-3
         if (ab.once) u.onceUsed['activateMain' + a.i] = true;
         NS.log.push(s, 'ability.activated', { uid: u.uid, id: u.id, i: a.i });
+        // CR 8-4-1-3 — the cost is paid INSIDE the invocation, so a cost that asks (which card
+        // to trash, which card to rest) parks its question like any other.
         return resumeAfterEffect(E.execute(s, { ctrl: seat, self: u.uid, cardId: u.id,
-                                                src: u.uid, ops: ab.ops, answers: [] }));
+                                                src: u.uid, ops: E.costOps(ab, false).concat(ab.ops), answers: [] }));
       }
 
       case 'giveDon': {                                         // CR 6-5-5-1
