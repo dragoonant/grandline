@@ -3,6 +3,8 @@
 An unofficial, non-commercial implementation of Bandai's **ONE PIECE CARD GAME**, played against
 a computer opponent in a browser. No build step, no dependencies, no network.
 
+**Play it: https://dragoonant.github.io/grandline/** (GitHub Pages, served from `main`).
+
 **Please read `NOTICE.md` first.** This is a fan project, it is not affiliated with or endorsed
 by Bandai, Eiichiro Oda, Shueisha or Toei Animation, and nothing here is sold or monetised.
 
