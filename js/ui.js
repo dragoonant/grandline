@@ -41,6 +41,7 @@
     NS.board.draw(root, state, you);
     promptEl = document.getElementById('prompt');
     renderLog();
+    renderFeed();
     renderTop();
     wireTrash();
     wire();
@@ -94,6 +95,24 @@
     'life.toHand': function (e) { return who(e.data.seat) + ' added a Life card to hand — ' + e.data.left + ' Life left.'; },
     'don.added': function (e) { return who(e.data.seat) + ' added ' + e.data.n + ' DON!!' + (e.data.rested ? ' (rested)' : '') + '.'; },
     'ability.activated': function (e) { return nm(e.data.id) + ' activated its effect.'; },
+    // Everything below used to be logged by the engine and shown to nobody, so what the OPPONENT
+    // did with these effects was invisible (found by diffing every engine log tag against this
+    // table after 12 AI games).
+    'char.played': function (e) {
+      var prev = state.log[e.n - 1];
+      if (prev && prev.tag === 'card.played' && prev.data.id === e.data.id) return null;   // hand play: already said
+      return who(e.data.seat) + ' put ' + nm(e.data.id) + ' into play by an effect.';
+    },
+    'char.overflowTrashed': function (e) { return who(e.data.seat) + ' had a full Character area and trashed ' + (e.data.id ? nm(e.data.id) : 'a Character') + '.'; },
+    'don.setActive': function (e) { return who(e.data.seat) + ' set ' + e.data.n + ' DON!! as active.'; },
+    'don.restedOpp': function (e) { return who(1 - e.data.seat) + ' rested ' + e.data.n + ' of ' + (e.data.seat === you ? 'your' : 'the opponent’s') + ' DON!!.'; },
+    'blocker.locked': function (e) { return (e.data.seat === you ? 'You' : 'The opponent') + ' cannot activate [Blocker]' + (e.data.powerMin ? ' on a Character with ' + e.data.powerMin + '+ power' : '') + ' during this ' + (e.data.scope === 'turn' ? 'turn' : 'battle') + '.'; },
+    'blocker.lockedFor': function (e) { return (e.data.seat === you ? 'You' : 'The opponent') + ' cannot activate [Blocker] if ' + unm(e.data.uid) + ' attacks this turn.'; },
+    'kw.gained': function (e) { return unm(e.data.uid) + ' gains [' + NS.names.keyword(e.data.kw) + '].'; },
+    'play.locked': function (e) { return who(e.data.seat) + ' cannot play Character cards this turn.'; },
+    'cost.restDon': function (e) { return who(e.data.seat) + ' rested ' + e.data.n + ' DON!! to pay a cost.'; },
+    'cost.restSelf': function (e) { return unm(e.data.uid) + ' was rested to pay a cost.'; },
+    'cost.restOwn': function (e) { return who(e.data.seat) + ' rested ' + (e.data.id ? nm(e.data.id) : 'a DON!!') + ' to pay a cost.'; },
     'effect.noTarget': function (e) { return (e.data.id ? nm(e.data.id) + ': ' : '') + 'no legal target, so that part does nothing.'; },
     'cost.donMinus': function (e) {
       var f = e.data.from;
@@ -110,6 +129,26 @@
   function nm(id) { try { return NS.names.cardName(S.card(id)); } catch (e) { return id; } }
   function unm(uid) { var u = S.findUnit(state, uid); return u ? nm(u.id) : 'a card'; }
 
+  // The last few things that happened, always on screen under the prompt. The full log is a
+  // closed panel by default, so without this everything the OPPONENT chose — its targets, what
+  // it revealed, what it trashed — happened where the player was not looking.
+  var FEED_N = 4;
+  function renderFeed() {
+    var box = document.getElementById('feed');
+    if (!box) return;
+    box.textContent = '';
+    var lines = [];
+    for (var i = state.log.length - 1; i >= 0 && lines.length < FEED_N; i--) {
+      var e = state.log[i], f = LOGLINE[e.tag];
+      if (!f || /^(phase\.|card\.drawn|game\.start|life\.set|mulligan)/.test(e.tag)) continue;
+      var line; try { line = f(e); } catch (err) { continue; }
+      if (line) lines.unshift({ line: line, you: e.seat === you });
+    }
+    lines.forEach(function (l, k) {
+      box.appendChild(el('div', 'feed-line ' + (l.you ? 'you' : 'them') + (k === lines.length - 1 ? ' latest' : ''), l.line));
+    });
+  }
+
   function renderLog() {
     if (!logEl) return;
     logEl.textContent = '';
@@ -120,6 +159,7 @@
       if (!f) continue;
       var line;
       try { line = f(e); } catch (err) { continue; }
+      if (!line) continue;
       var d = el('div', 'entry ' + (e.seat === you ? 'you' : 'them'), line);
       if (/^─|win|lose|K\.O|Life left/.test(line)) d.classList.add('big');
       logEl.appendChild(d);

@@ -200,11 +200,12 @@
       for (var i = 0; i < p.chars.length; i++) {
         if (p.chars[i].uid === victim) {
           if (p.chars[i].don > 0) { p.donRested += p.chars[i].don; }
-          p.trash.push(p.chars[i].id); p.chars.splice(i, 1); break;
+          var gone = p.chars[i].id;
+          p.trash.push(gone); p.chars.splice(i, 1); break;
         }
       }
       // CR 3-7-6-1-1 — this trashing is rule processing; it is NOT a K.O. and fires nothing.
-      NS.log.push(s, 'char.overflowTrashed', { seat: seat });
+      NS.log.push(s, 'char.overflowTrashed', { seat: seat, id: gone });
     }
     var u = S.unit('C', cardId);
     u.playedOn = s.turn;                                     // CR 3-7-4

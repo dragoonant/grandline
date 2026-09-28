@@ -113,7 +113,7 @@
 
   // CR 2-6-3 / 8-1-4-2 — a continuous power change for a stated duration.
   H.power = function (s, ctx, op) {
-    pick(s, ctx, op.sel, op.prompt || 'Choose a card to modify').forEach(function (u) {
+    pick(s, ctx, op.sel, op.prompt || ('Choose a card to get ' + (op.n >= 0 ? '+' : '−') + Math.abs(op.n) + ' power')).forEach(function (u) {
       u.mods.push({ stat: 'power', n: op.n, until: op.until || 'turn', src: ctx.self });
       NS.log.push(s, 'power.mod', { uid: u.uid, n: op.n, until: op.until || 'turn' });
     });
@@ -285,7 +285,7 @@
   // the top or bottom of its owner's deck.
   H.bounce = function (s, ctx, op) {
     var where = op.to || 'hand';
-    pick(s, ctx, op.sel, op.prompt || 'Choose a Character to return').forEach(function (u) {
+    pick(s, ctx, op.sel, op.prompt || ('Choose a Character to return to ' + (op.to === 'hand' || !op.to ? 'its owner\u2019s hand' : 'the ' + op.to + ' of its owner\u2019s deck'))).forEach(function (u) {
       var seat = S.seatOf(s, u.uid);
       if (seat < 0) return;
       var p = s.players[seat];
@@ -427,9 +427,10 @@
       var got = E.offerChoice(s, { kind: 'cost', ctrl: ctx.ctrl, source: ctx.self,
                                    prompt: 'Rest one of your cards to pay for this',
                                    options: pool, min: 1, max: 1 })[0];
+      var restedId = null;
       if (got === '__don') { p.donActive -= 1; p.donRested += 1; }
-      else { var pu = S.findUnit(s, got); if (pu) pu.rested = true; }
-      NS.log.push(s, 'cost.restOwn', { seat: ctx.ctrl });
+      else { var pu = S.findUnit(s, got); if (pu) { pu.rested = true; restedId = pu.id; } }
+      NS.log.push(s, 'cost.restOwn', { seat: ctx.ctrl, id: restedId });
     }
   };
 

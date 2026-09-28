@@ -140,5 +140,24 @@ for (const d of docs) {
 }
 ok('every path a document claims exists, exists');
 
+// PLAN.md D8 / CARD-GAME-LESSONS-6 §9.1 — everything either player does must be SHOWN. Every
+// tag the engine logs needs a line in js/ui.js LOGLINE, or a place on this list of pure
+// bookkeeping. 2026-09-27: eleven tags had no line, so what the AI did with its effects —
+// which Character it trashed, which of your DON!! it rested — reached no one.
+{
+  const BOOKKEEPING = new Set(['phase.refresh', 'phase.end', 'battle.end', 'don.deckSize']);
+  const uiSrc = await readFile(join(ROOT, 'js/ui.js'), 'utf8');
+  const shown = new Set([...uiSrc.matchAll(/^\s+'([a-zA-Z.]+)': function \(e?\)/gm)].map((m) => m[1]));
+  const unshown = [];
+  for (const f of ['js/engine.js', 'js/ops.js', 'js/actions.js']) {
+    const src = await readFile(join(ROOT, f), 'utf8');
+    for (const m of src.matchAll(/log\.push\(s, '([a-zA-Z.]+)'/g)) {
+      if (!shown.has(m[1]) && !BOOKKEEPING.has(m[1])) unshown.push(`${m[1]} (${f})`);
+    }
+  }
+  if (unshown.length) fail('engine events the player is never shown:\n        ' + [...new Set(unshown)].join('\n        '));
+  else ok('every engine event has a log line the player can see');
+}
+
 console.log(`\n${fails} failures, ${warns} warnings`);
 process.exit(fails ? 1 : 0);

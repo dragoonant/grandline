@@ -112,6 +112,9 @@
     var actions = el('div', null, '');
     actions.id = 'actions';
     mid.appendChild(actions);
+    var feed = el('div', null, '');
+    feed.id = 'feed';                          // js/ui.js renderFeed — what just happened
+    mid.appendChild(feed);
     b.appendChild(mid);
 
     b.appendChild(sideNode(s, youSeat, true));

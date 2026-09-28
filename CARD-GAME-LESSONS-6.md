@@ -283,6 +283,12 @@ asked are the ones that are not choices — "this card", "that card", "all of" �
 window with nothing legal in it. Put it in PLAN.md as a decision on day one (here, D8), and test
 it with a single-target case, because every other test passes either way.
 
+**And show what the OPPONENT chose.** The AI answered the same questions through the same door
+(187 in 12 test games, 23 with one option), but eleven engine events had no log line — which of
+its Characters it trashed, which of your DON!! it rested — and the log was a closed panel anyway.
+Two fixes, both for every project: a gate (`tools/check-pages.mjs`) that fails any logged event
+with no player-facing line, and an always-visible feed of the last few events under the prompt.
+
 ## 9.2 One cost door, or costs quietly stop being paid
 
 Costs were paid in three different places and missed in four more. Events paid only the DON!!
