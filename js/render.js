@@ -143,5 +143,59 @@
     return n;
   }
 
-  NS.render = { render: render, decorate: decorate, back: back, el: el };
+  // =======================================================================================
+  // HOVER ZOOM — every face-up card, everywhere, with nothing to wire.
+  //
+  // This used to be opt-in: js/ui.js called hover(node) on the cards it remembered to, and the
+  // opening hand, the Block/Counter/Trigger choices, the trash viewer and the deck screens were
+  // never wired, so hovering them did nothing. Now ONE delegated listener on the document zooms
+  // any rendered card (anything render() made carries data-card-id). A face-down card is made
+  // by back() and has no card id, so it can never be zoomed — the rules keep it hidden.
+  // =======================================================================================
+  var zoomEl = null, zoomNode = null;
+  function zoomBox() {
+    if (!zoomEl) zoomEl = document.getElementById('preview');
+    if (!zoomEl) throw new Error('render: #preview is missing from the page (hard rule 11)');
+    return zoomEl;
+  }
+  function showZoom(node) {
+    var id = node.dataset.cardId;
+    var card = id && NS.state.card(id);
+    if (!card) return;
+    var box = zoomBox();
+    zoomNode = node;
+    box.textContent = '';
+    box.appendChild(render(card, 'preview', {}));
+    box.classList.add('open');
+    var r = node.getBoundingClientRect();
+    var w = box.offsetWidth, h = box.offsetHeight;
+    var x = r.right + 12;
+    if (x + w + 12 > window.innerWidth) x = r.left - w - 12;         // flip to the left side
+    x = Math.max(12, Math.min(window.innerWidth - w - 12, x));
+    box.style.left = x + 'px';
+    box.style.top = Math.max(12, Math.min(window.innerHeight - h - 12, r.top - 40)) + 'px';
+  }
+  function hideZoom() { zoomNode = null; if (zoomEl) zoomEl.classList.remove('open'); }
+  function zoomTarget(t) {
+    var n = t && t.closest ? t.closest('.card[data-card-id]') : null;
+    if (!n || n.closest('#preview')) return null;
+    if (n.classList.contains('card-preview')) return null;           // already full size
+    return n;
+  }
+  function installZoom() {
+    document.addEventListener('mouseover', function (e) {
+      var n = zoomTarget(e.target);
+      if (n && n !== zoomNode) showZoom(n);
+      else if (!n && zoomNode) hideZoom();
+    });
+    document.addEventListener('mouseout', function (e) {
+      if (zoomNode && !zoomTarget(e.relatedTarget)) hideZoom();
+    });
+    // A node that is removed while hovered (every board redraw rebuilds it) must not leave the
+    // zoom behind; scrolling moves the card out from under it.
+    window.addEventListener('scroll', hideZoom, true);
+  }
+
+  NS.render = { render: render, decorate: decorate, back: back, el: el,
+                installZoom: installZoom, hideZoom: hideZoom };
 }(window.OP = window.OP || {}));

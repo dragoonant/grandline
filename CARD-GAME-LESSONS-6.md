@@ -262,6 +262,11 @@ Before the first playable build, go through the rules' zone list and give every 
 | A card revealed by an effect | CR 2-7-2, 10-1-5 | have it named (log) and visible; this includes the opponent's |
 | A card trashed as a cost | CR 3-5-2 | have it named, and findable in the trash afterwards |
 | The opponent's hand, deck and Life | CR 3-4-3, 3-2-2, 3-10-2 | see **nothing** except counts, unless an effect says otherwise |
+| **Any face-up card, anywhere** | CR 3-1-5 open areas | hover to zoom and read it — board, hand, **every modal** (opening hand, Block/Counter/Trigger, trash, look-at) |
+
+Build the zoom as ONE delegated listener on the document, keyed on the card's id attribute, and
+let face-down cards simply not carry the id. Here it was opt-in per node, and every modal added
+later — starting with the opening hand, the first thing the player sees — silently had none.
 
 And write the grep: an effect that says "look at", "reveal" or "your opponent's hand" must
 render its cards, and the gate should fail a question with a `seen` list that the UI ignores.

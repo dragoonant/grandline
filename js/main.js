@@ -10,6 +10,7 @@
       if (!NS[k]) throw new Error('boot: OP.' + k + ' is missing — check the script list in index.html');
     });
     NS.cards.build();
+    NS.render.installZoom();                  // hover zoom on every face-up card, everywhere
 
     // The log panel used to cover the very button that opened it, with no close control and
     // only an unadvertised L key to dismiss it. It now has a Close button, Esc closes it, and it

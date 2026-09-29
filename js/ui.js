@@ -10,7 +10,7 @@
 
   var S, E;
   var state = null, you = 0, busy = false, pendingAttacker = null;
-  var root, promptEl, logEl, modalEl, previewEl;
+  var root, promptEl, logEl, modalEl;
   var AI_DELAY = 480;
 
   function el(t, c, x) { return NS.render.el(t, c, x); }
@@ -20,7 +20,6 @@
     root = document.getElementById('table');
     logEl = document.getElementById('log');
     modalEl = document.getElementById('modal');
-    previewEl = document.getElementById('preview');
     you = opts.you === undefined ? 0 : opts.you;
     setState(opts.state);
   }
@@ -233,7 +232,6 @@
     p.trash.slice().reverse().forEach(function (id) {
       var wrap = el('div', 'opt-card');
       var n = NS.render.render(S.card(id), 'board', {});
-      hover(n);
       wrap.appendChild(n);
       o.appendChild(wrap);
     });
@@ -262,7 +260,6 @@
     var handCards = root.querySelectorAll('#hand .card[data-card-id]');
     [].forEach.call(handCards, function (n, ix) {
       var a = acts.filter(function (x) { return (x.t === 'play' || x.t === 'event') && x.ix === ix; })[0];
-      hover(n);
       if (a) { n.classList.add('actable'); n.onclick = function () { commit(a); }; }
       else { n.onclick = function () { inspect(n.dataset.cardId); }; }
     });
@@ -271,12 +268,11 @@
     [].forEach.call(root.querySelectorAll('.side.mine .card[data-uid]'), function (n) {
       var uid = n.dataset.uid;
       var mine = acts.filter(function (x) { return x.uid === uid; });
-      hover(n);
       if (mine.length) { n.classList.add('actable'); n.onclick = function () { unitMenu(uid, mine); }; }
       else n.onclick = function () { inspect(n.dataset.cardId); };
     });
     [].forEach.call(root.querySelectorAll('.side.enemy .card[data-uid]'), function (n) {
-      hover(n); n.onclick = function () { inspect(n.dataset.cardId); };
+      n.onclick = function () { inspect(n.dataset.cardId); };
     });
   }
 
@@ -470,7 +466,6 @@
         head.q.seen.forEach(function (id) {
           var w = el('div', 'opt-card' + (takeable[id] ? '' : ' dim'));
           var n = NS.render.render(S.card(id), 'board', {});
-          hover(n);
           w.appendChild(n);
           sn.appendChild(w);
         });
@@ -549,24 +544,8 @@
   }
 
   // ---------------------------------------------------------------------------------------
-  function hover(node) {
-    node.onmouseenter = function () { showPreview(node); };
-    node.onmouseleave = hidePreview;
-  }
-  function showPreview(node) {
-    var id = node.dataset.cardId;
-    if (!id) return;
-    previewEl.textContent = '';
-    previewEl.appendChild(NS.render.render(S.card(id), 'preview', {}));
-    previewEl.classList.add('open');
-    var r = node.getBoundingClientRect();
-    var w = previewEl.offsetWidth, h = previewEl.offsetHeight;
-    var x = Math.min(window.innerWidth - w - 12, Math.max(12, r.right + 12));
-    if (r.right + w + 24 > window.innerWidth) x = Math.max(12, r.left - w - 12);
-    previewEl.style.left = x + 'px';
-    previewEl.style.top = Math.min(window.innerHeight - h - 12, Math.max(12, r.top - 40)) + 'px';
-  }
-  function hidePreview() { previewEl.classList.remove('open'); }
+  // Hover zoom lives in js/render.js and covers every face-up card on the page by itself.
+  function hidePreview() { NS.render.hideZoom(); }
 
   function inspect(cardId) {
     var box = el('div', 'modal-box');
