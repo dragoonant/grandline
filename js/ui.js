@@ -37,6 +37,7 @@
     // gone. Without this the last hovered card stays on screen and, being z-index 60, sits on
     // top of the modal — found by looking at the screen during a Counter prompt.
     hidePreview();
+    NS.fx.before();
     NS.board.draw(root, state, you);
     promptEl = document.getElementById('prompt');
     renderLog();
@@ -44,6 +45,7 @@
     renderTop();
     wireTrash();
     wire();
+    NS.fx.after(state, you);
     if (state.winner !== null) showResult();
   }
 
@@ -265,13 +267,13 @@
     });
 
     // Your Leader, Characters and Stage: a click opens the menu of what that card may do.
-    [].forEach.call(root.querySelectorAll('.side.mine .card[data-uid]'), function (n) {
+    [].forEach.call(root.querySelectorAll('#mat .mine .card[data-uid]'), function (n) {
       var uid = n.dataset.uid;
       var mine = acts.filter(function (x) { return x.uid === uid; });
       if (mine.length) { n.classList.add('actable'); n.onclick = function () { unitMenu(uid, mine); }; }
       else n.onclick = function () { inspect(n.dataset.cardId); };
     });
-    [].forEach.call(root.querySelectorAll('.side.enemy .card[data-uid]'), function (n) {
+    [].forEach.call(root.querySelectorAll('#mat .enemy .card[data-uid]'), function (n) {
       n.onclick = function () { inspect(n.dataset.cardId); };
     });
   }
@@ -557,23 +559,29 @@
   }
 
   function showResult() {
-    var box = el('div', 'modal-box');
-    box.appendChild(el('div', 'modal-title', state.winner === you ? 'You win.' : 'You lose.'));
+    var won = state.winner === you;
+    var box = el('div', 'modal-box result-box ' + (won ? 'is-win' : 'is-loss'));
+    box.appendChild(el('div', 'result-kicker', won ? 'You win' : 'You lose'));
+    box.appendChild(el('div', 'result-title', won ? 'Victory!' : 'Defeated'));
+    box.appendChild(el('div', 'result-flavour', won
+      ? 'Your crew sails on toward the end of the Grand Line.'
+      : 'Your voyage ends here… for now.'));
     box.appendChild(el('div', 'modal-sub',
       'Turn ' + state.turn + '. Seed ' + state.seed + ' — the same seed replays the same game.'));
     var row = el('div', 'row');
-    var again = el('button', 'primary', 'Play again');
+    var again = el('button', 'primary', 'Set sail again');
     again.onclick = function () { NS.screens.show('menu'); closeModal(); };
     row.appendChild(again);
     box.appendChild(row);
     openModal(box);
   }
 
-  function cancel() { if (pendingAttacker) { pendingAttacker = null; render(); } else closeModal(); }
+  function cancel() { if (state === null) return; if (pendingAttacker) { pendingAttacker = null; render(); } else closeModal(); }
 
   // E, or Space. js/main.js binds them; this is the only thing that decides whether ending is
   // legal right now, so the shortcut cannot end a turn the rules would not.
   function endTurn() {
+    if (state === null) return;              // the keys work on the title screen too
     var end = myActions().filter(function (a) { return a.t === 'endTurn'; })[0];
     if (end) commit(end);
   }

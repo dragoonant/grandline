@@ -4,24 +4,57 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GRAND LINE — an unofficial ONE PIECE CARD GAME</title>
+<link rel="icon" href="art/ui/cardback.svg">
 <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
 
+<!-- The table is the whole window: the opponent's hand peeking from the top edge, the mat
+     (js/boardart.js draws it and places every zone from one geometry table), and the dock
+     with your hand. Everything else is a screen, the log drawer, or a centred panel. -->
 <div id="app">
-  <div id="topbar">
-    <b>GRAND LINE</b>
-    <span id="turnbadge" class="turnbadge"></span>
-    <span class="spacer"></span>
-    <button id="btn-log" title="Toggle the log (L)">Log</button>
-    <button id="btn-sound" title="Sound">&#128266;</button>
-    <button id="btn-trace" title="Download this game's trace for a bug report">Trace</button>
-    <button id="btn-menu">Menu</button>
+  <div id="table">
+    <div id="enemy-hand-bar"><div id="enemy-hand"></div></div>
+    <div id="mat">
+      <div id="enemy-life" class="mat-zone enemy life-zone"></div>
+      <div id="enemy-leader" class="mat-zone enemy leader-zone"></div>
+      <div id="enemy-chars" class="mat-zone enemy chars-zone"></div>
+      <div id="enemy-stage" class="mat-zone enemy stage-zone"></div>
+      <div id="enemy-deck" class="mat-zone enemy pile-zone"></div>
+      <div id="enemy-trash" class="mat-zone enemy pile-zone"></div>
+      <div id="enemy-dondeck" class="mat-zone enemy pile-zone dondeck-zone"></div>
+      <div id="enemy-cost" class="mat-zone enemy cost-zone"></div>
+      <div id="my-life" class="mat-zone mine life-zone"></div>
+      <div id="my-leader" class="mat-zone mine leader-zone"></div>
+      <div id="my-chars" class="mat-zone mine chars-zone"></div>
+      <div id="my-stage" class="mat-zone mine stage-zone"></div>
+      <div id="my-deck" class="mat-zone mine pile-zone"></div>
+      <div id="my-trash" class="mat-zone mine pile-zone"></div>
+      <div id="my-dondeck" class="mat-zone mine pile-zone dondeck-zone"></div>
+      <div id="my-cost" class="mat-zone mine cost-zone"></div>
+    </div>
+    <div id="dock">
+      <div id="dock-left"><div id="turnbadge" class="turnbadge"></div><div id="feed"></div></div>
+      <div id="hand-wrap"><div id="hand"></div></div>
+      <div id="dock-right"><div id="prompt"></div><div id="actions"></div></div>
+    </div>
   </div>
-  <div id="table"></div>
+  <button id="btn-log" type="button" title="Log and settings (L)">Log</button>
 </div>
 
-<div id="sidebar"><div class="sidebar-head"><h3>Game log</h3><button id="btn-log-close" title="Close the log (L or Esc)">✕ Close</button></div><div id="log"></div></div>
+<div id="sidebar">
+  <div class="sidebar-head"><h3>Ship&rsquo;s log</h3><button id="btn-log-close" type="button" title="Close the log (L or Esc)">&#10005; Close</button></div>
+  <div class="sidebar-controls">
+    <button id="btn-sound" type="button" title="Sound"></button>
+    <button id="btn-trace" type="button" title="Download this game's trace for a bug report">Save bug report</button>
+    <button id="btn-menu" type="button" title="Leave this game and choose new decks">New game</button>
+  </div>
+  <div class="sidebar-note">Newest at the bottom.</div>
+  <div id="log"></div>
+</div>
+<div id="fx-layer" aria-hidden="true"></div>
+<div id="spotlight" aria-hidden="true"></div>
+<div id="turn-banner" aria-live="polite"></div>
 <div id="preview"></div>
 <div id="modal"></div>
 
@@ -50,7 +83,9 @@
 <script src="art/manifest.js"></script>
 <script src="js/art.js"></script>
 <script src="js/render.js"></script>
+<script src="js/boardart.js"></script>
 <script src="js/board.js"></script>
+<script src="js/fx.js"></script>
 <script src="js/bugreport.js"></script>
 <script src="audio/manifest.js"></script>
 <script src="js/audio.js"></script>

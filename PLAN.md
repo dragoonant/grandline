@@ -5,6 +5,17 @@ the Status every session.
 
 ---
 
+## Status — 2026-10-25
+
+**The interface is re-themed as a pirate's table (D9).** Owner asked for the sister project's
+interface with a ONE PIECE theme. Title splash over a drawn sunset sea, a parchment picker with
+two deck slots and dice, a wanted-poster deck chooser, and a drawn ship's-deck mat with every
+area of the official playmat in its place — Life column, Leader, Character Area, Stage, DON!!
+deck, a Cost Area of real DON!! cards, Deck and Trash — the opponent's half mirrored. The log and
+settings moved to a right-edge drawer. `js/fx.js` adds a turn ribbon, the opponent's played card
+in the spotlight, an attack arrow, and hit / K.O. / power effects, all read from the log. Engine
+untouched; all gates green.
+
 ## Status — 2026-09-27
 
 **Per-card audit done.** Every card in a registered deck was read literally and played on a board
@@ -143,3 +154,21 @@ effect with no legal target says so in the log. One door enforces it: `offerChoi
 `js/engine.js` has no auto-take path. Not a choice, and so not asked: "this Character" and "that
 card" (the text names the card), "all of" (every match), and the NUMBER of indistinguishable DON!!
 an "up to N" DON!! effect moves. Reactive windows with zero legal options stay skipped (D4).
+
+### D9 — Interface: a pirate's table · 2026-10-25 · owner
+**The interface follows the sister project's structure with a nautical theme.** Owner: "I love
+the interface on lorecannae, can you do something similar, with a one piece theme." What carried
+over is the structure — splash, picker panel, a drawn mat whose zones are placed from one geometry
+table (`js/boardart.js`), hand dock, log drawer, effects read from the log. What changed is the
+dress: ship's-deck planks in a rope rim with brass corners, the Grand Line as a band of sea with a
+compass rose across the centre, parchment panels, brass buttons, gold for your side and steel blue
+for theirs.
+- **Every backdrop is drawn, not generated.** No image key was available in the session that built
+  it, and a drawn scene costs nothing against D2. Original throughout: a generic ship and a plain
+  skull flag, no crest, figurehead or logo from anywhere; the card back is a compass rose
+  (`art/ui/cardback.svg`).
+- **The cards keep CARD-PRESENTATION-SPEC.md.** Art is still the card; the only change to the face
+  is a gold edge and round corner pips.
+- **Effects never touch rules.** `js/fx.js` reads the log after each frame and plays nothing that
+  is not already in it; under `prefers-reduced-motion` the motion goes and the information stays.
+

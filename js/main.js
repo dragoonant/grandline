@@ -5,7 +5,7 @@
   function boot() {
     // Hard rule 11: a missing dependency throws on the first frame.
     ['rng', 'log', 'names', 'state', 'statics', 'ops', 'text', 'engine', 'cards',
-     'decks', 'defects', 'ai', 'art', 'render', 'board', 'ui', 'audio', 'screens',
+     'decks', 'defects', 'ai', 'art', 'render', 'boardArt', 'board', 'fx', 'ui', 'audio', 'screens',
      'bugreport'].forEach(function (k) {
       if (!NS[k]) throw new Error('boot: OP.' + k + ' is missing — check the script list in index.html');
     });
@@ -23,11 +23,12 @@
     }
     document.getElementById('btn-log').onclick = function () { toggleLog(); };
     document.getElementById('btn-log-close').onclick = function () { toggleLog(false); };
-    document.getElementById('btn-menu').onclick = function () { NS.screens.show('menu'); };
+    document.getElementById('btn-menu').onclick = function () { toggleLog(false); NS.screens.show('menu'); };
+    function soundLabel(muted) { return muted ? 'Sound: off' : 'Sound: on'; }
     document.getElementById('btn-sound').onclick = function (e) {
-      e.target.textContent = NS.audio.setMuted(!NS.audio.isMuted()) ? '🔇' : '🔊';
+      e.target.textContent = soundLabel(NS.audio.setMuted(!NS.audio.isMuted()));
     };
-    document.getElementById('btn-sound').textContent = NS.audio.isMuted() ? '🔇' : '🔊';
+    document.getElementById('btn-sound').textContent = soundLabel(NS.audio.isMuted());
     document.getElementById('btn-trace').onclick = function () { NS.bugreport.download(); };
 
     document.addEventListener('keydown', function (e) {

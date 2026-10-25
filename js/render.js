@@ -54,7 +54,11 @@
       corners.appendChild(el('span', 'pip cost', String(card.cost)));
     }
     if (card.attribute.length) {
-      corners.appendChild(el('span', 'pip attr', ATTR_ICON[card.attribute[0]] || card.attribute[0]));
+      // A card can carry two attributes ("Strike/Special"): one icon each, never the raw word.
+      var icons = card.attribute.join('/').split('/').map(function (a) { return ATTR_ICON[a] || a; });
+      var ap = el('span', 'pip attr', icons.join(''));
+      ap.title = card.attribute.join(' / ');
+      corners.appendChild(ap);
     }
     root.appendChild(corners);
 
@@ -143,6 +147,18 @@
     return n;
   }
 
+  // A DON!! card (CR 2-1-1-5). Every DON!! card is identical, so it is drawn rather than
+  // rendered from data: gold face, the word, and turned sideways when rested (CR 4-4-1-2).
+  // `faceDown` draws the DON!! deck's back. The outer node is the slot a row lays out (it may
+  // shrink, so a full Cost Area overlaps rather than shrinks); the face inside never changes size.
+  function don(rested, faceDown) {
+    var n = el('div', 'don-card' + (rested ? ' is-rested' : '') + (faceDown ? ' is-back' : ''));
+    var f = el('div', 'don-face');
+    f.appendChild(el('span', 'don-word', NS.names.term('don')));
+    n.appendChild(f);
+    return n;
+  }
+
   // =======================================================================================
   // HOVER ZOOM — every face-up card, everywhere, with nothing to wire.
   //
@@ -196,6 +212,6 @@
     window.addEventListener('scroll', hideZoom, true);
   }
 
-  NS.render = { render: render, decorate: decorate, back: back, el: el,
+  NS.render = { render: render, decorate: decorate, back: back, don: don, el: el,
                 installZoom: installZoom, hideZoom: hideZoom };
 }(window.OP = window.OP || {}));

@@ -15,14 +15,17 @@ Ordered by what a player would notice first.
       hour. Force a synchronous layout read rather than waiting on `requestAnimationFrame`,
       which does not fire in a background tab and will strand an animation whose end state is
       set in its callback.
+      *Partly done (D9):* `js/fx.js` plays effects read from the log — turn ribbon, spotlight,
+      attack arrow, hit / K.O. / power numbers, cards dropping in. Cards still do not travel
+      between zones (hand → field, field → trash); that FLIP pass is what remains.
 - [ ] **Drag to commit.** Tap currently inspects and a menu commits. `CARD-PRESENTATION-SPEC.md`
       §10's drag-to-commit is the better feel and the spec has the mechanics.
-- [ ] **An attack arrow**, so aiming and resolution are the same picture
-      (`CARD-LOG-AND-TARGETING-SPEC.md` §14).
+- [x] **An attack arrow**, so aiming and resolution are the same picture
+      (`CARD-LOG-AND-TARGETING-SPEC.md` §14). Drawn by `js/fx.js` when an attack is declared.
 - [ ] **A "recently played" strip.** The log scrolls away; a durable row of the last few cards
       is what players actually look at (`CARD-LOG-AND-TARGETING-SPEC.md` §7).
-- [ ] **Show the DON!! cost area as real cards** rather than chips, so giving DON!! reads as a
-      physical action.
+- [x] **Show the DON!! cost area as real cards** rather than chips, so giving DON!! reads as a
+      physical action. Done with the D9 mat: active upright, rested sideways.
 - [ ] **A concede button.** CR 1-2-3 allows it at any point and there is nowhere to click.
 
 ## Content
