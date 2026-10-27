@@ -5,6 +5,15 @@ the Status every session.
 
 ---
 
+## Status — 2026-10-27
+
+**The touch model (D10).** On a phone a tap reads, a drag commits and a hold peeks; the hand
+rests along the bottom edge and rises on a tap; recent plays run down the left edge; End turn is
+a round button on the right. Checked under phone emulation (844×390, touch events): picker in two
+columns, opening hand, raise, the card sheet with its buttons, hold to peek, a hand card dragged
+onto the Character area, a DON!! dragged onto the Leader, an attack dragged onto a rival, the
+touch Confirm in a choice window; desktop unchanged. Gates green.
+
 ## Status — 2026-10-25
 
 **The interface is re-themed as a pirate's table (D9).** Owner asked for the sister project's
@@ -172,3 +181,19 @@ for theirs.
 - **Effects never touch rules.** `js/fx.js` reads the log after each frame and plays nothing that
   is not already in it; under `prefers-reduced-motion` the motion goes and the information stays.
 
+### D10 — Touch: a tap reads, a drag commits, a hold peeks · 2026-10-27 · owner
+Owner: "Let's give these games the hearthstone treatment on mobile. I hate that I can't zoom in on
+cards and that when tapping on cards they automatically play." Agreed with the owner: drag and
+buttons both, landscape only, the same model in all three sister projects.
+- **On touch, a tap never commits.** A tap opens the card sheet: the card at full height beside
+  its legal actions as buttons, each with its numbers ("Attack Sanji — 6000 vs 3000"). A card
+  offered in a window (block, counter, a choice) is picked by a tap and committed by Confirm.
+  A mouse click still works as before.
+- **A drag commits.** A hand card onto your side plays it; a Leader or Character onto a rival
+  attacks it, with an arrow that snaps to legal targets only; an active DON!! onto your Leader
+  or a Character gives it. Every drop target is a legal action from `legalActions`.
+- **A hold peeks:** the card fills the screen until the finger lifts, and the lift does nothing.
+- **On a phone** (coarse pointer, short side ≤ 540 px): the hand rests as a fan of card tops and
+  rises on a tap; recent plays down the left edge; End turn round on the right, gold while a
+  card can still act and green when none can; portrait shows a "turn sideways" gate; Add to Home
+  Screen opens it full-screen and landscape (`manifest.webmanifest`). `js/touch.js`.

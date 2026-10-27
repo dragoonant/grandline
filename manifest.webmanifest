@@ -1,0 +1,12 @@
+{
+  "name": "GRAND LINE",
+  "short_name": "Grand Line",
+  "description": "An unofficial browser implementation of a trading card game's rules, played against the computer.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "fullscreen",
+  "orientation": "landscape",
+  "background_color": "#06121f",
+  "theme_color": "#06121f",
+  "icons": [{ "src": "art/ui/cardback.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
+}

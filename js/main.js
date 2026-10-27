@@ -5,7 +5,7 @@
   function boot() {
     // Hard rule 11: a missing dependency throws on the first frame.
     ['rng', 'log', 'names', 'state', 'statics', 'ops', 'text', 'engine', 'cards',
-     'decks', 'defects', 'ai', 'art', 'render', 'boardArt', 'board', 'fx', 'ui', 'audio', 'screens',
+     'decks', 'defects', 'ai', 'art', 'render', 'touch', 'boardArt', 'board', 'fx', 'ui', 'audio', 'screens',
      'bugreport'].forEach(function (k) {
       if (!NS[k]) throw new Error('boot: OP.' + k + ' is missing — check the script list in index.html');
     });

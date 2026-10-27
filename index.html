@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>GRAND LINE — an unofficial ONE PIECE CARD GAME</title>
 <link rel="icon" href="art/ui/cardback.svg">
+<!-- Add to Home Screen opens it full-screen and sideways (PLAN.md D10). -->
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#06121f">
 <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
@@ -56,6 +62,13 @@
 <div id="spotlight" aria-hidden="true"></div>
 <div id="turn-banner" aria-live="polite"></div>
 <div id="preview"></div>
+<!-- Touch (js/touch.js, PLAN.md D10): recent plays, the raised hand's scrim, the held card,
+     the drag arrow, and the gate a phone held upright sees. -->
+<div id="history"></div>
+<div id="hand-scrim"></div>
+<div id="peek" aria-hidden="true"></div>
+<svg id="drag-arrow" aria-hidden="true"></svg>
+<div id="rotate-gate" role="alert"><div class="rotate-box"><div class="rotate-phone"></div><div class="rotate-text">Turn your phone sideways to play.</div></div></div>
 <div id="modal"></div>
 
 <div class="screen" id="screen-menu"></div>
@@ -83,6 +96,7 @@
 <script src="art/manifest.js"></script>
 <script src="js/art.js"></script>
 <script src="js/render.js"></script>
+<script src="js/touch.js"></script>
 <script src="js/boardart.js"></script>
 <script src="js/board.js"></script>
 <script src="js/fx.js"></script>

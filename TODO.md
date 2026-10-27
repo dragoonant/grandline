@@ -18,8 +18,7 @@ Ordered by what a player would notice first.
       *Partly done (D9):* `js/fx.js` plays effects read from the log — turn ribbon, spotlight,
       attack arrow, hit / K.O. / power numbers, cards dropping in. Cards still do not travel
       between zones (hand → field, field → trash); that FLIP pass is what remains.
-- [ ] **Drag to commit.** Tap currently inspects and a menu commits. `CARD-PRESENTATION-SPEC.md`
-      §10's drag-to-commit is the better feel and the spec has the mechanics.
+- [x] **Drag to commit.** Done on touch with D10: a tap reads, a drag commits, a hold peeks.
 - [x] **An attack arrow**, so aiming and resolution are the same picture
       (`CARD-LOG-AND-TARGETING-SPEC.md` §14). Drawn by `js/fx.js` when an attack is declared.
 - [ ] **A "recently played" strip.** The log scrolls away; a durable row of the last few cards

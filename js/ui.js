@@ -43,6 +43,7 @@
     renderLog();
     renderFeed();
     renderTop();
+    NS.touch.renderHistory(state, you, inspect);
     wireTrash();
     wire();
     NS.fx.after(state, you);
@@ -194,8 +195,10 @@
     var bar = document.getElementById('actions');
     if (!bar) return;
     bar.textContent = '';
+    // End turn reads gold while a card can still act and green when nothing is left (D10).
+    var more = acts.some(function (a) { return CARD_BOUND[a.t]; });
     acts.filter(function (a) { return !CARD_BOUND[a.t]; }).forEach(function (a) {
-      var b = el('button', a.t === 'endTurn' ? 'primary' : null,
+      var b = el('button', a.t === 'endTurn' ? 'primary end-turn ' + (more ? 'has-plays' : 'is-ready') : null,
                  ACTION_LABEL[a.t] || a.label || a.t);
       if (a.t === 'endTurn') b.title = 'End your turn  (E, or Space)';
       b.onclick = function () { commit(a); };
@@ -258,24 +261,118 @@
     promptEl.textContent = 'Your Main Phase — play a card, give DON!!, attack, or end the turn.';
     renderActionBar(acts);
 
-    // Hand: a card you can pay for is actable; any card can be inspected.
+    // PLAN.md D10 — a mouse click works as it always has; a finger's tap READS (the card sheet,
+    // its legal actions as buttons) and a drag commits. Every drop target is a legal action.
+    var mine = function (id) { return function () { return document.getElementById(id); }; };
     var handCards = root.querySelectorAll('#hand .card[data-card-id]');
     [].forEach.call(handCards, function (n, ix) {
       var a = acts.filter(function (x) { return (x.t === 'play' || x.t === 'event') && x.ix === ix; })[0];
-      if (a) { n.classList.add('actable'); n.onclick = function () { commit(a); }; }
-      else { n.onclick = function () { inspect(n.dataset.cardId); }; }
+      if (a) n.classList.add('actable');
+      NS.touch.press(n, {
+        kind: 'hand',
+        targets: a ? ['my-chars', 'my-stage', 'my-leader'].map(function (z) { return { el: mine(z), act: a }; }) : [],
+        onDrop: commit,
+        onTap: function (touch) {
+          if (!touch) { if (a) commit(a); else inspect(n.dataset.cardId); return; }
+          if (NS.touch.phone() && !NS.touch.handRaised()) { NS.touch.raiseHand(); return; }
+          NS.touch.lowerHand();
+          cardSheet(n.dataset.cardId, a ? [[actLabel(a), 'primary', a]] : [],
+            a ? 'Or drag it onto your side of the table.' : whyNotNow(n.dataset.cardId));
+        }
+      });
     });
 
-    // Your Leader, Characters and Stage: a click opens the menu of what that card may do.
+    // Your Leader, Characters and Stage: drag onto a rival to attack it; tap for every action.
     [].forEach.call(root.querySelectorAll('#mat .mine .card[data-uid]'), function (n) {
       var uid = n.dataset.uid;
-      var mine = acts.filter(function (x) { return x.uid === uid; });
-      if (mine.length) { n.classList.add('actable'); n.onclick = function () { unitMenu(uid, mine); }; }
-      else n.onclick = function () { inspect(n.dataset.cardId); };
+      var own = acts.filter(function (x) { return x.uid === uid; });
+      if (own.length) n.classList.add('actable');
+      var attacks = own.filter(function (x) { return x.t === 'attack'; });
+      NS.touch.press(n, {
+        kind: 'unit',
+        targets: attacks.map(function (a) { return { el: function () { return root.querySelector('.card[data-uid="' + a.target + '"]'); }, act: a }; }),
+        onDrop: commit,
+        onTap: function (touch) {
+          if (!touch) { if (own.length) unitMenu(uid, own); else inspect(n.dataset.cardId); return; }
+          cardSheet(n.dataset.cardId, own.map(function (a) { return [actLabel(a), a.t === 'attack' ? 'primary' : null, a]; }),
+            attacks.length ? 'Or drag it onto the card it attacks.' : own.length ? null : 'Nothing it can do right now.');
+        }
+      });
     });
     [].forEach.call(root.querySelectorAll('#mat .enemy .card[data-uid]'), function (n) {
-      n.onclick = function () { inspect(n.dataset.cardId); };
+      NS.touch.press(n, { kind: 'unit', targets: [], onTap: function () { inspect(n.dataset.cardId); } });
     });
+
+    // An active DON!! in your Cost Area: drag it onto the Leader or Character it powers up.
+    var gives = acts.filter(function (x) { return x.t === 'giveDon'; });
+    [].forEach.call(root.querySelectorAll('#my-cost .don-card:not(.is-rested)'), function (n) {
+      NS.touch.press(n, {
+        kind: 'don',
+        targets: gives.map(function (a) { return { el: function () { return root.querySelector('#mat .mine .card[data-uid="' + a.uid + '"]'); }, act: a }; }),
+        onDrop: commit,
+        onTap: function () {
+          if (gives.length) promptEl.textContent = 'Drag a ' + NS.names.term('don') + ' onto your ' + NS.names.term('leader') + ' or a ' + NS.names.term('character') + ' to give it +1000 power this turn.';
+        }
+      });
+    });
+  }
+
+  // Why a hand card has no action, from the one rule the engine checks first (CR 2-7-2).
+  function whyNotNow(cardId) {
+    var c = S.card(cardId), p = state.players[you];
+    if (state.active !== you) return 'You play cards in your own Main Phase.';
+    if (c.cost !== null && c.cost > p.donActive)
+      return 'You can’t play it yet: it costs ' + c.cost + ' and you have ' + p.donActive + ' active ' + NS.names.term('don') + '.';
+    return 'You can’t play it right now.';
+  }
+
+  // What a card-bound action does, with its numbers.
+  function actLabel(a) {
+    if (a.t === 'play') return 'Play it — cost ' + a.cost;
+    if (a.t === 'event') return 'Activate the ' + NS.names.term('event') + ' — cost ' + a.cost;
+    if (a.t === 'giveDon') return 'Give 1 ' + NS.names.term('don') + ' (+1000 power this turn)';
+    if (a.t === 'activate') return 'Activate its effect';
+    if (a.t === 'attack') {
+      var at = S.findUnit(state, a.uid), tg = S.findUnit(state, a.target);
+      return 'Attack ' + nm(tg.id) + ' — ' + S.power(state, at) + ' vs ' + S.power(state, tg);
+    }
+    return a.label || a.t;
+  }
+
+  // The card sheet: the card at full size beside its actions. With no actions it is the reader.
+  function cardSheet(cardId, items, note) {
+    var box = el('div', 'modal-box card-sheet');
+    var body = el('div', 'sheet-body');
+    body.appendChild(NS.render.render(S.card(cardId), 'preview', {}));
+    var side = el('div', 'sheet-actions');
+    items.forEach(function (x) {
+      var b = el('button', x[1] || null, x[0]);
+      b.onclick = function () { commit(x[2]); };
+      side.appendChild(b);
+    });
+    if (note) side.appendChild(el('div', 'sheet-note', note));
+    var close = el('button', 'ghost', 'Close');
+    close.onclick = closeModal;
+    side.appendChild(close);
+    body.appendChild(side);
+    box.appendChild(body);
+    openModal(box);
+  }
+
+  // A card offered in a window (block, counter, a choice). A mouse click is the choice; a finger
+  // is less sure, so on touch the tap picks it and a Confirm button commits (PLAN.md D10).
+  function pickable(box, wrap, a, label) {
+    wrap.onclick = function () {
+      if (!NS.touch.active()) { commit(a); return; }
+      [].forEach.call(box.querySelectorAll('.opt-card.is-picked'), function (w) { w.classList.remove('is-picked'); });
+      wrap.classList.add('is-picked');
+      var row = box.querySelector('.confirm-row');
+      if (!row) { row = el('div', 'row confirm-row'); box.appendChild(row); }
+      row.textContent = '';
+      var ok = el('button', 'primary', 'Confirm: ' + label);
+      ok.onclick = function () { commit(a); };
+      row.appendChild(ok);
+    };
   }
 
   function wireAttack(acts) {
@@ -396,7 +493,7 @@
         wrap.appendChild(NS.render.render(S.card(u.id), 'board', {}));
         wrap.appendChild(el('div', 'cap', 'Power ' + a.power +
           (a.power > m.ap ? ' — survives' : ' — would be K.O.’d')));
-        wrap.onclick = function () { commit(a); };
+        pickable(box, wrap, a, 'block with ' + nm(u.id));
         opts.appendChild(wrap);
       });
       box.appendChild(opts);
@@ -422,7 +519,7 @@
         wrap.appendChild(NS.render.render(S.card(a.id), 'board', {}));
         wrap.appendChild(el('div', 'cap', a.kind === 'counterCard'
           ? '+' + a.n + ' power' : 'Event · cost ' + a.cost));
-        wrap.onclick = function () { commit(a); };
+        pickable(box, wrap, a, 'counter with ' + nm(a.id));
         o2.appendChild(wrap);
       });
       box.appendChild(o2);
@@ -488,7 +585,7 @@
         var wrap = el('div', 'opt-card');
         wrap.appendChild(NS.render.render(S.card(cid), 'board', {}));
         wrap.appendChild(el('div', 'cap', a.label));
-        wrap.onclick = function () { commit(a); };
+        pickable(box, wrap, a, a.label);
         o4.appendChild(wrap);
       });
       box.appendChild(o4);
@@ -517,6 +614,7 @@
   // ---------------------------------------------------------------------------------------
   function commit(action) {
     if (busy) return;
+    NS.touch.lowerHand();
     closeModal();
     pendingAttacker = null;
     busy = true;
@@ -549,14 +647,7 @@
   // Hover zoom lives in js/render.js and covers every face-up card on the page by itself.
   function hidePreview() { NS.render.hideZoom(); }
 
-  function inspect(cardId) {
-    var box = el('div', 'modal-box');
-    box.appendChild(NS.render.render(S.card(cardId), 'preview', {}));
-    var b = el('button', null, 'Close');
-    b.onclick = closeModal;
-    box.appendChild(b);
-    openModal(box);
-  }
+  function inspect(cardId) { cardSheet(cardId, [], null); }
 
   function showResult() {
     var won = state.winner === you;
